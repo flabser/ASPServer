@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="getlog_TaxIndService" mode="on">
+	<description/>
+	<xsltfile>views/citizen.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.log.tax.getLogTaxIndService</doscript>
+		</events>
+	</element>
+</rule>

@@ -1,0 +1,438 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UDPServiceService WSDL service -->
+
+  <service name="UDPService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://udp.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="UDPServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.udp.webservices.lof.kz,http://udp.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="UDPService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.udp.UDPServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="UDPService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getLog" qname="operNS:getLog" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getLogReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:date" xmlns:pns="http://udp.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="getDataByIIN" qname="operNS:getDataByIIN" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByIINReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:iin" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByFIO" qname="operNS:getDataByFIO" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByFIOReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:firstName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lastName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middleName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getTheftData" qname="operNS:getTheftData" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getTheftDataReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TheftSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:grnz" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOrgName" qname="operNS:getDataByOrgName" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByOrgNameReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:orgName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataBySRTS" qname="operNS:getDataBySRTS" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataBySRTSReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:srtsSerial" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:srtsNumber" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByGRNZ" qname="operNS:getDataByGRNZ" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByGRNZReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:grnz" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOwnerId" qname="operNS:getDataByOwnerId" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByOwnerIdReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:ownerId" xmlns:pns="http://udp.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByRegId" qname="operNS:getDataByRegId" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getDataByRegIdReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleFullData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:srtsId" xmlns:pns="http://udp.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountAMTSByAdr" qname="operNS:getCountAMTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getCountAMTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TSCountByAddr" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountAMTSByCodeRegion" qname="operNS:getCountAMTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getCountAMTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TSCountByAddr" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMarkAMTSByCodeRegion" qname="operNS:getMarkAMTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getMarkAMTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMarkAMTSByAdr" qname="operNS:getMarkAMTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getMarkAMTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoYearAMTSByCodeRegion" qname="operNS:getInfoYearAMTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoYearAMTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoYearAMTSByAdr" qname="operNS:getInfoYearAMTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoYearAMTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoDrivLicByCodeRegion" qname="operNS:getInfoDrivLicByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoDrivLicByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:distrcit" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoDrivLicByAdr" qname="operNS:getInfoDrivLicByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoDrivLicByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleCountData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoOwnerTSByAdr" qname="operNS:getInfoOwnerTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoOwnerTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoOwnerTSByCodeRegion" qname="operNS:getInfoOwnerTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoOwnerTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountOwnerTSByAdr" qname="operNS:getCountOwnerTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getCountOwnerTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TSCountByOwnType" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountOwnerTSByCodeRegion" qname="operNS:getCountOwnerTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getCountOwnerTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TSCountByOwnType" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoTypeAMTSByAdr" qname="operNS:getInfoTypeAMTSByAdr" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoTypeAMTSByAdrReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://udp.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoTypeAMTSByCodeRegion" qname="operNS:getInfoTypeAMTSByCodeRegion" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getInfoTypeAMTSByCodeRegionReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:district" xmlns:pns="http://udp.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.udp.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://udp.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getDataByOrgName getLog getDataByOwnerId getInfoOwnerTSByAdr getInfoDrivLicByCodeRegion getInfoTypeAMTSByCodeRegion getInfoYearAMTSByAdr getInfoTypeAMTSByAdr getDataByRegId getCountOwnerTSByAdr getDataByIIN getCountAMTSByAdr getCountAMTSByCodeRegion getInfoYearAMTSByCodeRegion getTheftData testService getDataBySRTS getDataByGRNZ getMarkAMTSByCodeRegion getCountOwnerTSByCodeRegion getInfoDrivLicByAdr getInfoOwnerTSByCodeRegion getMarkAMTSByAdr getDataByFIO"/>
+
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TSCountByMark"
+        type="java:kz.lof.webservices.store.udp.TSCountByMark"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TrustType"
+        type="java:kz.lof.webservices.store.udp.TrustType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleShortData"
+        type="java:kz.lof.webservices.store.udp.VehicleShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Region"
+        type="java:kz.lof.webservices.store.udp.Region"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_TaxData"
+        type="java:kz.lof.webservices.store.udp.TaxData[]"
+        innerType="cmp-ns:TaxData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleCountData"
+        type="java:kz.lof.webservices.store.udp.VehicleCountData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TrustData"
+        type="java:kz.lof.webservices.store.udp.TrustData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_VehicleShortData"
+        type="java:kz.lof.webservices.store.udp.VehicleShortData[]"
+        innerType="cmp-ns:VehicleShortData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:DriverPassport"
+        type="java:kz.lof.webservices.store.udp.DriverPassport"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:HumanShortData"
+        type="java:kz.lof.webservices.store.udp.HumanShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TSCountByOwnType"
+        type="java:kz.lof.webservices.store.udp.TSCountByOwnType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_HumanShortData"
+        type="java:kz.lof.webservices.store.udp.HumanShortData[]"
+        innerType="cmp-ns:HumanShortData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_CheckupData"
+        type="java:kz.lof.webservices.store.udp.CheckupData[]"
+        innerType="cmp-ns:CheckupData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:CheckupData"
+        type="java:kz.lof.webservices.store.udp.CheckupData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleSearchResult"
+        type="java:kz.lof.webservices.store.udp.VehicleSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleFullData"
+        type="java:kz.lof.webservices.store.udp.VehicleFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:HumanSearchResult"
+        type="java:kz.lof.webservices.store.udp.HumanSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.udp.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TaxData"
+        type="java:kz.lof.webservices.store.udp.TaxData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_TSCountByYear"
+        type="java:kz.lof.webservices.store.udp.TSCountByYear[]"
+        innerType="cmp-ns:TSCountByYear" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleCountResult"
+        type="java:kz.lof.webservices.store.udp.VehicleCountResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TSCountByCategory"
+        type="java:kz.lof.webservices.store.udp.TSCountByCategory"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Color"
+        type="java:kz.lof.webservices.store.udp.Color"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:District"
+        type="java:kz.lof.webservices.store.udp.District"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TSCountByAddr"
+        type="java:kz.lof.webservices.store.udp.TSCountByAddr"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_TSCountByCategory"
+        type="java:kz.lof.webservices.store.udp.TSCountByCategory[]"
+        innerType="cmp-ns:TSCountByCategory" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TheftSearchResult"
+        type="java:kz.lof.webservices.store.udp.TheftSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_TSCountByMark"
+        type="java:kz.lof.webservices.store.udp.TSCountByMark[]"
+        innerType="cmp-ns:TSCountByMark" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TSCountByYear"
+        type="java:kz.lof.webservices.store.udp.TSCountByYear"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_VehicleCountData"
+        type="java:kz.lof.webservices.store.udp.VehicleCountData[]"
+        innerType="cmp-ns:VehicleCountData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_TrustData"
+        type="java:kz.lof.webservices.store.udp.TrustData[]"
+        innerType="cmp-ns:TrustData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

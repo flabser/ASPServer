@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="query" id="reportstatistic">
+	<description>Статистика работы пользователей</description>
+	<rununderuser source="static">observer</rununderuser>	
+	<doctype></doctype>
+	<query source="macro">SYSTEM_USERS</query>
+	<query source="static">userid ~ '$keyword'</query>
+	<field mode="on">
+       <name>viewtext</name>
+       <value source="resultset">viewtext</value>
+   </field> 
+  </rule>

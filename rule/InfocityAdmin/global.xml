@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rule id="InfocityAdmin" mode="on" type="global">
+	<description>Единая информационная система</description>
+	<orgname>ТОО "Avanti"</orgname>
+	<liccount>100</liccount>
+	<logo>qc_logo.png</logo>
+	<appname>Администратор EIS "Город"</appname>
+	<database autodeploy="ON">
+		<name>InfocityServices</name>		
+		<driver>org.postgresql.Driver</driver>
+		<url>jdbc:postgresql://127.0.0.1:5432/InfocityServices</url>
+		<username/>
+		<password/>
+	<connectionid>KknN2EOffCjUaTjedw1E2g==@@@TlvqJ0yoTmQ=</connectionid></database>
+	<!-- <database autodeploy="on">
+		<name>InfoSystemAdmin_data</name>
+	<driver>org.h2.Driver</driver>
+	<url>jdbc:h2:InfocityServices_data/Avanti;AUTO_SERVER=TRUE;CACHE_TYPE=SOFT_LRU;CACHE_SIZE=262144;QUERY_CACHE_SIZE=262144;MVCC=TRUE</url> 
+	 <url>jdbc:h2:InfocityServices_data/Avanti;AUTO_SERVER=TRUE;CACHE_TYPE=SOFT_LRU;CACHE_SIZE=262144;QUERY_CACHE_SIZE=262144;TRACE_LEVEL_FILE=3;MVCC=TRUE</url>	
+	</database> -->
+	<struct>
+	     <name/>
+	     <driver/>
+	     <url/>
+	 </struct>
+	<daemons>
+		<cyclecontrol>
+			<scheduler mode="off">
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</cyclecontrol>
+		<timewaiting>
+			<scheduler>
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</timewaiting>
+		<recalculator>
+			<scheduler>
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</recalculator>
+	</daemons>
+	<entrypoint>Provider?type=static&amp;id=start</entrypoint>
+	<defaultredirecturl>Provider?type=view&amp;id=spravpoisksystem</defaultredirecturl>
+	<langs>
+		<entry id="RUS">Русский</entry>
+		<entry id="KAZ">Қазақша</entry>
+	</langs>
+	<skins>
+		<entry default="on" id="classic" path="./webapps/InfocityAdmin/classic/xsl">Classic</entry>
+<!-- 		<entry id="ipadandtab" path="./webapps/QC/ipadandtab/xsl">Soria</entry> -->
+	</skins>
+	<markdelaysec>5</markdelaysec>
+	<eds mode="ON">
+		
+	</eds> 
+	<sync mode="off">
+		<nsf>
+			<dominohost>192.168.0.13:63148</dominohost>
+			<dominouser>admin</dominouser>
+			<dominopwd>123</dominopwd>
+			<dominoserver>Zion</dominoserver>
+			<dominoqueuedb>KMG\qevent.nsf</dominoqueuedb>
+		</nsf>
+		<default>
+			<userredirect app="InfocityAdmin">Provider?type=outline&amp;subtype=view&amp;id=spravpoisksystem</userredirect>
+		</default>
+		<puller>
+			<multithread>true</multithread>
+		</puller>
+	</sync>
+	<eds mode="off">
+		<keypass/>
+    	<keystore/>
+	</eds>
+	
+</rule>

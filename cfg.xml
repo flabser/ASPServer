@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<nextbase>
+	<name>Nopanic</name>
+    <adminapp mode="on"/>
+    <hostname></hostname>
+    <port>8889</port>
+     <webserver>
+    	<version>7</version>
+    	<webservices mode="ON" />
+    </webserver>
+    <ssl mode="OFF">
+        <port>38789</port>
+    	<keypass>123456</keypass>
+    	<keystore>c:\tmp\ssl\aikonamedia.jks</keystore>
+    	<clientauth mode="ON">
+	   	 	<truststorepass>123456</truststorepass>
+	    	<truststorefile>c:\tmp\ssl\truststore.jks</truststorefile>
+    	</clientauth>
+    </ssl>
+    <applications> 
+        <app>
+            <name mode="on">InfocityServices</name>
+        </app>
+        <app>
+            <name mode="on">InfocityAdmin</name>
+        </app>
+         <app>
+            <name mode="off">Workspace</name>
+        </app>
+    </applications>
+    <logging>
+        <verbose>true</verbose>
+    </logging>
+    <mailagent>
+        <smtphost>192.168.0.1</smtphost>
+        <defaultsender>info@flabs.kz</defaultsender>
+    </mailagent>
+    <instmsgagent>
+    	<xmppserver>192.168.0.13</xmppserver>       
+        <xmpplogin>support@zion</xmpplogin>
+        <xmpppwd>support</xmpppwd>        
+    </instmsgagent>
+     <scheduler>
+        <startdelaymin>0</startdelaymin>
+     </scheduler>
+    <debug>true</debug>
+	 <externalhost>
+
+    	<host id="nk" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="gkz" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="uaig" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="udp" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="ump" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="social" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="bti" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="FRNS" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+
+    </externalhost>
+</nextbase>

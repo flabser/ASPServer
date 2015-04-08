@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="view" id="users" history="on"> 
+	<description>ЕИС Администратор - Пользователи</description>
+	<outline>navigator</outline>
+	<query>users</query>		
+	<xsltfile>views\users.xsl</xsltfile>
+	<title source="KEYWORD">ЕИС Администратор -  Пользователи</title>
+	<field mode="on">
+		<description></description>
+		<name>newDocURL</name>
+		<value><![CDATA[Provider?type=document&amp;id=organization&amp;key=]]></value>
+	</field>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">ЕИС Администратор</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Пользователи</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dobavit" source="KEYWORD">Добавить</caption>
+	</column>
+	<column>
+		<caption id="udalit" source="KEYWORD">Удалить</caption>
+	</column>
+	<column>
+		<caption id="izmenit" source="KEYWORD">Изменить</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="kategoriya" source="KEYWORD">Категория</caption>
+	</column>
+	<column>
+		<caption id="prinyat" source="KEYWORD">Принять</caption>
+	</column>
+	<column>
+		<caption id="otmena" source="KEYWORD">Отмена</caption>
+	</column>
+	<column>
+		<caption id="vyhod" source="KEYWORD">Выход</caption>
+	</column>
+	<glossary mode="on" id="typeservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>NK</name>
+				<value>NK</value>
+			</entry>
+			<entry mode="on">
+				<name>GKZ</name>
+				<value>GKZ</value>
+			</entry>
+			<entry mode="on">
+				<name>UAIG</name>
+				<value>UAIG</value>
+			</entry>
+			<entry mode="on">
+				<name>UDP</name>
+				<value>UDP</value>
+			</entry>
+			<entry mode="on">
+				<name>UMP</name>
+				<value>UMP</value>
+			</entry>
+			<entry mode="on">
+				<name>SOCIAL</name>
+				<value>SOCIAL</value>
+			</entry>
+			<entry mode="on">
+				<name>BTI</name>
+				<value>BTI</value>
+			</entry>
+		]]></value>
+	</glossary>
+	<glossary mode="on" id="nameservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>TaxIndService</name>
+				<viewtext>Индивидуальные предприниматели</viewtext>
+				<value>TaxIndService</value>
+				<type>NK</type>
+			</entry>
+			<entry mode="on">
+				<name>TaxPayService</name>
+				<viewtext>Налогоплательщики</viewtext>
+				<value>TaxPayService</value>
+				<type>NK</type>
+			</entry>
+			<entry mode="on">
+				<name>HumansSearchService</name>
+				<viewtext>Регистрация населения</viewtext>
+				<value>HumansSearchService</value>
+				<type>UMP</type>
+			</entry>
+			<entry mode="on">
+				<name>UDPService</name>
+				<viewtext>Транспортные средства</viewtext>
+				<value>UDPService</value>
+				<type>UDP</type>
+			</entry>
+			<entry mode="on">
+				<name>BTIService</name>
+				<viewtext>Недвижимость</viewtext>
+				<value>BTIService</value>
+				<type>BTI</type>
+			</entry>
+		]]></value>
+	</glossary>
+</rule>

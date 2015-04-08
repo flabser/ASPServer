@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="bti_form_getdatabyownerid" mode="on">
+	<description/>
+	<!-- 	<caching>CACHING_IN_USER_SESSION_SCOPE</caching> -->
+	<caching>NO_CACHING</caching>
+	<xsltfile>forms/realestatedocumentlist.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.bti.form.GetDataByOwnerId</doscript>
+		</events>
+	</element>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="vladelec" source="KEYWORD">Владелец</caption>
+	<caption name="documentynanedvizhimost" source="KEYWORD">Документы на недвижимость</caption>
+	<caption name="documentynavladeniestroeniem" source="KEYWORD">Документы на владение строением</caption>
+	<caption name="documenty" source="KEYWORD">Документы</caption>
+	<caption name="priznak" source="KEYWORD">Признак</caption>
+	<caption name="tip" source="KEYWORD">Тип</caption>
+	<caption name="nomer" source="KEYWORD">Номер</caption>
+	<caption name="dataregistracii" source="KEYWORD">Дата регистрации</caption>
+	<caption name="tipstroeniya" source="KEYWORD">Тип строения</caption>
+	<caption name="adresstroeniya" source="KEYWORD">Адрес строения</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kvartira" source="KEYWORD">Квартира</caption>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+</rule>

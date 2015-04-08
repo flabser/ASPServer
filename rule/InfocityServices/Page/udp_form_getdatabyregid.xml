@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="udp_form_getdatabyregid" mode="on">
+	<description/>
+	<!-- 	<caching>CACHING_IN_USER_SESSION_SCOPE</caching> -->
+	<caching>NO_CACHING</caching>
+	<xsltfile>forms/transport.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.udp.form.GetDataByRegID</doscript>
+		</events>
+	</element>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="svedeniyaotransportnomsredstve" source="KEYWORD">Сведения о транспортном средстве</caption>
+	<caption name="dannyepots" source="KEYWORD">Данные по ТС</caption>
+	<caption name="gosnomer" source="KEYWORD">Госномер</caption>
+	<caption name="tehpassport" source="KEYWORD">Техпаспорт</caption>
+	<caption name="marka" source="KEYWORD">Марка</caption>
+	<caption name="model" source="KEYWORD">Модель</caption>
+	<caption name="cvet" source="KEYWORD">Цвет</caption>
+	<caption name="godvypuska" source="KEYWORD">Год выпуска</caption>
+	<caption name="status" source="KEYWORD">Статус</caption>
+	<caption name="dataregistracii" source="KEYWORD">Дата регистрации</caption>
+	<caption name="datasnyatiyasucheta" source="KEYWORD">Дата снятия с учета</caption>
+	<caption name="osobyeotmetki" source="KEYWORD">Особые отметки</caption>
+	<caption name="prezhniigosnomer" source="KEYWORD">Прежний госномер</caption>
+	<caption name="prezhniitehpassport" source="KEYWORD">Прежний техпаспорт</caption>
+	<caption name="nomerkuzova" source="KEYWORD">№ кузова</caption>
+	<caption name="nomershassi" source="KEYWORD">№ шасси</caption>
+	<caption name="nomerdvigatelya" source="KEYWORD">№ двигателя</caption>
+	<caption name="obem" source="KEYWORD">Объем</caption>
+	<caption name="moschnost" source="KEYWORD">Мощность (л/с)</caption>
+	<caption name="gruzopodemnost" source="KEYWORD">Грузоподъемность</caption>
+	<caption name="kolvoposadochnyhmest" source="KEYWORD">Кол-во посадочных мест</caption>
+	<caption name="vladelec" source="KEYWORD">Владелец</caption>
+	<caption name="familiya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	<caption name="rnn" source="KEYWORD">РНН</caption>
+	<caption name="oblast" source="KEYWORD">Область</caption>
+	<caption name="rayon" source="KEYWORD">Район</caption>
+	<caption name="naselennyipunkt" source="KEYWORD">Населенный пункт</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kvartira" source="KEYWORD">Квартира</caption>
+	<caption name="tehosmotr" source="KEYWORD">Техосмотр</caption>
+	<caption name="tipto" source="KEYWORD">Тип ТО</caption>
+	<caption name="dataprohozhdeniya" source="KEYWORD">Дата прохождения</caption>
+	<caption name="punkt" source="KEYWORD">Пункт</caption>
+	<caption name="fioinspektora" source="KEYWORD">ФИО инспектора</caption>
+	<caption name="talon" source="KEYWORD">Талон</caption>
+	<caption name="svidetelstvo" source="KEYWORD">Свидетельство</caption>
+	<caption name="nomeredk" source="KEYWORD">№ ЭДК</caption>
+	<caption name="nalogilgoty" source="KEYWORD">Налоги/Льготы</caption>
+	<caption name="tiplgoty" source="KEYWORD">Тип льготы</caption>
+	<caption name="seriyalgotnogoudostovereniya" source="KEYWORD">Серия льготного удостоверения</caption>
+	<caption name="nomerlgotnogoudostovereniya" source="KEYWORD">Номер льготного удостоверения</caption>
+	<caption name="datalgoty" source="KEYWORD">Дата льготы</caption>
+	<caption name="dataokonchaniyadeistviya" source="KEYWORD">Дата окончания действия</caption>
+	<caption name="doverennosti" source="KEYWORD">Доверенности</caption>
+	<caption name="tip" source="KEYWORD">Тип</caption>
+	<caption name="seriyanomer" source="KEYWORD">Серия Номер</caption>
+	<caption name="dataokonchaniya" source="KEYWORD">Дата окончания</caption>
+	<caption name="fiodoverennogolica" source="KEYWORD">ФИО доверенного лица</caption>
+	<caption name="adresdoverennogolica" source="KEYWORD">Адрес доверенного лица</caption>
+	<caption name="iin" source="KEYWORD">ИИН</caption>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+</rule>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="reportstatisticservices" history="on"> 
+	<description>Статистика работы по сервисам</description>
+	<outline>navigator</outline>
+	<query>reportstatistic</query>		
+	<xsltfile>views\reportstatisticservices.xsl</xsltfile>
+	<title source="KEYWORD">Статистика работы по сервисам</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Статистика работы по сервисам</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="documents" source="KEYWORD">Документов</caption>
+	</column>
+	<column>
+		<caption id="updates" source="KEYWORD">Обновлено</caption>
+	</column>
+	<column>
+		<caption id="from" source="KEYWORD">из</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dataivremya" source="KEYWORD">Дата и время</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="deistvie" source="KEYWORD">Действие</caption>
+	</column>
+	<column>
+		<caption id="resultat" source="KEYWORD">Результат</caption>
+	</column>
+	<column>
+		<caption id="primechanie" source="KEYWORD">Примечание</caption>
+	</column>
+	<glossary mode="on" id="typeservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>NK</name>
+				<namerus>Налоговый комитет</namerus>
+				<namekaz>Салык комитетi</namekaz>
+				<value>NK</value>
+				<services>
+					<entry mode="on">
+						<name>TaxIndService</name>
+						<viewtext>Индивидуальные предприниматели</viewtext>
+						<viewtextkaz>Жеке кәсіпкерлер</viewtextkaz>
+						<value>TaxIndService</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>service_getDataByFIO_TAX_PB</value>
+							</entry>
+							<entry>
+								<name>getDataByRNN</name>
+								<value>service_getdatabyrnn_TAX_PB</value>
+							</entry>
+						</methods>
+					</entry>
+					<entry mode="on">
+						<name>TaxPayService</name>
+						<viewtext>Налогоплательщики</viewtext>
+						<viewtextkaz>Cалық төлеуші</viewtextkaz>
+						<value>TaxPayService</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>service_getDataByFIO_TAX_REG</value>
+							</entry>
+							<entry>
+								<name>getDataByRNN</name>
+								<value>service_getDataByRNN_TAX_REG</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>service_getDataByIIN_TAX_REG</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>service_getDataByOrgName_reg</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>GKZ</name>
+				<namerus>Комитет по управлению земельными ресурсами</namerus>
+				<namekaz>Комитет ша басrармага жердін камбаларынын</namekaz>
+				<value>GKZ</value>
+			</entry>
+			<entry mode="on">
+				<name>UAIG</name>
+				<namerus>Управление архитектуры и градостроительства</namerus>
+				<namekaz>Сәулеттің және градостроительства басқармасы</namekaz>
+				<value>UAIG</value>
+			</entry>
+			<entry mode="on">
+				<name>UDP</name>
+				<namerus>Управление дорожной полиции</namerus>
+				<namekaz>Басқарма жол полициясы</namekaz>
+				<value>UDP</value>
+				<services>
+					<entry mode="on">
+						<name>UDPServiceProxy</name>
+						<viewtext>Транспорт</viewtext>
+						<viewtextkaz>Транспорт</viewtextkaz>
+						<value>UDPServiceProxy</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>service_getDataByFIO_UDP</value>
+							</entry>
+							<entry>
+								<name>getDataByGRNZ</name>
+								<value>service_getDataByGRNZ_UDP</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>service_getDataByIIN_UDP</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>service_getDataByOrgName_UDP</value>
+							</entry>
+							<entry>
+								<name>getDataByOwnerId</name>
+								<value>service_udp_getDataByOwnerID</value>
+							</entry>
+							<entry>
+								<name>getDataByRegId</name>
+								<value>service_getDataByRegId</value>
+							</entry>
+							<entry>
+								<name>getDataBySRTS</name>
+								<value>service_getDataBySRTS_UDP</value>
+							</entry>
+							<entry>
+								<name>GetListAutoByID</name>
+								<value>service_getListAutoDataByOwnerId_UDP</value>
+							</entry>
+							<entry>
+								<name>getTheftData</name>
+								<value>getTheftData</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>UMP</name>
+				<namerus>Управление миграционной полиции</namerus>
+				<namekaz>Миграциялы полицияның басқармасы</namekaz>
+				<value>UMP</value>
+				<services>
+					<entry mode="on">
+						<name>HumansSearchService</name>
+						<viewtext>Граждане РК</viewtext>
+						<viewtextkaz>Граждане РК</viewtextkaz>
+						<value>HumansSearchService</value>
+						<methods>
+							<entry>
+								<name>getCitizenByIIN</name>
+								<value>service_ump_getCitizenByIIN</value>
+							</entry>
+							<entry>
+								<name>getHumanByAddr</name>
+								<value>service_ump_getHumanByAddr</value>
+							</entry>
+							<entry>
+								<name>getHumanByDoc</name>
+								<value>service_ump_getHumanByDoc</value>
+							</entry>
+							<entry>
+								<name>getHumanByFIO</name>
+								<value>service_ump_getHumanByFIO</value>
+							</entry>
+						</methods>
+					</entry>
+					<entry mode="on">
+						<name>ForeignersSearchService</name>
+						<viewtext>Иностранцы</viewtext>
+						<viewtextkaz>Иностранцы</viewtextkaz>
+						<value>ForeignersSearchService</value>
+						<methods>
+							<entry>
+								<name>getPersonByDoc</name>
+								<value>service_ump_getHumanByDoc</value>
+							</entry>
+							<entry>
+								<name>getPersonByFIO</name>
+								<value>service_ump_getHumanByFIO</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>SOCIAL</name>
+				<namerus>Департамент труда и социальной защиты населения</namerus>
+				<namekaz>Әлеуметтік қорғаудың халық департамент еңбек</namekaz>
+				<value>SOCIAL</value>
+			</entry>
+			<entry mode="on">
+				<name>BTI</name>
+				<namerus>Центр недвижимости</namerus>
+				<namekaz>Жылжымайтын мүліктің орталығы</namekaz>
+				<value>BTI</value>
+				<services>
+					<entry mode="on">
+						<name>BTIServiceProxy</name>
+						<viewtext>Недвижимость</viewtext>
+						<viewtextkaz>Недвижимость</viewtextkaz>
+						<value>BTIServiceProxy</value>
+						<methods>
+							<entry>
+								<name>getDataByAddress</name>
+								<value>service_getDataByAddress_BTI</value>
+							</entry>
+							<entry>
+								<name>getDataByBuildingId</name>
+								<value>getDataByBuildingId</value>
+							</entry>
+							<entry>
+								<name>getDataByDoc</name>
+								<value>service_getDataByDoc_BTI</value>
+							</entry>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>service_getDataByFIO_BTI</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>service_getDataByIIN_BTI</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>service_getDataByOrgName_BTI</value>
+							</entry>
+							<entry>
+								<name>getDataByOwnerId</name>
+								<value>service_getDataByOwnerId_BTI</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+		]]></value>
+	</glossary>
+</rule>

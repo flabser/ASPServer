@@ -1,0 +1,175 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UDPCamServiceService WSDL service -->
+
+  <service name="UDPCamService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://udp.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="UDPCamServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.udp.webservices.lof.kz,http://udp.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="UDPCamService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.udp.UDPCamServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="UDPCamService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAddressByFIO" qname="operNS:getAddressByFIO" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getAddressByFIOReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:HumanShortData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:firstName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lastName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middleName" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:birthDate" xmlns:pns="http://udp.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="getWarrByGRNZ" qname="operNS:getWarrByGRNZ" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getWarrByGRNZReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:TrustData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:grnz" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getFullDataByGRNZ" qname="operNS:getFullDataByGRNZ" xmlns:operNS="http://udp.webservices.lof.kz" returnQName="retNS:getFullDataByGRNZReturn" xmlns:retNS="http://udp.webservices.lof.kz" returnType="rtns:VehicleFullData" xmlns:rtns="http://store.udp.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:grnz" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://udp.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="testService getAddressByFIO getWarrByGRNZ getFullDataByGRNZ"/>
+
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_TrustData"
+        type="java:kz.lof.webservices.store.udp.TrustData[]"
+        innerType="cmp-ns:TrustData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TrustData"
+        type="java:kz.lof.webservices.store.udp.TrustData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Color"
+        type="java:kz.lof.webservices.store.udp.Color"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:DriverPassport"
+        type="java:kz.lof.webservices.store.udp.DriverPassport"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:District"
+        type="java:kz.lof.webservices.store.udp.District"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_TaxData"
+        type="java:kz.lof.webservices.store.udp.TaxData[]"
+        innerType="cmp-ns:TaxData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.udp.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:HumanShortData"
+        type="java:kz.lof.webservices.store.udp.HumanShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TrustType"
+        type="java:kz.lof.webservices.store.udp.TrustType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:CheckupData"
+        type="java:kz.lof.webservices.store.udp.CheckupData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:Region"
+        type="java:kz.lof.webservices.store.udp.Region"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:TaxData"
+        type="java:kz.lof.webservices.store.udp.TaxData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://udp.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_CheckupData"
+        type="java:kz.lof.webservices.store.udp.CheckupData[]"
+        innerType="cmp-ns:CheckupData" xmlns:cmp-ns="http://store.udp.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.udp.webservices.lof.kz"
+        qname="ns:VehicleFullData"
+        type="java:kz.lof.webservices.store.udp.VehicleFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

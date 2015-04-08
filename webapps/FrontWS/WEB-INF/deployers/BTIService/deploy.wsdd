@@ -1,0 +1,334 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BTIServiceService WSDL service -->
+
+  <service name="BTIService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://bti.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="BTIServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.bti.webservices.lof.kz,http://bti.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="BTIService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.bti.BTIServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="BTIService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getLog" qname="operNS:getLog" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getLogReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:date" xmlns:pns="http://bti.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="getDataByIIN" qname="operNS:getDataByIIN" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByIINReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:PersonSearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:iin" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByFIO" qname="operNS:getDataByFIO" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByFIOReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:PersonSearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:firstName" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lastName" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middleName" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getStreets" qname="operNS:getStreets" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getStreetsReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:Street" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByDoc" qname="operNS:getDataByDoc" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByDocReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:RealtySearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:docKind" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:docType" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:docNumber" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDocKinds" qname="operNS:getDocKinds" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDocKindsReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:DocKind" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDocTypes" qname="operNS:getDocTypes" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDocTypesReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:DocType" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOrgName" qname="operNS:getDataByOrgName" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByOrgNameReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:PersonSearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:orgName" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOwnerId" qname="operNS:getDataByOwnerId" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByOwnerIdReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:RealtySearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:ownerId" xmlns:pns="http://bti.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ownerStatus" xmlns:pns="http://bti.webservices.lof.kz" type="tns:short" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllStreets" qname="operNS:getAllStreets" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getAllStreetsReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:Street" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByAddress" qname="operNS:getDataByAddress" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByAddressReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:RealtySearchResult" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:buildingKind" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:street" xmlns:pns="http://bti.webservices.lof.kz" type="tns:Street" xmlns:tns="http://store.bti.webservices.lof.kz"/>
+        <parameter qname="pns:house" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:flat" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:extras" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getFullDataByDoc" qname="operNS:getFullDataByDoc" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getFullDataByDocReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:BuildingFullData" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:ownerId" xmlns:pns="http://bti.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ownerStatus" xmlns:pns="http://bti.webservices.lof.kz" type="tns:short" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:docId" xmlns:pns="http://bti.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByBuildingId" qname="operNS:getDataByBuildingId" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getDataByBuildingIdReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:BuildingFullData" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:buildingId" xmlns:pns="http://bti.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getBuildingKinds" qname="operNS:getBuildingKinds" xmlns:operNS="http://bti.webservices.lof.kz" returnQName="retNS:getBuildingKindsReturn" xmlns:retNS="http://bti.webservices.lof.kz" returnType="rtns:BuildingKind" xmlns:rtns="http://store.bti.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://bti.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getDataByOrgName getDataByOwnerId testService getLog getDataByDoc getDataByAddress getFullDataByDoc getAllStreets getDocKinds getBuildingKinds getDocTypes getDataByIIN getDataByBuildingId getStreets getDataByFIO"/>
+
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:WallMaterial"
+        type="java:kz.lof.webservices.store.bti.WallMaterial"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://bti.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_PersonShortData"
+        type="java:kz.lof.webservices.store.bti.PersonShortData[]"
+        innerType="cmp-ns:PersonShortData" xmlns:cmp-ns="http://store.bti.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:RealtyShortData"
+        type="java:kz.lof.webservices.store.bti.RealtyShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:DocType"
+        type="java:kz.lof.webservices.store.bti.DocType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://bti.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_ApartmentData"
+        type="java:kz.lof.webservices.store.bti.ApartmentData[]"
+        innerType="cmp-ns:ApartmentData" xmlns:cmp-ns="http://store.bti.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:DocumentData"
+        type="java:kz.lof.webservices.store.bti.DocumentData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:IDDocType"
+        type="java:kz.lof.webservices.store.bti.IDDocType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:StreetType"
+        type="java:kz.lof.webservices.store.bti.StreetType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:BuildingKind"
+        type="java:kz.lof.webservices.store.bti.BuildingKind"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:District"
+        type="java:kz.lof.webservices.store.bti.District"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:HousePart"
+        type="java:kz.lof.webservices.store.bti.HousePart"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:BuildingPurpose"
+        type="java:kz.lof.webservices.store.bti.BuildingPurpose"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://bti.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:PropertyKind"
+        type="java:kz.lof.webservices.store.bti.PropertyKind"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:Country"
+        type="java:kz.lof.webservices.store.bti.Country"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:PersonSearchResult"
+        type="java:kz.lof.webservices.store.bti.PersonSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:IDDocument"
+        type="java:kz.lof.webservices.store.bti.IDDocument"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:PropertyForm"
+        type="java:kz.lof.webservices.store.bti.PropertyForm"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:BuildingFullData"
+        type="java:kz.lof.webservices.store.bti.BuildingFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:Region"
+        type="java:kz.lof.webservices.store.bti.Region"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://bti.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_RealtyShortData"
+        type="java:kz.lof.webservices.store.bti.RealtyShortData[]"
+        innerType="cmp-ns:RealtyShortData" xmlns:cmp-ns="http://store.bti.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:Street"
+        type="java:kz.lof.webservices.store.bti.Street"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:DocKind"
+        type="java:kz.lof.webservices.store.bti.DocKind"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:RealtySearchResult"
+        type="java:kz.lof.webservices.store.bti.RealtySearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.bti.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:PersonShortData"
+        type="java:kz.lof.webservices.store.bti.PersonShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:City"
+        type="java:kz.lof.webservices.store.bti.City"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.bti.webservices.lof.kz"
+        qname="ns:ApartmentData"
+        type="java:kz.lof.webservices.store.bti.ApartmentData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

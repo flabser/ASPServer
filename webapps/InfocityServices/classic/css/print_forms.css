@@ -1,0 +1,67 @@
+BODY {
+    font-family: Verdana,Arial,Helvetica,sans-serif !important;
+}
+
+#usernavpanel{
+	display:none;
+}
+
+
+#header-view{
+	height:40px !important;
+}
+
+#header-view span{
+	width:100%;
+	text-align:right;
+	line-height:40px;
+}
+
+#header-view span img{
+	position:absolute;
+	top:0px;
+	left:5px
+}
+
+#viewcontent-header{
+	height:50px !important;
+}
+
+#aboutprint{
+	display:block !important;
+	margin-top:5px;
+}
+
+#pagetitle{
+	font-size:19px !important;
+}
+
+button, .ui-tabs-nav{
+	display:none;
+}
+
+.fc{
+	width:200px;
+	text-align:right;
+}
+
+.title{
+	font-size:22px !important;
+	margin-top:50px;
+}
+
+.resulttable{
+	font-size:15px;
+	margin-top:55px
+}
+
+.longresulttable{
+	font-size:10px;
+	width:700px !important;
+	margin-top:20px;
+}
+
+.td_noteditable{
+	padding:0px !important;
+	height:5px;
+}

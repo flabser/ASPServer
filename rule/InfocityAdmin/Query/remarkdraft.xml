@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="query" id="remarkdraft">
+	<description></description>
+	<doctype>PROJECT</doctype>
+	<query source="static">form = 'remark' and vn = '0' and coordstatus=351</query>
+	<sortby source="static">VIEWTEXT1#asc</sortby>
+</rule>

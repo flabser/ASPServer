@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="form" id="reportstatistic" mode="on">
+	<description></description>
+	<xsltfile>forms/reportstatistic.xsl</xsltfile>
+	<doctype>maindoc</doctype>
+	<title source="KEYWORD">Активность пользователя</title>
+	<outline>navigator</outline>
+	<default>
+	</default>
+	<show>
+	</show>
+	<events>
+		<queryopen source="file">form.reportstatistics.QueryOpen</queryopen>
+	</events> 
+	<save>
+	</save>
+	<caption name="close" source="KEYWORD">Закрыть</caption> 
+	<caption name="saveandclose" source="KEYWORD">Сохранить и закрыть</caption> 
+	<caption name="properties" source="KEYWORD">Свойства</caption> 
+	<caption name="settings" source="KEYWORD">Настройки системы</caption> 
+	<caption name="editing" source="KEYWORD">Редактирование</caption>
+	<caption name="readonly" source="KEYWORD">Только для чтения</caption>
+	<caption name="modenotdefined" source="KEYWORD">Режим не определен</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="lang" source="KEYWORD">Язык</caption>
+ 	<caption name="skin" source="KEYWORD">Оформление</caption>
+ 	<caption name="chinese" source="KEYWORD">Китайский</caption>
+	<glossary mode="on" id="langs" source="macro">AVAILABLE_LANGS</glossary>
+	<glossary mode="on" id="skins" source="macro">AVAILABLE_SKINS</glossary>
+</rule>

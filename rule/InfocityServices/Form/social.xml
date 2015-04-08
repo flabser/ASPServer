@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule type="form" id="social" mode="on">
+	<caching>CACHING_IN_USER_SESSION_SCOPE</caching>
+	<description>Сведения о человеке</description>
+	<xsltfile>forms/social.xsl</xsltfile>
+	<doctype>PROJECT</doctype>
+	<title source="KEYWORD">Сведения о человеке</title>
+	<outline>navigator</outline>
+	<default>
+	</default>
+	<show>
+	</show>
+	<events>
+		<queryopen source="file">form.social.QueryOpen</queryopen>
+	</events> 
+	<save>
+	</save>
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>	
+	<viewdate><![CDATA[
+	]]></viewdate>
+	<viewnumber><![CDATA[
+	]]></viewnumber>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="svedeniyaopmzh" source="KEYWORD">Сведения о пмж</caption>
+	<caption name="obschiesvedeniya" source="KEYWORD">Общие сведения</caption>
+	<caption name="familiya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="otnosheniekotvetstvennomukvartirosemschiku" source="KEYWORD">Отношение к ответств. квартиросъемщику</caption>
+	<caption name="tipregistracii" source="KEYWORD">Тип регистрации</caption>
+	<caption name="pmzh" source="KEYWORD">ПМЖ</caption>
+	<caption name="rayon" source="KEYWORD">Район</caption>
+	<caption name="naselpunkt" source="KEYWORD">Насел. пункт</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kv" source="KEYWORD">Кв.</caption>
+	<caption name="datanachalaregistracii" source="KEYWORD">Дата начала регистрации</caption>
+	<caption name="dataokonchaniyaregistracii" source="KEYWORD">Дата окончания регистрации</caption>
+	<caption name="otkudapribyl" source="KEYWORD">Откуда прибыл</caption>
+	<caption name="kudaubyl" source="KEYWORD">Куда убыл</caption>
+	<caption name="oblast" source="KEYWORD">Область</caption>
+	<caption name="punktregistracii" source="KEYWORD">Пункт регистрации</caption>
+	<caption name="iin" source="KEYWORD">ИИН</caption>
+	<caption name="raspechatatrezultaty" source="KEYWORD">Распечатать результаты</caption>
+	
+	<caption name="fio" source="KEYWORD">ФИО</caption>
+	<caption name="address" source="KEYWORD">Адрес</caption>
+	<caption name="familymembers" source="KEYWORD">состав семьи</caption>
+	<caption name="areareal" source="KEYWORD">занимаемая площадь квартиры</caption>
+	<caption name="areastandard" source="KEYWORD">площадь квартиры по соц. норме</caption>
+	<caption name="averageincome" source="KEYWORD">совместный средний доход</caption>
+	<caption name="tenpercent" source="KEYWORD">10 %</caption>
+	<caption name="invoiceamount" source="KEYWORD">сумма согласно квитанции</caption>
+	<caption name="standardamount" source="KEYWORD">сумма по соц. норме</caption>
+	<caption name="allowanceamount" source="KEYWORD">сумма жил. пособия</caption>
+	<caption name="daterevalidation" source="KEYWORD">дата переаттестации</caption>
+	<caption name="printed" source="KEYWORD">Распечатал</caption>
+</rule>

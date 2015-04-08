@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="view" id="reportaccess" history="on"> 
+	<description>Генератор отчетов - Предоставление доступа</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\reportaccess.xsl</xsltfile>
+	<title source="KEYWORD">Генератор отчетов - Предоставление доступа</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Предоставление доступа</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="organizaciya" source="KEYWORD">Организация</caption>
+	</column>
+	<column>
+		<caption id="serveristochnik" source="KEYWORD">Сервер-источник</caption>
+	</column>
+	<column>
+		<caption id="gruppyservisa" source="KEYWORD">Группы сервиса</caption>
+	</column>
+	<column>
+		<caption id="polzovateli" source="KEYWORD">Пользователи</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="kategoriya" source="KEYWORD">Категория</caption>
+	</column>
+</rule>

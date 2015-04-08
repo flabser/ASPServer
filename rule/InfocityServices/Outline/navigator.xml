@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule type="outline" id="navigator" mode="on">
+	<description>Navigator outline</description>
+	<xsltfile>outline.xsl</xsltfile>
+	<outline>
+		<entry id="realestatecenter" mode="on">
+			<caption source="KEYWORD">Центр недвижимости</caption>
+			<hint source="KEYWORD">Центр недвижимости</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("BTI -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Недвижимость" id="realestate">
+				<caption source="KEYWORD">Недвижимость</caption>
+				<hint source="KEYWORD">Недвижимость</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=realestate-fio" hint="По ФИО" id="realestate-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("BTIService -> getDataByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=realestate-docvladen" hint="По документу на владение" id="realestate-docvladen">
+					<caption source="KEYWORD">По документу на владение</caption>
+					<hint source="KEYWORD">По документу на владение</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("BTIService -> getDataByDoc") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=realestate-iin" hint="По ИИН" id="realestate-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("BTIService -> getDataByIIN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=realestate-adress" hint="По Адресу" id="realestate-adress">
+					<caption source="KEYWORD">По Адресу</caption>
+					<hint source="KEYWORD">По Адресу</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("BTIService -> getDataByAddress") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="ump" mode="on">
+			<caption source="KEYWORD">УМП</caption>
+			<hint source="KEYWORD">УМП</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("UMP -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Иностранцы" id="foreigner">
+				<caption source="KEYWORD">Иностранцы</caption>
+				<hint source="KEYWORD">Иностранцы</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("ForeignersSearchService -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=foreigner-fio" hint="По ФИО" id="foreigner-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("ForeignersSearchService -> getPersonByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=foreigner-passport" hint="По паспорту" id="foreigner-passport">
+					<caption source="KEYWORD">По паспорту</caption>
+					<hint source="KEYWORD">По паспорту</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("ForeignersSearchService -> getPersonByDoc") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="off" type="link" url="Provider?type=view&amp;id=foreigner-addr" hint="По адресу" id="foreigner-addr">
+					<caption source="KEYWORD">По адресу</caption>
+					<hint source="KEYWORD">По адресу</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UMP -> MainOutlineEntry") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+			<entry mode="on" hint="Граждане РК" id="citizen">
+				<caption source="KEYWORD">Граждане РК</caption>
+				<hint source="KEYWORD">Граждане РК</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("HumanSearchService -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=citizen-fio" hint="По ФИО" id="citizen-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("HumansSearchService -> getHumanByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=citizen-id" hint="По уд. личности" id="citizen-id">
+					<caption source="KEYWORD">По уд. личности</caption>
+					<hint source="KEYWORD">По уд. личности</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("HumansSearchService -> getHumanByDoc") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=citizen-addr" hint="По адресу" id="citizen-addr">
+					<caption source="KEYWORD">По адресу</caption>
+					<hint source="KEYWORD">По адресу</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("HumansSearchService -> getHumanByAddr") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=citizen-iin" hint="По ИИН" id="citizen-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("HumansSearchService -> getCitizenByIIN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="gorkomzem" mode="on">
+			<caption source="KEYWORD">АлматыГорНПЦЗем</caption>
+			<hint source="KEYWORD">АлматыГорНПЦЗем</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("GKZ -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Земельные участки" id="landlots">
+				<caption source="KEYWORD">Земельные участки</caption>
+				<hint source="KEYWORD">Земельные участки</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("GKZService -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=landlots-fio" hint="По ФИО" id="landlots-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GKZService -> getDataByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=landlots-organization" hint="По наименованию организации" id="landlots-organization">
+					<caption source="KEYWORD">По наименованию организации</caption>
+					<hint source="KEYWORD">По наименованию организации</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GKZService -> getDataByCompany") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=landlots-kadastr-number" hint="По кадастровому номеру" id="landlots-kadastr-number">
+					<caption source="KEYWORD">По кадастровому номеру</caption>
+					<hint source="KEYWORD">По кадастровому номеру</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GKZService -> getDataByCadastrNumber") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=landlots-dok-uchastok" hint="По документу на участок" id="landlots-dok-uchastok">
+					<caption source="KEYWORD">По документу на участок</caption>
+					<hint source="KEYWORD">По документу на участок</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GKZService -> getDataByDocument") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="nalkom" mode="on">
+			<caption source="KEYWORD">Налоговый департамент</caption>
+			<hint source="KEYWORD">Налоговый департамент</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("NK -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Регистрационные данные" id="regdata">
+				<caption source="KEYWORD">Регистрационные данные</caption>
+				<hint source="KEYWORD">Регистрационные данные</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("TaxPayService -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=regdata-fio" hint="По ФИО" id="regdata-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxPayService -> getDataByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=regdata-organization" hint="По наименованию организации" id="regdata-organization">
+					<caption source="KEYWORD">По наименованию организации</caption>
+					<hint source="KEYWORD">По наименованию организации</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxPayService -> getDataByOrgName") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=regdata-iin" hint="По ИИН" id="regdata-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxPayService -> getDataByIIN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=regdata-rnn" hint="По РНН" id="regdata-rnn">
+					<caption source="KEYWORD">По РНН</caption>
+					<hint source="KEYWORD">По РНН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxPayService -> getDataByRNN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+			<entry mode="off" hint="Индивидуальные предприниматели" id="personalbusinessmen">
+				<caption source="KEYWORD">Индивидуальные предприниматели</caption>
+				<hint source="KEYWORD">Индивидуальные предприниматели</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("TaxIndService -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=personalbusinessmen-fio" hint="По ФИО" id="personalbusinessmen-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxIndService -> getDataByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=personalbusinessmen-rnn" hint="По РНН" id="personalbusinessmen-rnn">
+					<caption source="KEYWORD">По РНН</caption>
+					<hint source="KEYWORD">По РНН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("TaxIndService -> getDataByRNN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="udp" mode="on">
+			<caption source="KEYWORD">УДП</caption>
+			<hint source="KEYWORD">УДП</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("UDP -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Транспорт" id="transport">
+				<caption source="KEYWORD">Транспорт</caption>
+				<hint source="KEYWORD">Транспорт</hint>
+				<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("UDP -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=transport-organization" hint="По наименованию организации" id="transport-organization">
+					<caption source="KEYWORD">По наименованию организации</caption>
+					<hint source="KEYWORD">По наименованию организации</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UDPService -> getDataByOrgName") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=transport-fio" hint="По ФИО" id="transport-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UDPService -> getDataByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=transport-iin" hint="По ИИН" id="transport-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UDPService -> getDataByIIN") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=transport-gos-number" hint="По Гос. номеру" id="transport-gos-number">
+					<caption source="KEYWORD">По Гос. номеру</caption>
+					<hint source="KEYWORD">По Гос. номеру</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UDPService -> getDataByGRNZ") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=transport-teh-passport" hint="По тех. паспорту" id="transport-teh-passport">
+					<caption source="KEYWORD">По тех. паспорту</caption>
+					<hint source="KEYWORD">По тех. паспорту</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("UDPService -> getDataBySRTS") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="daig" mode="off">
+			<caption source="KEYWORD">ДАиГ</caption>
+			<hint source="KEYWORD">ДАиГ</hint>
+			<entry mode="on" hint="Заявления" id="declaration">
+				<caption source="KEYWORD">Заявления</caption>
+				<hint source="KEYWORD">Заявления</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=declaration-number" hint="По номеру заявления" id="declaration-number">
+					<caption source="KEYWORD">По номеру заявления</caption>
+					<hint source="KEYWORD">По номеру заявления</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=declaration-rnn" hint="По РНН заказчика" id="declaration-rnn">
+					<caption source="KEYWORD">По РНН заказчика</caption>
+					<hint source="KEYWORD">По РНН заказчика</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=declaration-period" hint="За период" id="declaration-period">
+					<caption source="KEYWORD">За период</caption>
+					<hint source="KEYWORD">По период</hint>
+				</entry>
+			</entry>			
+			<entry mode="on" hint="АПЗ" id="apz">
+				<caption source="KEYWORD">АПЗ</caption>
+				<hint source="KEYWORD">АПЗ</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=apz-fio" hint="По ФИО застройщика" id="apz-fio">
+					<caption source="KEYWORD">По ФИО застройщика</caption>
+					<hint source="KEYWORD">По ФИО застройщика</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=apz-organization" hint="По наименованию орг. застройщика" id="apz-organization">
+					<caption source="KEYWORD">По наименованию орг. застройщика</caption>
+					<hint source="KEYWORD">По наименованию орг. застройщика</hint>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="departmenttruda" mode="on">
+			<caption source="KEYWORD">Департамент соц. защиты</caption>
+			<hint source="KEYWORD">Департамент соц. защиты</hint>
+			<granted source="script" mode="on"><![CDATA[
+					String[] getStringValue(_Session session){
+						def user = session.getStructure().getUser(session.getCurrentUser());
+						return getAsArray(user.hasRole("Social -> MainOutlineEntry") ? user.getUserID() : "");
+					}
+					]]>
+				</granted>
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=socialdept-fio" hint="По ФИО" id="socialdept-fio">
+				<caption source="KEYWORD">По ФИО</caption>
+				<hint source="KEYWORD">По ФИО</hint>
+			</entry>
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=socialdept-address" hint="По адресу" id="socialdept-address">
+				<caption source="KEYWORD">По адресу</caption>
+				<hint source="KEYWORD">По адресу</hint>
+			</entry>
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=socialdept-district" hint="По району" id="socialdept-district">
+				<caption source="KEYWORD">По району</caption>
+				<hint source="KEYWORD">По району</hint>
+			</entry>
+		</entry>
+		
+		<entry id="departmenttruda" mode="off">
+			<caption source="KEYWORD">Департамент труда и соц</caption>
+			<hint source="KEYWORD">Департамент труда и соц</hint>
+			<entry mode="on"  hint="Лицензии на привлечение ин. граждан" id="licensesforeigncitizens">
+				<caption source="KEYWORD">Лицензии на привлечение ин. граждан</caption>
+				<hint source="KEYWORD">Лицензии на привлечение ин. граждан</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-fio" hint="По ФИО" id="licensesforeigncitizens-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-id" hint="По уд. личности" id="licensesforeigncitizens-id">
+					<caption source="KEYWORD">По уд. личности</caption>
+					<hint source="KEYWORD">По уд. личности</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-organization" hint="По наименованию организации" id="licensesforeigncitizens-organization">
+					<caption source="KEYWORD">По наименованию организации</caption>
+					<hint source="KEYWORD">По наименованию организации</hint>
+				</entry>
+			</entry>			
+			<entry mode="on" hint="Пособия" id="grant">
+				<caption source="KEYWORD">Пособия</caption>
+				<hint source="KEYWORD">Пособия</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-fio" hint="По ФИО" id="grant-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-rnn" hint="По РНН" id="grant-rnn">
+					<caption source="KEYWORD">По РНН</caption>
+					<hint source="KEYWORD">По РНН</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-iin" hint="По ИИН" id="grant-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+				</entry>
+			</entry>			
+		</entry>
+		<entry id="glossary" mode="on">
+			<caption source="KEYWORD">Справочники</caption>
+			<hint source="KEYWORD">Справочники</hint>
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=glossary-dokpriznak" hint="Признак документа" id="glossary-dokpriznak">
+				<caption source="KEYWORD">Признак документа</caption>
+				<hint source="KEYWORD">Признак документа</hint>
+			</entry>			
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=glossary-typedoc" hint="Тип документа" id="glossary-typedoc">
+				<caption source="KEYWORD">Тип документа</caption>
+				<hint source="KEYWORD">Тип документа</hint>
+			</entry>			
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=glossary-subtypedoc" hint="Подтип документа" id="glossary-subtypedoc">
+				<caption source="KEYWORD">Подтип документа</caption>
+				<hint source="KEYWORD">Подтип документа</hint>
+			</entry>			
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=glossary-priznakstroyeniya" hint="Признак строения" id="glossary-priznakstroyeniya">
+				<caption source="KEYWORD">Признак строения</caption>
+				<hint source="KEYWORD">Признак строения</hint>
+			</entry>			
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=glossary-typedoczem" hint="Тип документа на земельный участок" id="glossary-typedoczem">
+				<caption source="KEYWORD">Тип документа на земельный участок</caption>
+				<hint source="KEYWORD">Тип документа на земельный участок</hint>
+			</entry>			
+		</entry>
+		<entry id="statistic" mode="off">
+			<caption source="KEYWORD">Статистика</caption>
+			<hint source="KEYWORD">Статистика</hint>
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=statisticusers" hint="По пользователям" id="statisticusers">
+				<caption source="KEYWORD">По пользователям</caption>
+				<hint source="KEYWORD">По пользователям</hint>
+			</entry>			
+			<entry mode="on" type="link" url="Provider?type=view&amp;id=statisticservices" hint="По сервисам" id="statisticservices">
+				<caption source="KEYWORD">По сервисам</caption>
+				<hint source="KEYWORD">Тип сервисам</hint>
+			</entry>			
+		</entry>
+		<default>
+			<field mode="on">
+				<name>logout</name>
+				<value source="static">logout</value>
+				<caption source="KEYWORD">Завершить работу</caption>
+			</field>
+			<field mode="on">
+				<name>documentmanager</name>
+				<value source="static">documentmanager</value>
+				<caption source="KEYWORD">Документооборот</caption>
+			</field>
+			<field mode="on">
+				<name>outlinetitle</name>
+				<value source="static">outlinetitle</value>
+				<caption source="KEYWORD">Список документов</caption>
+			</field>
+			<field mode="on">
+				<name>orgtitle</name>
+				<value source="static">ТОО Avanti</value>
+			</field>
+		</default>
+	</outline>
+</rule>

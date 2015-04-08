@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="view" id="reportperiod" history="on"> 
+	<description>Генератор отчетов - Обращения к ЕИС - За период</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\reportperiod.xsl</xsltfile>
+	<title source="KEYWORD">Генератор отчетов - Обращения к ЕИС - За период</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Обращения к ЕИС - За период</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="s" source="KEYWORD">C</caption>
+	</column>
+	<column>
+		<caption id="po" source="KEYWORD">По</caption>
+	</column>
+	<column>
+		<caption id="sgenerirovatotchet" source="KEYWORD">Сгенерировать отчет</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="nachaloseansa" source="KEYWORD">Начало сеанса</caption>
+	</column>
+	<column>
+		<caption id="posledniizapros" source="KEYWORD">Последний запрос</caption>
+	</column>
+	<column>
+		<caption id="podsistema" source="KEYWORD">Подсистема</caption>
+	</column>
+</rule>

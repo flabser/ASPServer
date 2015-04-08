@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="services" history="on"> 
+	<description>ЕИС Администратор - Обслуживание</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\services.xsl</xsltfile>
+	<title source="KEYWORD">ЕИС Администратор -  Обслуживание</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">ЕИС Администратор</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Обслуживание</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dobavit" source="KEYWORD">Добавить</caption>
+	</column>
+	<column>
+		<caption id="udalit" source="KEYWORD">Удалить</caption>
+	</column>
+	<column>
+		<caption id="izmenit" source="KEYWORD">Изменить</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="kategoriya" source="KEYWORD">Категория</caption>
+	</column>
+	<column>
+		<caption id="prinyat" source="KEYWORD">Принять</caption>
+	</column>
+	<column>
+		<caption id="otmena" source="KEYWORD">Отмена</caption>
+	</column>
+	<column>
+		<caption id="vyhod" source="KEYWORD">Выход</caption>
+	</column>
+	<column>
+		<caption id="type" source="KEYWORD">Тип</caption>
+	</column>
+	<column>
+		<caption id="service" source="KEYWORD">Сервис</caption>
+	</column>
+	<column>
+		<caption id="comments" source="KEYWORD">Комментарии</caption>
+	</column>
+	<column>
+		<caption id="result" source="KEYWORD">Результат</caption>
+	</column>
+	<glossary mode="on" id="typeservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>NK</name>
+				<namerus>Налоговый комитет</namerus>
+				<namekaz>Салык комитетi</namekaz>
+				<value>NK</value>
+			</entry>
+			<entry mode="on">
+				<name>GKZ</name>
+				<namerus>Комитет по управлению земельными ресурсами</namerus>
+				<namekaz>Комитет ша басrармага жердін камбаларынын</namekaz>
+				<value>GKZ</value>
+			</entry>
+			<entry mode="on">
+				<name>UAIG</name>
+				<namerus>Управление архитектуры и градостроительства</namerus>
+				<namekaz>Сәулеттің және градостроительства басқармасы</namekaz>
+				<value>UAIG</value>
+			</entry>
+			<entry mode="on">
+				<name>UDP</name>
+				<namerus>Управление дорожной полиции</namerus>
+				<namekaz>Басқарма жол полициясы</namekaz>
+				<value>UDP</value>
+			</entry>
+			<entry mode="on">
+				<name>UMP</name>
+				<namerus>Управление миграционной полиции</namerus>
+				<namekaz>Миграциялы полицияның басқармасы</namekaz>
+				<value>UMP</value>
+			</entry>
+			<entry mode="on">
+				<name>SOCIAL</name>
+				<namerus>Департамент труда и социальной защиты населения</namerus>
+				<namekaz>Әлеуметтік қорғаудың халық департамент еңбек</namekaz>
+				<value>SOCIAL</value>
+			</entry>
+			<entry mode="on">
+				<name>BTI</name>
+				<namerus>Центр недвижимости</namerus>
+				<namekaz>Жылжымайтын мүліктің орталығы</namekaz>
+				<value>BTI</value>
+			</entry>
+		]]></value>
+	</glossary>
+	<glossary mode="on" id="nameservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>TaxIndService</name>
+				<viewtext>Индивидуальные предприниматели</viewtext>
+				<viewtextkaz>Жеке кәсіпкерлер</viewtextkaz>
+				<value>TaxIndService</value>
+				<type>NK</type>
+			</entry>
+			<entry mode="on">
+				<name>TaxPayService</name>
+				<viewtext>Налогоплательщики</viewtext>
+				<viewtextkaz>Cалық төлеуші</viewtextkaz>
+				<value>TaxPayService</value>
+				<type>NK</type>
+			</entry>
+			<entry mode="on">
+				<name>HumansSearchService</name>
+				<viewtext>Регистрация населения</viewtext>
+				<viewtextkaz>Халықтың тірке</viewtextkaz>
+				<value>HumansSearchService</value>
+				<type>UMP</type>
+			</entry>
+			<entry mode="on">
+				<name>UDPService</name>
+				<viewtext>Транспортные средства</viewtext>
+				<viewtextkaz>Транспорт ақы-пұлдар</viewtextkaz>
+				<value>UDPService</value>
+				<type>UDP</type>
+			</entry>
+			<entry mode="on">
+				<name>BTIService</name>
+				<viewtext>Недвижимость</viewtext>
+				<viewtextkaz>Жылжымайтын мүлік</viewtextkaz>
+				<value>BTIService</value>
+				<type>BTI</type>
+			</entry>
+		]]></value>
+	</glossary>
+</rule>

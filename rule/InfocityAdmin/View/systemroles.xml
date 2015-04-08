@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="view" id="systemroles" history="on"> 
+	<description>ЕИС Администратор - Права доступа </description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\systemroles.xsl</xsltfile>
+	<title source="KEYWORD">ЕИС Администратор -  Права доступа</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">ЕИС Администратор</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Права доступа</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dobavit" source="KEYWORD">Добавить</caption>
+	</column>
+	<column>
+		<caption id="udalit" source="KEYWORD">Удалить</caption>
+	</column>
+	<column>
+		<caption id="izmenit" source="KEYWORD">Изменить</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="kategoriya" source="KEYWORD">Категория</caption>
+	</column>
+	<column>
+		<caption id="prinyat" source="KEYWORD">Принять</caption>
+	</column>
+	<column>
+		<caption id="otmena" source="KEYWORD">Отмена</caption>
+	</column>
+	<column>
+		<caption id="vyhod" source="KEYWORD">Выход</caption>
+	</column>
+	<glossary mode="on" id="roles" source="macro">APPLICATION_ROLES</glossary>
+</rule>

@@ -1,0 +1,47 @@
+img{border:none;}
+html{margin:0px;padding:0px;}
+
+#footer{
+	position:absolute; 
+	bottom:0px;
+	border-top:1px solid #ccc;
+	width:100%; 
+	left:0px; 
+	height:30px;
+	background:none repeat scroll 0 0 #e6e6e6; 
+	min-width: 1020px;
+}
+#footer a ,#footer font{ text-decoration:none; color: #444444; font: 85%/2 Arial;}
+#footer .extlink { text-decoration:underline; color: #444444; font: 11px Arial;}
+#footer .extlink:hover { text-decoration:underline; color: red; font: 11px Arial;}
+#footer a :hover { text-decoration:underline;}
+.button_img { width:15px; height:15px; margin-right:3px; vertical-align:top}
+a :hover {text-decoration:underline;}
+.doclink {color:#1A3DC1 !important;text-decoration:none;}
+.doclink:hover, .doclink :hover { color:#FF0000 !important; text-decoration:underline !important;}
+.doclink font:hover {text-decoration:none;}
+.actionlink {text-decoration:none; color:#444444;}
+.actionlink font {vertical-align:1px;margin-left:1px;font-size:13px;}
+.doclink_action :hover {color:#1A3DC1; text-decoration:underline;}
+/* уведомления событий */
+#notifydiv{
+	background:#37A0DE; 
+	width:40%; 
+	position:absolute;
+	top:-40px;
+	padding-top:5px;
+	height:30px;
+	text-align:center;
+	z-index:9999; 
+	display:block; 
+	border-radius:0px 0px 8px 8px; 
+	opacity:0.9; 
+	margin:0px 30%
+}
+
+#notifydiv font{
+	color:#eeeeee; 
+	font-size:14px; 
+	font-family:Segoe UI;	
+}
+/* --- */

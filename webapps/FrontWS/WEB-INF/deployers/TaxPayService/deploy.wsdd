@@ -1,0 +1,198 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from TaxPayServiceService WSDL service -->
+
+  <service name="TaxPayService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://tax.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="TaxPayServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.tax.webservices.lof.kz,http://tax.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="TaxPayService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.tax.TaxPayServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="TaxPayService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getLog" qname="operNS:getLog" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getLogReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:date" xmlns:pns="http://tax.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getOrgsByAddresses" qname="operNS:getOrgsByAddresses" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getOrgsByAddressesReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayerFullData" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:addresses" xmlns:pns="http://tax.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.tax.webservices.lof.kz"/>
+        <parameter qname="pns:fromDate" xmlns:pns="http://tax.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:toDate" xmlns:pns="http://tax.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="getFullData" qname="operNS:getFullData" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getFullDataReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayerFullData" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:payerId" xmlns:pns="http://tax.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:payerStatus" xmlns:pns="http://tax.webservices.lof.kz" type="tns:short" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByIIN" qname="operNS:getDataByIIN" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getDataByIINReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayersSearchResult" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:iin" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByFIO" qname="operNS:getDataByFIO" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getDataByFIOReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayersSearchResult" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lastName" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:firstName" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middleName" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByRNN" qname="operNS:getDataByRNN" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getDataByRNNReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayersSearchResult" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:rnn" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOrgName" qname="operNS:getDataByOrgName" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getDataByOrgNameReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayersSearchResult" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:orgName" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDataByOrgNameGis" qname="operNS:getDataByOrgNameGis" xmlns:operNS="http://tax.webservices.lof.kz" returnQName="retNS:getDataByOrgNameGisReturn" xmlns:retNS="http://tax.webservices.lof.kz" returnType="rtns:TaxPayerFullData" xmlns:rtns="http://store.tax.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:orgName" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://tax.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://tax.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getDataByOrgName getFullData testService getLog getOrgsByAddresses getDataByIIN getDataByRNN getDataByOrgNameGis getDataByFIO"/>
+
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:PropertyForm"
+        type="java:kz.lof.webservices.store.tax.PropertyForm"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:TaxPayersSearchResult"
+        type="java:kz.lof.webservices.store.tax.TaxPayersSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:Region"
+        type="java:kz.lof.webservices.store.tax.Region"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:LegalPersonType"
+        type="java:kz.lof.webservices.store.tax.LegalPersonType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:Street"
+        type="java:kz.lof.webservices.store.tax.Street"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:TaxPayerShortData"
+        type="java:kz.lof.webservices.store.tax.TaxPayerShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:ActivityType"
+        type="java:kz.lof.webservices.store.tax.ActivityType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.tax.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:State"
+        type="java:kz.lof.webservices.store.tax.State"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:TaxPayerFullData"
+        type="java:kz.lof.webservices.store.tax.TaxPayerFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://tax.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_TaxPayerShortData"
+        type="java:kz.lof.webservices.store.tax.TaxPayerShortData[]"
+        innerType="cmp-ns:TaxPayerShortData" xmlns:cmp-ns="http://store.tax.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:OrgForm"
+        type="java:kz.lof.webservices.store.tax.OrgForm"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.tax.webservices.lof.kz"
+        qname="ns:Place"
+        type="java:kz.lof.webservices.store.tax.Place"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://tax.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

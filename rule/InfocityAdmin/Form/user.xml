@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="form" id="user" mode="on">
+	<description>Пользователь</description>
+	<outline>navigator</outline>
+	<xsltfile>forms/user.xsl</xsltfile>
+	<doctype>employer</doctype>
+	<default>	
+	</default>
+	<show>
+		<field mode="on">	
+			<name>userid</name>			
+			<value source="docfield">userid</value>
+			<caption source="KEYWORD">ID пользователя</caption>	
+		</field>
+		<field mode="on">	
+			<name>email</name>			
+			<value source="docfield">email</value>	
+			<caption source="KEYWORD">E-mail</caption>
+		</field>
+		<field mode="on">	
+			<name>jid</name>			
+			<value source="docfield">jid</value>	
+			<caption source="KEYWORD">jid</caption>
+		</field>
+		<field mode="on">	
+			<name>pwd1</name>			
+			<value source="docfield">pwd1</value>	
+			<caption source="KEYWORD">Пароль</caption>
+		</field>
+		<field mode="on">	
+			<name>pwd2</name>			
+			<value source="docfield">pwd2</value>	
+			<caption source="KEYWORD">Повтор пароля</caption>
+		</field>
+		<field mode="on">	
+			<name>isadmin</name>			
+			<value source="docfield">isadmin</value>	
+			<caption source="KEYWORD">Администратор</caption>
+		</field>
+	</show>
+	<save>		
+		<field mode="on">	
+			<value source="static">user</value>
+			<docfield>form</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">userid</value>
+			<docfield>userid</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">email</value>
+			<docfield>email</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">jid</value>
+			<docfield>jid</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">pwd1</value>
+			<docfield>pwd1</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">pwd2</value>
+			<docfield>pwd2</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">isadmin</value>
+			<docfield>isadmin</docfield>				
+		</field>
+		<field mode="on">	
+			<value source="webformfield">userid</value>
+			<docfield type="viewtext"></docfield>				
+		</field>
+		<field mode="on">
+			<value source="static">user</value>
+			<docfield>defaultruleid</docfield>
+		</field>
+		
+	</save>
+	<querysave><![CDATA[
+		void doQuerySave(_Session session, _Document document, String user){
+		boolean v = true;
+		/*def validate = {
+			if (document.getValueString("code") == ""){
+					localizedMsgBox("Поле \"Код\" не заполнено.");
+					v = false;
+				}
+			if (document.getValueString("name") == ""){
+					localizedMsgBox("Поле \"Категория\" не заполнено.");
+					v = false;
+				}			
+			}
+			validate();*/
+			if (v){
+			
+			}else{
+				stopSave();
+			}
+			}
+	]]>
+	</querysave>
+	<viewtext><![CDATA[
+		String[] getStringValue(_Document doc){
+			return getAsArray(doc.getValueString("viewtext"));
+		}
+	]]></viewtext>
+	<viewtext><![CDATA[]]></viewtext>
+	<viewtext><![CDATA[]]></viewtext>
+	<viewdate><![CDATA[]]></viewdate>
+	<viewnumber><![CDATA[]]></viewnumber>
+	<caption name="newdoc" source="KEYWORD">Новый документ</caption>
+	<caption name="editing" source="KEYWORD">Редактирование</caption>
+	<caption name="readonly" source="KEYWORD">Только для чтения</caption>
+	<caption name="modenotdefined" source="KEYWORD">Режим не определен</caption>
+	<caption name="saved" source="KEYWORD">Сохраненный</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="saveclose" source="KEYWORD">Сохранить и закрыть</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="newdept" source="KEYWORD">Новый департамент</caption>
+	<caption name="newemp" source="KEYWORD">Новый сотрудник</caption>
+	<caption name="name" source="KEYWORD">Сотрудник</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="cancel" source="KEYWORD">Отмена</caption>
+	<caption name="properties" source="KEYWORD">Свойства</caption>
+	<caption name="employer" source="KEYWORD">Сотрудник</caption>
+	<caption name="fullname" source="KEYWORD">Полное имя</caption>
+	<caption name="shortname" source="KEYWORD">Сокращенное имя</caption>
+	<caption name="password" source="KEYWORD">Пароль</caption>
+	<caption name="repeatpassword" source="KEYWORD">Повтор пароля</caption>
+	<caption name="organization" source="KEYWORD">Организация</caption>
+	<caption name="department" source="KEYWORD">Департамент</caption>
+	<caption name="post" source="KEYWORD">Должность</caption>
+	<caption name="phone" source="KEYWORD">Телефон</caption>
+	<caption name="rank" source="KEYWORD">Ранг</caption>
+	<caption name="index" source="KEYWORD">Индекс</caption>
+	<caption name="mailing" source="KEYWORD">Рассылка уведомлений</caption>
+	<caption name="comment" source="KEYWORD">Комментарий</caption>
+	<caption name="role" source="KEYWORD">Роли</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="documentsavedcaption" source="KEYWORD">Документ сохранен</caption>
+	<caption name="documentmarkread" source="KEYWORD">Документ отмечен как прочтенный</caption>
+	<caption name="pleasewaitdocsave" source="KEYWORD">Пожалуйста ждите... Идет сохранение документа</caption>
+	
+	<glossary mode="on" id="post" source="query">
+		<description>Должность</description>
+		<value>post</value>
+	</glossary>
+	<glossary mode="on" id="roles" source="macro">APPLICATION_ROLES</glossary>
+	<glossary mode="on" id="group" source="query">
+		<description>Группа</description>
+		<value>group</value>
+	</glossary>
+</rule>

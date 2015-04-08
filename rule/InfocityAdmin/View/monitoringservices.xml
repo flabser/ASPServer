@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="monitoringservices" history="on"> 
+	<description>Статистика работы пользователей</description>
+	<outline>navigator</outline>
+	<query>statistic</query>		
+	<xsltfile>views\monitoringservices.xsl</xsltfile>
+	<title source="KEYWORD">Статистика работы пользователей</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Статистика работы пользователей</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="documents" source="KEYWORD">Документов</caption>
+	</column>
+	<column>
+		<caption id="updates" source="KEYWORD">Обновлено</caption>
+	</column>
+	<column>
+		<caption id="from" source="KEYWORD">из</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dataivremya" source="KEYWORD">Дата и время</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="deistvie" source="KEYWORD">Действие</caption>
+	</column>
+	<column>
+		<caption id="resultat" source="KEYWORD">Результат</caption>
+	</column>
+	<column>
+		<caption id="primechanie" source="KEYWORD">Примечание</caption>
+	</column>
+	<column>
+		<caption id="request_filter" source="KEYWORD">Фильтр запросов</caption>
+	</column>
+	<column>
+		<caption id="user_login" source="KEYWORD">Логин пользователя</caption>
+	</column>
+	<column>
+		<caption id="request_error_only" source="KEYWORD">Только запросы, в которых произошла ошибка</caption>
+	</column>
+	<column>
+		<caption id="request_filter_target" source="KEYWORD">Фильтрация по направлению запроса</caption>
+	</column>
+	<column>
+		<caption id="server_spring" source="KEYWORD">Сервер-источник</caption>
+	</column>
+	<column>
+		<caption id="service" source="KEYWORD">Сервис</caption>
+	</column>
+	<column>
+		<caption id="function" source="KEYWORD">Функция</caption>
+	</column>
+	<column>
+		<caption id="filter_trafic" source="KEYWORD">Фильтрация по трафику</caption>
+	</column>
+	<column>
+		<caption id="record_count" source="KEYWORD">Количество записей</caption>
+	</column>
+	<column>
+		<caption id="from" source="KEYWORD">c</caption>
+	</column>
+	<column>
+		<caption id="to" source="KEYWORD">по</caption>
+	</column>
+	<column>
+		<caption id="for" source="KEYWORD">от</caption>
+	</column>
+	<column>
+		<caption id="up_to" source="KEYWORD">до</caption>
+	</column>
+	<column>
+		<caption id="filter_date_request" source="KEYWORD">Фильтрация по дате выполнения запросов</caption>
+	</column>
+	<column>
+		<caption id="request_date" source="KEYWORD">Дата выполнения запросов</caption>
+	</column>
+	<column>
+		<caption id="filter_time_request" source="KEYWORD">Фильтрация по времени выполнения запроса</caption>
+	</column>
+	<column>
+		<caption id="total_time_request" source="KEYWORD">Общее время выполнения запроса</caption>
+	</column>
+	<column>
+		<caption id="cancel" source="KEYWORD">Отмена</caption>
+	</column>
+	<column>
+		<caption id="request_full_info" source="KEYWORD">Подробности о запросе</caption>
+	</column>
+	<column>
+		<caption id="user_info" source="KEYWORD">Информация о пользователе</caption>
+	</column>
+	<column>
+		<caption id="fio" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="session_info" source="KEYWORD">Информация о сессии</caption>
+	</column>
+	<column>
+		<caption id="start_seans" source="KEYWORD">Начало сеанса</caption>
+	</column>
+	<column>
+		<caption id="subsystem" source="KEYWORD">Подсистема</caption>
+	</column>
+	<column>
+		<caption id="help_find_system" source="KEYWORD">Справочно поисковая система</caption>
+	</column>
+	<column>
+		<caption id="request_info" source="KEYWORD">Информация о запросе</caption>
+	</column>
+	<column>
+		<caption id="perfomance_status" source="KEYWORD">Статус выполнения</caption>
+	</column>
+	<column>
+		<caption id="error" source="KEYWORD">Ошибка</caption>
+	</column>
+	<column>
+		<caption id="error_type" source="KEYWORD">Тип ошибки</caption>
+	</column>
+	<column>
+		<caption id="without_error" source="KEYWORD">Ошибок нет</caption>
+	</column>
+	<column>
+		<caption id="request_part_time" source="KEYWORD">Поэтапное время выполнения запроса</caption>
+	</column>
+	<column>
+		<caption id="spring_request_receiving_time" source="KEYWORD">Время получения запроса на сервер источник</caption>
+	</column>
+	<column>
+		<caption id="answer_request_time" source="KEYWORD">Время получения ответа от сервера источника</caption>
+	</column>
+	<column>
+		<caption id="close" source="KEYWORD">Закрыть</caption>
+	</column>
+	<column>
+		<caption id="filter" source="KEYWORD">Фильтр</caption>
+	</column>
+	<column>
+		<caption id="reset_filter" source="KEYWORD">Сбросить фильтр</caption>
+	</column>
+	<column>
+		<caption id="input_param" source="KEYWORD">Входные параметры</caption>
+	</column>
+	<column>
+		<caption id="date" source="KEYWORD">Дата</caption>
+	</column>
+	<column>
+		<caption id="user" source="KEYWORD">Пользователь</caption>
+	</column>
+	<column>
+		<caption id="services_and_methods" source="KEYWORD">Сервисы и методы</caption>
+	</column>
+	<column>
+		<caption id="services_and_methods" source="KEYWORD">Сервисы и методы</caption>
+	</column>
+	<column>
+		<caption id="come_error" source="KEYWORD">Произошла ошибка</caption>
+	</column>
+	<column>
+		<caption id="YES" source="KEYWORD">Да</caption>
+	</column>
+	<column>
+		<caption id="NO" source="KEYWORD">Нет</caption>
+	</column>
+	<glossary mode="on" id="typeservices" source="static">
+		<value><![CDATA[
+			<entry mode="on">
+				<name>NK</name>
+				<namerus>Налоговый комитет</namerus>
+				<namekaz>Салык комитетi</namekaz>
+				<value>NK</value>
+				<services>
+					<entry mode="on">
+						<name>TaxIndService</name>
+						<viewtext>Индивидуальные предприниматели</viewtext>
+						<viewtextkaz>Жеке кәсіпкерлер</viewtextkaz>
+						<value>TaxIndService</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>getDataByFIO</value>
+							</entry>
+							<entry>
+								<name>getDataByRNN</name>
+								<value>getDataByRNN</value>
+							</entry>
+						</methods>
+					</entry>
+					<entry mode="on">
+						<name>TaxPayService</name>
+						<viewtext>Налогоплательщики</viewtext>
+						<viewtextkaz>Cалық төлеуші</viewtextkaz>
+						<value>TaxPayService</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>getDataByFIO</value>
+							</entry>
+							<entry>
+								<name>getDataByRNN</name>
+								<value>getDataByRNN</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>getDataByIIN</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>getDataByOrgName</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>GKZ</name>
+				<namerus>Комитет по управлению земельными ресурсами</namerus>
+				<namekaz>Комитет ша басrармага жердін камбаларынын</namekaz>
+				<value>GKZ</value>
+			</entry>
+			<entry mode="on">
+				<name>UAIG</name>
+				<namerus>Управление архитектуры и градостроительства</namerus>
+				<namekaz>Сәулеттің және градостроительства басқармасы</namekaz>
+				<value>UAIG</value>
+			</entry>
+			<entry mode="on">
+				<name>UDP</name>
+				<namerus>Управление дорожной полиции</namerus>
+				<namekaz>Басқарма жол полициясы</namekaz>
+				<value>UDP</value>
+				<services>
+					<entry mode="on">
+						<name>UDPServiceProxy</name>
+						<viewtext>Транспорт</viewtext>
+						<viewtextkaz>Транспорт</viewtextkaz>
+						<value>UDPServiceProxy</value>
+						<methods>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>getDataByFIO</value>
+							</entry>
+							<entry>
+								<name>getDataByGRNZ</name>
+								<value>getDataByGRNZ</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>getDataByIIN</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>getDataByOrgName</value>
+							</entry>
+							<entry>
+								<name>getDataByOwnerId</name>
+								<value>getDataByOwnerId</value>
+							</entry>
+							<entry>
+								<name>getDataByRegId</name>
+								<value>getDataByRegId</value>
+							</entry>
+							<entry>
+								<name>getDataBySRTS</name>
+								<value>getDataBySRTS</value>
+							</entry>
+							<entry>
+								<name>getListAutoByID</name>
+								<value>getListAutoByID</value>
+							</entry>
+							<entry>
+								<name>getTheftData</name>
+								<value>getTheftData</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>UMP</name>
+				<namerus>Управление миграционной полиции</namerus>
+				<namekaz>Миграциялы полицияның басқармасы</namekaz>
+				<value>UMP</value>
+				<services>
+					<entry mode="on">
+						<name>HumansSearchService</name>
+						<viewtext>Граждане РК</viewtext>
+						<viewtextkaz>Граждане РК</viewtextkaz>
+						<value>HumansSearchService</value>
+						<methods>
+							<entry>
+								<name>getCitizenByIIN</name>
+								<value>getCitizenByIIN</value>
+							</entry>
+							<entry>
+								<name>getHumanByAddr</name>
+								<value>getHumanByAddr</value>
+							</entry>
+							<entry>
+								<name>getHumanByDoc</name>
+								<value>getHumanByDoc</value>
+							</entry>
+							<entry>
+								<name>getHumanByFIO</name>
+								<value>getHumanByFIO</value>
+							</entry>
+						</methods>
+					</entry>
+					<entry mode="on">
+						<name>ForeignersSearchService</name>
+						<viewtext>Иностранцы</viewtext>
+						<viewtextkaz>Иностранцы</viewtextkaz>
+						<value>ForeignersSearchService</value>
+						<methods>
+							<entry>
+								<name>getForeignerByDoc</name>
+								<value>getForeignerByDoc</value>
+							</entry>
+							<entry>
+								<name>getForeignerByFIO</name>
+								<value>getForeignerByFIO</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>SOCIAL</name>
+				<namerus>Департамент труда и социальной защиты населения</namerus>
+				<namekaz>Әлеуметтік қорғаудың халық департамент еңбек</namekaz>
+				<value>SOCIAL</value>
+			</entry>
+			<entry mode="on">
+				<name>BTI</name>
+				<namerus>Центр недвижимости</namerus>
+				<namekaz>Жылжымайтын мүліктің орталығы</namekaz>
+				<value>BTI</value>
+				<services>
+					<entry mode="on">
+						<name>BTIServiceProxy</name>
+						<viewtext>Недвижимость</viewtext>
+						<viewtextkaz>Недвижимость</viewtextkaz>
+						<value>BTIServiceProxy</value>
+						<methods>
+							<entry>
+								<name>getDataByAddress</name>
+								<value>getDataByAddress</value>
+							</entry>
+							<entry>
+								<name>getDataByBuildingId</name>
+								<value>getDataByBuildingId</value>
+							</entry>
+							<entry>
+								<name>getDataByDoc</name>
+								<value>getDataByDoc</value>
+							</entry>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>getDataByFIO</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>getDataByIIN</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>getDataByOrgName</value>
+							</entry>
+							<entry>
+								<name>getDataByOwnerId</name>
+								<value>getDataByOwnerId</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+		]]></value>
+	</glossary>
+</rule>

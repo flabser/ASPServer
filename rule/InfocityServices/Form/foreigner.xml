@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule type="form" id="foreigner" mode="on">
+	<caching>CACHING_IN_USER_SESSION_SCOPE</caching>
+	<description>Информация о строении</description>
+	<xsltfile>forms/foreigner.xsl</xsltfile>
+	<doctype>PROJECT</doctype>
+	<title source="KEYWORD">Сведения о регистрации</title>
+	<outline>navigator</outline>
+	<default>
+		<field mode="on" publishas="USER">
+			<name>author</name>
+			<value source="macro">current_user</value>
+		</field>
+	</default>
+	<show>
+		<field mode="on">
+			<name>signer</name>
+		</field>
+		<field mode="on">
+			<name>close</name>
+			<caption source="KEYWORD">Закрыть</caption>
+		</field>
+		<field mode="on">
+			<name>doctypemultilang</name>
+			<caption source="KEYWORD">Замечание</caption>
+		</field>
+		<field mode="on">
+			<name>more</name>
+			<caption source="KEYWORD">Дополнительно</caption>
+		</field>
+		<field mode="on">
+			<name>waittime</name>
+			<caption source="KEYWORD">Время ожидания</caption>
+		</field>
+		<field mode="on">
+			<name>statuscoord</name>
+			<caption source="KEYWORD">Статус</caption>
+		</field>
+		<field mode="on">
+			<name>currcoorder</name>
+			<caption source="KEYWORD">текущий согл.</caption>
+		</field>
+		<field mode="on" publishas="USER">
+			<name>author</name>
+			<value source="docfield">author</value>
+		</field>
+		<field mode="on">
+			<name>coordblocks</name>
+			<value source="macro">COORD_BLOCKS</value>
+		</field>
+		<field mode="on">
+			<name>rtfcontent</name>
+			<value source="doc_attachment">rtfcontent</value>
+		</field>
+		<field mode="on" publishas="HTML">
+			<name>contentsource</name>
+			<value source="docfield">contentsource</value>
+		</field>
+	</show>
+	<save>
+	</save>
+	<events>
+		<queryopen source="file">form.ump.foreigner.QueryOpen</queryopen>
+	</events> 
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>	
+	<viewdate><![CDATA[
+	]]></viewdate>
+	<viewnumber><![CDATA[
+	]]></viewnumber>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="obschiesvedeniya" source="KEYWORD">Общие сведения</caption>
+	<caption name="familya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	<caption name="docnumber" source="KEYWORD">№ документа</caption>
+	<caption name="docserial" source="KEYWORD">Серия документа</caption>
+	<caption name="pol" source="KEYWORD">Пол</caption>
+	<caption name="nacionalnost" source="KEYWORD">Национальность</caption>
+	<caption name="stranarozhdeniya" source="KEYWORD">Страна рождения</caption>
+	<caption name="stranagrazhdanstva" source="KEYWORD">Страна гражданства</caption>
+	<caption name="svedeniyaovizitah" source="KEYWORD">Сведения о визитах</caption>
+	<caption name="svedeniyaovremennoiregistracii" source="KEYWORD">Сведения о временной регистрации</caption>
+	<caption name="datanachala" source="KEYWORD">Дата начала</caption>
+	<caption name="dataokonchaniya" source="KEYWORD">Дата окончания</caption>
+	<caption name="celvizita" source="KEYWORD">Цель визита</caption>
+	<caption name="kolvodetei" source="KEYWORD">Кол-во детей</caption>
+	<caption name="seriya" source="KEYWORD">Серия</caption>
+	<caption name="nomer" source="KEYWORD">Номер</caption>
+	<caption name="kratn" source="KEYWORD">Кратн.</caption>
+	<caption name="datavydachi" source="KEYWORD">Дата выдачи</caption>
+	<caption name="dataokonchaniyadeistviya" source="KEYWORD">Дата окончания действия</caption>
+	<caption name="vydavshayaorganizaciya" source="KEYWORD">Выдавшая организация</caption>
+	<caption name="svedeniyaovize" source="KEYWORD">Сведения о визе</caption>
+	<caption name="adresprozhivaniya" source="KEYWORD">Адрес проживания</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kvartira" source="KEYWORD">Квартира</caption>
+	<caption name="mestoprozhivaniya" source="KEYWORD">Место проживания</caption>
+	<caption name="svedeniyaoregistracii" source="KEYWORD">Сведения о регистрации</caption>
+	<caption name="nomersvidregistracii" source="KEYWORD">Номер свид. регистрации</caption>
+	<caption name="raspechatatrezultaty" source="KEYWORD">Распечатать результаты</caption>
+	<caption name="printed" source="KEYWORD">Распечатал</caption>
+</rule>

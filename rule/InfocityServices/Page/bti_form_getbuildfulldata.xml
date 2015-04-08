@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="bti_form_getbuildfulldata" mode="on">
+	<description/>
+<!-- 	<caching>CACHING_IN_USER_SESSION_SCOPE</caching> -->
+	<caching>NO_CACHING</caching>
+	<xsltfile>forms/realestatebuildingdata.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.bti.form.BuildingData</doscript>
+		</events>
+	</element>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="vladelec" source="KEYWORD">Владелец</caption>
+	<caption name="documentynanedvizhimost" source="KEYWORD">Документы на недвижимость</caption>
+	<caption name="documentynavladeniestroeniem" source="KEYWORD">Документы на владение строением</caption>
+	<caption name="documenty" source="KEYWORD">Документы</caption>
+	<caption name="dataregistracii" source="KEYWORD">Дата регистрации</caption>
+	<caption name="tipstroeniya" source="KEYWORD">Тип строения</caption>
+	<caption name="adresstroeniya" source="KEYWORD">Адрес строения</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kvartira" source="KEYWORD">Квартира</caption>
+	
+	
+	<caption name="registrdannye" source="KEYWORD">Регистр. данные</caption>
+	<caption name="priznakstroeniya" source="KEYWORD">Признак строения</caption>
+	<caption name="nomerkvartala" source="KEYWORD">Номер квартала</caption>
+	<caption name="uchetnyikvartal" source="KEYWORD">Учетный квартал</caption>
+	<caption name="kadastrovyinomer" source="KEYWORD">Кадастровый номер</caption>
+	<caption name="oblast" source="KEYWORD">Область</caption>
+	<caption name="rayon" source="KEYWORD">Район</caption>
+	<caption name="naselennyipunkt" source="KEYWORD">Населенный пункт</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="uglovayaulica" source="KEYWORD">Угловая улица</caption>
+	<caption name="nomerdoma" source="KEYWORD">Номер дома</caption>
+	<caption name="godpostroiki" source="KEYWORD">Год постройки</caption>
+	<caption name="etazhnost" source="KEYWORD">Этажность</caption>
+	<caption name="materialsten" source="KEYWORD">Материал стен</caption>
+	<caption name="kolichestvokvartir" source="KEYWORD">Количество квартир</caption>
+	<caption name="ploschadobschaya" source="KEYWORD">Площадь общая</caption>
+	<caption name="ploschadzhilaya" source="KEYWORD">Площадь жилая</caption>
+	<caption name="kvartirapostroika" source="KEYWORD">Квартира/Постройка</caption>
+	<caption name="naimenovaniestroeniya" source="KEYWORD">Наименование строения</caption>
+	<caption name="literstroeniya" source="KEYWORD">Литер строения</caption>
+	<caption name="nomerkvartiry" source="KEYWORD">Номер квартиры</caption>
+	<caption name="etazh" source="KEYWORD">Этаж</caption>
+	<caption name="telephon" source="KEYWORD">Телефон</caption>
+	<caption name="kolichestvokomnat" source="KEYWORD">Количество комнат</caption>
+	<caption name="kolichestvopomeschenii" source="KEYWORD">Количество помещений</caption>
+	<caption name="familiya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	<caption name="rnn" source="KEYWORD">РНН</caption>
+	<caption name="adres" source="KEYWORD">Адрес</caption>
+	<caption name="grazhdanstvo" source="KEYWORD">Гражданство</caption>
+	<caption name="tipdocumenta" source="KEYWORD">Тип документа</caption>
+	<caption name="vydan" source="KEYWORD">Выдан</caption>
+	<caption name="nomerdocumenta" source="KEYWORD">Номер документа</caption>
+	<caption name="documentosnovaniye" source="KEYWORD">Документ/Основание</caption>
+	<caption name="priznak" source="KEYWORD">Признак</caption>
+	<caption name="tip" source="KEYWORD">Тип</caption>
+	<caption name="nomer" source="KEYWORD">Номер</caption>
+	<caption name="datavozniknoveniya" source="KEYWORD">Дата возникновения</caption>
+	<caption name="datavoregistracii" source="KEYWORD">Дата регистрации</caption>
+	<caption name="naznacheniestroeniya" source="KEYWORD">Назначение строения</caption>
+	<caption name="formasobstvennosti" source="KEYWORD">Форма собственности</caption>
+	<caption name="vidsobstvennosti" source="KEYWORD">Вид собственности</caption>
+	<caption name="organnalozhivshiiarest" source="KEYWORD">Орган наложивший арест(залогодатель, арендатор)</caption>
+	<caption name="objektnalozheniyaobremeneniya" source="KEYWORD">Объект наложения обременения</caption>
+	<caption name="usloviyazaloga" source="KEYWORD">Условия залога(аренды)</caption>
+	<caption name="informaciyaostroenii" source="KEYWORD">Информация о строении</caption>
+	<caption name="vladelecsovladelec" source="KEYWORD">Владелец/Совладелец</caption>
+	<caption name="informaciyaostroenii" source="KEYWORD">Информация о строении</caption>
+	<caption name="iin" source="KEYWORD">ИИН</caption>
+</rule>

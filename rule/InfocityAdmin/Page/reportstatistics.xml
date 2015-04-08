@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="reportstatistics" mode="on">
+	<description />
+	<caching>CACHING_IN_USER_SESSION_SCOPE</caching>
+	<xsltfile>forms/reportstatistic.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.reportstatistics.DoScript</doscript>
+		</events>
+	</element>
+</rule>

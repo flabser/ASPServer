@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule id="testservices" app="" type="HANDLER" isvalid="true" mode="ON">
+	<description></description>
+	<rununderuser source="STATIC" type="TEXT">[observer]</rununderuser>
+	<waitresponse>true</waitresponse>
+	<trigger>PROVIDER</trigger>
+	<scheduler mode="OFF">
+		<starttime>19:57</starttime>
+		<nextstart></nextstart>
+	</scheduler>
+	<tohandle source="STATIC" type="TEXT"></tohandle>
+	<events>
+		<trigger source="FILE">handler.testservices.Trigger</trigger>
+	</events>
+</rule>

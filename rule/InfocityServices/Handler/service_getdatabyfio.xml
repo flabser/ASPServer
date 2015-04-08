@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule id="service_getdatabyfio" app="" type="HANDLER" isvalid="true" mode="ON">
+	<description></description>
+	<rununderuser source="MACRO">CURRENT_USER</rununderuser>
+	<waitresponse>true</waitresponse>
+	<trigger>PROVIDER</trigger>
+	<scheduler mode="OFF">
+		<starttime>19:57</starttime>
+		<nextstart></nextstart>
+	</scheduler>
+	<tohandle source="STATIC" type="TEXT"></tohandle>
+	<events>
+		<trigger source="FILE">handler.service_getdatabyfio.Trigger</trigger>
+	</events>
+</rule>

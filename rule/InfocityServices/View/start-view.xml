@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="start-view" history="on"> 
+	<description>Страница приветствия</description>
+	<outline>navigator</outline>
+	<query></query>		
+	<xsltfile>views\start-view.xsl</xsltfile>
+	<title source="KEYWORD">Страница приветствия</title>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="CATEGORY" source="KEYWORD">Страница приветствия</caption>
+	</column>
+	<column>
+		<caption id="startwork" source="KEYWORD">для начала работы перейдите к меню</caption>
+	</column>
+	<column>
+		<caption id="hello" source="KEYWORD">Здравствуйте</caption>
+	</column>
+</rule>

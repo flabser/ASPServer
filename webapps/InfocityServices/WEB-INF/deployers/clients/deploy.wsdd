@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+	xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<requestFlow>
+			<handler type="java:kz.lof.webservices.handlers.client.Bouncer" />
+			<handler type="java:kz.lof.webservices.handlers.client.ActivityLogger" />
+		</requestFlow>
+		<responseFlow>
+			<handler type="java:kz.lof.webservices.handlers.client.ActivityLogger" />
+		</responseFlow>
+	</globalConfiguration>
+</deployment>

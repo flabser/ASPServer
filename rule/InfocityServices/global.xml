@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rule id="InfocityServices" mode="on" type="global">
+	<description>Единая информационная система</description>
+	<orgname>ТОО "Avanti"</orgname>
+	<liccount>100</liccount>
+	<logo>qc_logo.png</logo>
+	<appname>Единая Информационная Система</appname>
+	<database autodeploy="ON">
+		<name>InfocityServices</name>		
+		<driver>org.postgresql.Driver</driver>
+		<url>jdbc:postgresql://127.0.0.1:5432/InfocityServices</url>
+		<username/>
+		<password/>
+	<connectionid>SesB4BkIphg82cFJ6tutzA==@@@vDf6f/LiNM0=</connectionid></database>
+	<externalmodule type="STRUCTURE">InfocityAdmin</externalmodule>
+	<!-- <database autodeploy="on">
+		<name>InfoSystem_data</name>
+	<driver>org.h2.Driver</driver>
+	<url>jdbc:h2:InfocityServices_data/Avanti;AUTO_SERVER=TRUE;CACHE_TYPE=SOFT_LRU;CACHE_SIZE=262144;QUERY_CACHE_SIZE=262144;MVCC=TRUE</url> 
+	 <url>jdbc:h2:InfocityServices_data/Avanti;AUTO_SERVER=TRUE;CACHE_TYPE=SOFT_LRU;CACHE_SIZE=262144;QUERY_CACHE_SIZE=262144;TRACE_LEVEL_FILE=3;MVCC=TRUE</url>	
+	</database> -->
+	<daemons>
+		<cyclecontrol>
+			<scheduler mode="off">
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</cyclecontrol>
+		<timewaiting>
+			<scheduler>
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</timewaiting>
+		<recalculator>
+			<scheduler>
+				<mininterval daysofweek="WORKWEEK,">360</mininterval>
+			</scheduler>
+		</recalculator>
+	</daemons>
+	<entrypoint>Provider?type=static&amp;id=start</entrypoint>
+	<defaultredirecturl>Provider?type=view&amp;id=start-view</defaultredirecturl>
+	<langs>
+		<entry id="RUS">Русский</entry>
+		<entry id="KAZ">Қазақша</entry>
+	</langs>
+	<skins>
+		<entry default="on" id="classic" path="./webapps/InfocityServices/classic/xsl">Classic</entry>
+<!-- 		<entry id="ipadandtab" path="./webapps/QC/ipadandtab/xsl">Soria</entry> -->
+	</skins>
+	<roles>
+		<!-- пробелы не убирать, нужно для иерархичного отображения ролей в админке -->
+		<!-- используется неразрывный пробел (код 0160) -->
+		<entry id="UMP -&gt; MainOutlineEntry">УМП. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="HumanSearchService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Граждане РК"</entry>
+		<entry id="HumansSearchService -&gt; getHumanByFIO">            Поиск граждан РК по ФИО</entry>
+		<entry id="HumansSearchService -&gt; getHumanByDoc">            Поиск граждан РК по уд. личности</entry>
+		<entry id="HumansSearchService -&gt; getHumanByAddr">            Поиск граждан РК по адресу</entry>
+		<entry id="HumansSearchService -&gt; getCitizenByIIN">            Поиск граждан РК по ИИН</entry>
+		<entry id="HumansSearchService -&gt; getFullData">            Просмотр подробных данных о гражданах РК</entry>
+		<entry id="HumansSearchService -&gt; getStreets">            Доступ к справочнику названий улиц</entry>
+		<entry id="ForeignersSearchService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Иностранцы"</entry>
+		<entry id="ForeignersSearchService -&gt; getPersonByFIO">            Поиск иностранцев по ФИО</entry>
+		<entry id="ForeignersSearchService -&gt; getPersonByDoc">            Поиск иностранцев по паспорту</entry>
+		<entry id="ForeignersSearchService -&gt; getFullData">            Просмотр подробных данных по иностранцам</entry>
+		<entry id="HumansSearchService -&gt; getCntAdamByAge">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getCountCriminalsByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getCountCriminalsByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getCountTypeRegByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getCountTypeRegByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationLiveByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationNationByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationNationByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationReasonByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getInfoMigrationReasonByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationNatEducByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationNatEducByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationNatSpecByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationNatSpecByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationSpecByAdr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getMigrationSpecByCodeRegion">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getNationalityByAddr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getProzhivByAddr">      Метод для ГИС</entry>
+		<entry id="HumansSearchService -&gt; getProzhivByCodeRegion">      Метод для ГИС</entry>
+		<entry id="NK -&gt; MainOutlineEntry">НК. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="TaxIndService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Индивидуальные предприниматели"</entry>
+		<entry id="TaxIndService -&gt; getDataByFIO">            Поиск индивидуальных предпринимателей по ФИО</entry>
+		<entry id="TaxIndService -&gt; getDataByRNN">            Поиск индивидуальных предпринимателей по РНН</entry>
+		<entry id="TaxPayService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Регистрационные данные"</entry>
+		<entry id="TaxPayService -&gt; getDataByFIO">            Поиск налогоплательщиков по ФИО</entry>
+		<entry id="TaxPayService -&gt; getDataByOrgName">            Поиск налогоплательщиков по наименованию организации</entry>
+		<entry id="TaxPayService -&gt; getDataByIIN">            Поиск налогоплательщиков по ИИН</entry>
+		<entry id="TaxPayService -&gt; getDataByRNN">            Поиск налогоплательщиков по РНН</entry>
+		<entry id="TaxPayService -&gt; getFullData">            Просмотр подробных данных о налогоплательщике</entry>
+		<entry id="TaxPayService -&gt; getOrgsByAddresses">      Метод для ГИС</entry>
+		<entry id="TaxPayService -&gt; getDataByOrgNameGis">      Метод для ГИС</entry>
+		<entry id="UDP -&gt; MainOutlineEntry">УДП. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="UDPService -&gt; getDataByOrgName">      Поиск данных по наименованию организации</entry>
+		<entry id="UDPService -&gt; getDataByFIO">      Поиск данных по ФИО</entry>
+		<entry id="UDPService -&gt; getDataByIIN">      Поиск данных по ИИН</entry>
+		<entry id="UDPService -&gt; getDataByGRNZ">      Поиск данных по гос. номеру</entry>
+		<entry id="UDPService -&gt; getDataBySRTS">      Поиск данных по номеру тех. паспорта</entry>
+		<entry id="UDPService -&gt; getDataByOwnerId">      Просмотр всех ТС владельца</entry>
+		<entry id="UDPService -&gt; getDataByRegId">      Подробные данные о владельце и ТС</entry>
+		<entry id="UDPService -&gt; getCountAMTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getCountAMTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getCountOwnerTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getCountOwnerTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoDrivLicByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoDrivLicByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoOwnerTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoOwnerTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoTypeAMTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoTypeAMTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoYearAMTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getInfoYearAMTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getMarkAMTSByAdr">      Метод для ГИС</entry>
+		<entry id="UDPService -&gt; getMarkAMTSByCodeRegion">      Метод для ГИС</entry>
+		<entry id="BTI -&gt; MainOutlineEntry">БТИ. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="BTIService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Недвижимость"</entry>
+		<entry id="BTIService -&gt; getDataByFIO">            Поиск владельцев недвижимости по ФИО</entry>
+		<entry id="BTIService -&gt; getDataByIIN">            Поиск владельцев недвижимости по ИИН</entry>
+		<entry id="BTIService -&gt; getDataByAddress">            Поиск владельцев недвижимости по адресу</entry>
+		<entry id="BTIService -&gt; getDataByDoc">            Поиск владельцев недвижимости по документу на недвижимость</entry>
+		<entry id="BTIService -&gt; getDataByOwnerId">            Поиск недвижимости по владельцу</entry>
+		<entry id="BTIService -&gt; getFullDataByDoc">            Поиск недвижимости по документу</entry>
+		<entry id="GKZ -&gt; MainOutlineEntry">АлматыЖер. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="GKZService -&gt; MainOutlineEntry">      Доступ в интерфейсе к разделу "Земельные участки"</entry>
+		<entry id="GKZService -&gt; getDataByFIO">				Поиск По ФИО владельца</entry>
+		<entry id="GKZService -&gt; getDataByCompany">				Поиск владельцев по наименованию организации</entry>
+		<entry id="GKZService -&gt; getDataByCadastrNumber">				Поиск владельцев по кадастровому номеру</entry>
+		<entry id="GKZService -&gt; getDataByDocument">				Поиск владельцев по документу на участок</entry>
+		<entry id="Social -&gt; MainOutlineEntry">Департамент социальной защиты. Доступ в интерфейсе к основному разделу</entry>
+		<entry id="SocialService -&gt; getHumanByFullName">				Поиск людей По ФИО</entry>
+		<entry id="SocialService -&gt; getHumanByAddress">			Поиск людей по адресу</entry>
+		<entry id="SocialService -&gt; getHumanByDistrict">			Поиск людей по району</entry>
+		<entry id="SocialService -&gt; getHumanById">			Поиск людей по id</entry>
+	</roles>
+	<markdelaysec>5</markdelaysec>
+	<eds mode="ON">
+		
+	</eds> 
+	<sync mode="off">
+		<nsf>
+			<dominohost>192.168.0.13:63148</dominohost>
+			<dominouser>admin</dominouser>
+			<dominopwd>123</dominopwd>
+			<dominoserver>Zion</dominoserver>
+			<dominoqueuedb>KMG\qevent.nsf</dominoqueuedb>
+		</nsf>
+		<default>
+			<userredirect app="InfocityServices">Provider?type=outline&amp;subtype=view&amp;id=realestate</userredirect>
+		</default>
+		<puller>
+			<multithread>true</multithread>
+		</puller>
+	</sync>
+	<eds mode="off">
+		<keypass/>
+    	<keystore/>
+	</eds>
+	
+</rule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="query" id="statistic">
+	<description></description>
+	<doctype></doctype>
+	<query source="macro">SERVICE_ACTIVITY</query>
+	<query source="static">user ~ '$user'</query>
+	<query source="static">dateto ~ '$dateto'</query>
+	<query source="static">datefrom ~ '$datefrom'</query>
+	<query source="static">totalsfrom ~ '$totalsfrom'</query>
+	<query source="static">totalsto ~ '$totalsto'</query>
+	<query source="static">errorsonly ~ '$errorsonly'</query>
+	<query source="static">springserver ~ '$springserver'</query>
+	<query source="static">difftimefrom ~ '$difftimefrom'</query>
+	<query source="static">difftimeto ~ '$difftimeto'</query>
+</rule>

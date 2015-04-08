@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="landlots-dok-uchastok" history="on"> 
+	<description>АлматыГорНПЦЗем - Земельные участки - по документу на участок</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\landlots.xsl</xsltfile>
+	<title source="KEYWORD">АлматыГорНПЦЗем - Земельные участки  - по документу на участок</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">АлматыГорНПЦЗем</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Земельные участки  - по документу на участок</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="tip" source="KEYWORD">Тип</caption>
+	</column>
+	<column>
+		<caption id="seriya" source="KEYWORD">Серия</caption>
+	</column>
+	<column>
+		<caption id="nomer" source="KEYWORD">Номер</caption>
+	</column>
+	<column>
+		<caption id="vypolnit" source="KEYWORD">Выполнить</caption>
+	</column>
+	<column>
+		<caption id="nazvanie" source="KEYWORD">Название</caption>
+	</column>
+	<column>
+		<caption id="celevoenaznachenie" source="KEYWORD">Целевое назначение</caption>
+	</column>
+	<column>
+		<caption id="fionaimenovanieorganizacii" source="KEYWORD">ФИО/Наименование организации</caption>
+	</column>
+	<column>
+		<caption id="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	</column>
+	<column>
+		<caption id="raion" source="KEYWORD">Район</caption>
+	</column>
+	<column>
+		<caption id="kvartal" source="KEYWORD">Квартал</caption>
+	</column>
+	<column>
+		<caption id="ulica" source="KEYWORD">Улица</caption>
+	</column>
+	<column>
+		<caption id="nomerzdaniyakorpus" source="KEYWORD">Номер здания-корпус</caption>
+	</column>
+	<column>
+		<caption id="tipprava" source="KEYWORD">Тип права</caption>
+	</column>
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	
+	
+	<glossary mode="on" id="typedoczem" source="query">
+		<description>Тип документа на земельеный участок</description>
+		<value>glossary-typedoczem</value>
+	</glossary>		
+</rule>

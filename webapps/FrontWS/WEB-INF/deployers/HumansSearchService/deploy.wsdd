@@ -1,0 +1,586 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from HumansSearchServiceService WSDL service -->
+
+  <service name="HumansSearchService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ump.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="HumansSearchServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.ump.webservices.lof.kz,http://ump.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="HumansSearchService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.ump.HumansSearchServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="HumansSearchService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getLog" qname="operNS:getLog" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getLogReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:date" xmlns:pns="http://ump.webservices.lof.kz" type="tns:date" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountry" qname="operNS:getCountry" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCountryReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:Country" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationNationByCodeRegion" qname="operNS:getInfoMigrationNationByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationNationByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationNatData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationReasonByCodeRegion" qname="operNS:getInfoMigrationReasonByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationReasonByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationReasonData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationNatSpecByCodeRegion" qname="operNS:getMigrationNatSpecByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationNatSpecByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:NatEducData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:nacId" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationNatEducByCodeRegion" qname="operNS:getMigrationNatEducByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationNatEducByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:NatEducData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:nacId" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountCriminalsByCodeRegion" qname="operNS:getCountCriminalsByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCountCriminalsByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:CriminalsData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:idNac" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sex" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:startAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationLiveByCodeRegion" qname="operNS:getInfoMigrationLiveByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationLiveByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationLiveData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="getFullData" qname="operNS:getFullData" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getFullDataReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:HumanFullData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://ump.webservices.lof.kz" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDistricts" qname="operNS:getDistricts" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getDistrictsReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:District" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getStreets" qname="operNS:getStreets" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getStreetsReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:Street" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanByFIO" qname="operNS:getHumanByFIO" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getHumanByFIOReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:HumansSearchResult" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:firstName" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lastName" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middleName" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanByAddr" qname="operNS:getHumanByAddr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getHumanByAddrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:HumansSearchResult" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:street" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Street" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:house" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:flat" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanByDoc" qname="operNS:getHumanByDoc" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getHumanByDocReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:HumansSearchResult" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:docNumber" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCitizenByIIN" qname="operNS:getCitizenByIIN" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCitizenByIINReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:HumansSearchResult" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:iin" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllCountries" qname="operNS:getAllCountries" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getAllCountriesReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:Country" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllDistricts" qname="operNS:getAllDistricts" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getAllDistrictsReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:District" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllStreets" qname="operNS:getAllStreets" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getAllStreetsReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:Street" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getNationalityByAddr" qname="operNS:getNationalityByAddr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getNationalityByAddrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:NatCount" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getProzhivByCodeRegion" qname="operNS:getProzhivByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getProzhivByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:CountByAddr" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getProzhivByAddr" qname="operNS:getProzhivByAddr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getProzhivByAddrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:CountByAddr" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCntAdamByAge" qname="operNS:getCntAdamByAge" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCntAdamByAgeReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:CountByAddr" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sex" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationByAdr" qname="operNS:getInfoMigrationByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationByCodeRegion" qname="operNS:getInfoMigrationByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationNationByAdr" qname="operNS:getInfoMigrationNationByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationNationByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationNatData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getInfoMigrationReasonByAdr" qname="operNS:getInfoMigrationReasonByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getInfoMigrationReasonByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:MigrationReasonData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:startDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endDate" xmlns:pns="http://ump.webservices.lof.kz" type="tns:dateTime" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationSpecByAdr" qname="operNS:getMigrationSpecByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationSpecByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:SpecCount" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationSpecByCodeRegion" qname="operNS:getMigrationSpecByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationSpecByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:SpecCount" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationNatSpecByAdr" qname="operNS:getMigrationNatSpecByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationNatSpecByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:NatEducData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:nacId" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMigrationNatEducByAdr" qname="operNS:getMigrationNatEducByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getMigrationNatEducByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:NatEducData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:nacId" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountTypeRegByAdr" qname="operNS:getCountTypeRegByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCountTypeRegByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:TypeRegData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountCriminalsByAdr" qname="operNS:getCountCriminalsByAdr" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCountCriminalsByAdrReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:CriminalsData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:idNac" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sex" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:startAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:endAge" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCountTypeRegByCodeRegion" qname="operNS:getCountTypeRegByCodeRegion" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:getCountTypeRegByCodeRegionReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:TypeRegData" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:region" xmlns:pns="http://ump.webservices.lof.kz" type="tns:Region" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getInfoMigrationByCodeRegion getHumanByFIO getNationalityByAddr getInfoMigrationNationByCodeRegion getInfoMigrationReasonByAdr getCntAdamByAge getStreets testService getAllCountries getInfoMigrationReasonByCodeRegion getDistricts getMigrationNatSpecByCodeRegion getCountry getCountTypeRegByAdr getProzhivByCodeRegion getFullData getLog getCountTypeRegByCodeRegion getMigrationSpecByAdr getCitizenByIIN getMigrationSpecByCodeRegion getInfoMigrationLiveByCodeRegion getHumanByAddr getCountCriminalsByCodeRegion getMigrationNatEducByCodeRegion getInfoMigrationByAdr getInfoMigrationNationByAdr getCountCriminalsByAdr getProzhivByAddr getMigrationNatSpecByAdr getMigrationNatEducByAdr getAllStreets getHumanByDoc getAllDistricts"/>
+
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:RegTypeCount"
+        type="java:kz.lof.webservices.store.ump.RegTypeCount"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CountByReason"
+        type="java:kz.lof.webservices.store.ump.CountByReason"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_HumanShortData"
+        type="java:kz.lof.webservices.store.ump.HumanShortData[]"
+        innerType="cmp-ns:HumanShortData" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CountMigByApartment"
+        type="java:kz.lof.webservices.store.ump.CountMigByApartment"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_RegTypeCount"
+        type="java:kz.lof.webservices.store.ump.RegTypeCount[]"
+        innerType="cmp-ns:RegTypeCount" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_SpecCount"
+        type="java:kz.lof.webservices.store.ump.SpecCount[]"
+        innerType="cmp-ns:SpecCount" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:VisitPurpose"
+        type="java:kz.lof.webservices.store.ump.VisitPurpose"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:RegType"
+        type="java:kz.lof.webservices.store.ump.RegType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Nationality"
+        type="java:kz.lof.webservices.store.ump.Nationality"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Country"
+        type="java:kz.lof.webservices.store.ump.Country"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_CountMigByNat"
+        type="java:kz.lof.webservices.store.ump.CountMigByNat[]"
+        innerType="cmp-ns:CountMigByNat" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CountByAge"
+        type="java:kz.lof.webservices.store.ump.CountByAge"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:District"
+        type="java:kz.lof.webservices.store.ump.District"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CriminalsData"
+        type="java:kz.lof.webservices.store.ump.CriminalsData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Street"
+        type="java:kz.lof.webservices.store.ump.Street"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:TypeRegData"
+        type="java:kz.lof.webservices.store.ump.TypeRegData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_CountByAge"
+        type="java:kz.lof.webservices.store.ump.CountByAge[]"
+        innerType="cmp-ns:CountByAge" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:City"
+        type="java:kz.lof.webservices.store.ump.City"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_Document"
+        type="java:kz.lof.webservices.store.ump.Document[]"
+        innerType="cmp-ns:Document" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:VisitReason"
+        type="java:kz.lof.webservices.store.ump.VisitReason"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.ump.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:SpecCount"
+        type="java:kz.lof.webservices.store.ump.SpecCount"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CountMigByNat"
+        type="java:kz.lof.webservices.store.ump.CountMigByNat"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:CountByAddr"
+        type="java:kz.lof.webservices.store.ump.CountByAddr"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:ApartmentType"
+        type="java:kz.lof.webservices.store.ump.ApartmentType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:DocType"
+        type="java:kz.lof.webservices.store.ump.DocType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:NatEducData"
+        type="java:kz.lof.webservices.store.ump.NatEducData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:HumansSearchResult"
+        type="java:kz.lof.webservices.store.ump.HumansSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:MigrationReasonData"
+        type="java:kz.lof.webservices.store.ump.MigrationReasonData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:MigrationLiveData"
+        type="java:kz.lof.webservices.store.ump.MigrationLiveData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:MigrationNatData"
+        type="java:kz.lof.webservices.store.ump.MigrationNatData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:NatCount"
+        type="java:kz.lof.webservices.store.ump.NatCount"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:HumanShortData"
+        type="java:kz.lof.webservices.store.ump.HumanShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:HumanFullData"
+        type="java:kz.lof.webservices.store.ump.HumanFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_CountMigByApartment"
+        type="java:kz.lof.webservices.store.ump.CountMigByApartment[]"
+        innerType="cmp-ns:CountMigByApartment" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_CountByReason"
+        type="java:kz.lof.webservices.store.ump.CountByReason[]"
+        innerType="cmp-ns:CountByReason" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:MigrationData"
+        type="java:kz.lof.webservices.store.ump.MigrationData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Region"
+        type="java:kz.lof.webservices.store.ump.Region"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Document"
+        type="java:kz.lof.webservices.store.ump.Document"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Apartment"
+        type="java:kz.lof.webservices.store.ump.Apartment"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Relation"
+        type="java:kz.lof.webservices.store.ump.Relation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:Education"
+        type="java:kz.lof.webservices.store.ump.Education"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

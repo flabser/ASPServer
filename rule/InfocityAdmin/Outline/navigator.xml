@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule type="outline" id="navigator" mode="on">
+	<description>Navigator outline</description>
+	<xsltfile>outline.xsl</xsltfile>
+	<outline>
+		<entry id="subsystem" mode="on">
+			<caption source="KEYWORD">Ведение подсистем и доступа к ним</caption>
+			<hint source="KEYWORD">Ведение подсистем и доступа к ним</hint>
+			<entry mode="off" url="Provider?type=view&amp;id=spravpoisksystem" id="spravpoisksystem">
+				<caption source="KEYWORD">Справочно-Поисковая Система</caption>
+				<hint source="KEYWORD">Справочно-Поисковая Система</hint>
+			</entry>
+			<entry mode="off" url="Provider?type=view&amp;id=gisklient" id="gisklient">
+				<caption source="KEYWORD">GIS-клиент</caption>
+				<hint source="KEYWORD">GIS-клиент</hint>
+			</entry>
+			<entry mode="off" url="Provider?type=view&amp;id=specsubsystemudp" id="specsubsystemudp">
+				<caption source="KEYWORD">Спец подсистема УДП получение </caption>
+				<hint source="KEYWORD">Спец подсистема УДП получение </hint>
+			</entry>
+			<entry mode="off" url="Provider?type=view&amp;id=aisdgsen" id="aisdgsen">
+				<caption source="KEYWORD">АИС ДГСЭН</caption>
+				<hint source="KEYWORD">АИС ДГСЭН</hint>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=services" id="services">
+				<caption source="KEYWORD">Обслуживание</caption>
+				<hint source="KEYWORD">Обслуживание</hint>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=users" id="users">
+				<caption source="KEYWORD">Пользователи</caption>
+				<hint source="KEYWORD">Пользователи</hint>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=group" id="group">
+				<caption source="KEYWORD">Группы пользователей</caption>
+				<hint source="KEYWORD">Группы пользователей</hint>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=systemroles" id="systemroles">
+				<caption source="KEYWORD">Права доступа</caption>
+				<hint source="KEYWORD">Права доступа</hint>
+			</entry>
+		</entry>
+		<entry id="reports" mode="on">
+			<caption source="KEYWORD">Генератор отчетов</caption>
+			<hint source="KEYWORD">Генератор отчетов</hint>
+			<entry mode="off" url="Provider?type=view&amp;id=reportperiod" id="reportperiod">
+				<caption source="KEYWORD">Обращения к ЕИС - За период</caption>
+				<hint source="KEYWORD">Обращения к ЕИС - За период</hint>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=reportservers" id="reportservers">
+				<caption source="KEYWORD">Просмотр состояний серверов</caption>
+				<hint source="KEYWORD">Просмотр состояний серверов</hint>
+			</entry>
+			<entry mode="off" url="Provider?type=view&amp;id=reportaccess" id="reportaccess">
+				<caption source="KEYWORD">Предоставление доступа</caption>
+				<hint source="KEYWORD">Предоставление доступа</hint>
+			</entry>
+			<entry mode="off" url="Provider?type=view&amp;id=reportstatistic" id="reportstatistic">
+				<caption source="KEYWORD">Статистика работы</caption>
+				<hint source="KEYWORD">Статистика работы</hint>
+				<entry mode="off" url="Provider?type=view&amp;id=reportstatisticusers" id="reportstatisticusers">
+					<caption source="KEYWORD">По пользователям</caption>
+					<hint source="KEYWORD">По пользователям</hint>
+				</entry>
+				<entry mode="off" url="Provider?type=view&amp;id=reportstatisticservices" id="reportstatisticservices">
+					<caption source="KEYWORD">По сервисам</caption>
+					<hint source="KEYWORD">По сервисам</hint>
+				</entry>
+			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=monitoring" id="monitoring">
+				<caption source="KEYWORD">Мониторинг</caption>
+				<hint source="KEYWORD">Мониторинг</hint>
+				<entry mode="on" url="Provider?type=view&amp;id=monitoringusers" id="monitoringusers">
+					<caption source="KEYWORD">Работа пользователей</caption>
+					<hint source="KEYWORD">Работа пользователей</hint>
+				</entry>
+				<entry mode="on" url="Provider?type=view&amp;id=monitoringservices&amp;users=&amp;dateto=&amp;datefrom=&amp;totalsfrom=&amp;totalsto=&amp;errorsonly=" id="monitoringservices">
+					<caption source="KEYWORD">Запросы к серверам источникам</caption>
+					<hint source="KEYWORD">Запросы к серверам источникам</hint>
+				</entry>
+				<entry mode="on" url="Provider?type=view&amp;id=logsofunloadings" id="logsofunloadings">
+					<caption source="KEYWORD">Журналы выгрузок</caption>
+					<hint source="KEYWORD">Журналы выгрузок</hint>
+				</entry>
+			</entry>
+		</entry>
+		<default>
+			<field mode="on">
+				<name>logout</name>
+				<value source="static">logout</value>
+				<caption source="KEYWORD">Завершить работу</caption>
+			</field>
+			<field mode="on">
+				<name>orgtitle</name>
+				<value source="static">ТОО Avanti</value>
+			</field>
+		</default>
+	</outline>
+</rule>

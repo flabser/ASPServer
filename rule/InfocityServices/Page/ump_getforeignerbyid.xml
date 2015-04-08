@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="ump_getforeignerbyid" mode="on">
+	<description/>
+	<!-- 	<caching>CACHING_IN_USER_SESSION_SCOPE</caching> -->
+	<caching>NO_CACHING</caching>
+	<xsltfile>forms/foreigner.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.ump.form.GetForeignerByID</doscript>
+		</events>
+	</element>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="obschiesvedeniya" source="KEYWORD">Общие сведения</caption>
+	<caption name="familya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	<caption name="pol" source="KEYWORD">Пол</caption>
+	<caption name="nacionalnost" source="KEYWORD">Национальность</caption>
+	<caption name="stranarozhdeniya" source="KEYWORD">Страна рождения</caption>
+	<caption name="stranagrazhdanstva" source="KEYWORD">Страна гражданства</caption>
+	<caption name="svedeniyaovizitah" source="KEYWORD">Сведения о визитах</caption>
+	<caption name="svedeniyaovremennoiregistracii" source="KEYWORD">Сведения о временной регистрации</caption>
+	<caption name="datanachala" source="KEYWORD">Дата начала</caption>
+	<caption name="dataokonchaniya" source="KEYWORD">Дата окончания</caption>
+	<caption name="celvizita" source="KEYWORD">Цель визита</caption>
+	<caption name="kolvodetei" source="KEYWORD">Кол-во детей</caption>
+	<caption name="seriya" source="KEYWORD">Серия</caption>
+	<caption name="nomer" source="KEYWORD">Номер</caption>
+	<caption name="kratn" source="KEYWORD">Кратн.</caption>
+	<caption name="datavydachi" source="KEYWORD">Дата выдачи</caption>
+	<caption name="dataokonchaniyadeistviya" source="KEYWORD">Дата окончания действия</caption>
+	<caption name="vydavshayaorganizaciya" source="KEYWORD">Выдавшая организация</caption>
+	<caption name="svedeniyaovize" source="KEYWORD">Сведения о визе</caption>
+	<caption name="adresprozhivaniya" source="KEYWORD">Адрес проживания</caption>
+	<caption name="ulica" source="KEYWORD">Улица</caption>
+	<caption name="dom" source="KEYWORD">Дом</caption>
+	<caption name="kvartira" source="KEYWORD">Квартира</caption>
+	<caption name="mestoprozhivaniya" source="KEYWORD">Место проживания</caption>
+	<caption name="svedeniyaoregistracii" source="KEYWORD">Сведения о регистрации</caption>
+	<caption name="nomersvidregistracii" source="KEYWORD">Номер свид. регистрации</caption>
+	<caption name="datanachaladeistviya" source="KEYWORD">Дата начала действия</caption>
+	<caption name="mestoprozhivaniya" source="KEYWORD">Место проживания</caption>
+	<caption name="raspechatatresultaty" source="KEYWORD">Распечатать результаты</caption>
+	<caption name="docnumber" source="KEYWORD">№ документа</caption>
+	<caption name="docserial" source="KEYWORD">Серия документа</caption>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+</rule>

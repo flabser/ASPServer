@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="licensesforeigncitizens-id" history="on"> 
+	<description>Департамент труда и соц - Лицензии на привлечение ин. граждан  - по уд. личности</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\licensesforeigncitizens.xsl</xsltfile>
+	<title source="KEYWORD">Департамент труда и соц - Лицензии на привлечение ин. граждан - по уд. личности</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Департамент труда и соц</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Лицензии на привлечение ин. граждан - по уд. личности</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="familiya" source="KEYWORD">Фамилия</caption>
+	</column>		
+	<column>
+		<caption id="imya" source="KEYWORD">Имя</caption>
+	</column>		
+	<column>
+		<caption id="otchestvo" source="KEYWORD">Отчество</caption>
+	</column>		
+	<column>
+		<caption id="vypolnit" source="KEYWORD">Выполнить</caption>
+	</column>		
+	<column>
+		<caption id="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	</column>		
+	<column>
+		<caption id="adresprozhivaniya" source="KEYWORD">Адрес проживания</caption>
+	</column>		
+	<column>
+		<caption id="telephon" source="KEYWORD">Телефон</caption>
+	</column>		
+	<column>
+		<caption id="nomerudostlichnosti" source="KEYWORD">Номер удост. личности</caption>
+	</column>	
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	<column>
+		<caption id="searchtime" source="KEYWORD">Время поиска</caption>
+	</column>
+	<column>
+		<caption id="totalfound" source="KEYWORD">Найдено всего</caption>
+	</column>
+	
+</rule>

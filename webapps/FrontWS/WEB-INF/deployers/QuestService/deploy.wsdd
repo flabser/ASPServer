@@ -1,0 +1,88 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from QuestServiceService WSDL service -->
+
+  <service name="QuestService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ump.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="QuestServiceService"/>
+      <parameter name="schemaQualified" value="http://common.webservices.lof.kz,http://store.ump.webservices.lof.kz,http://ump.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="QuestService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.ump.QuestServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="QuestService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="testService" qname="operNS:testService" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:testServiceReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:ServiceInfo" xmlns:rtns="http://common.webservices.lof.kz" soapAction="" >
+      </operation>
+      <operation name="searchPeople" qname="operNS:searchPeople" xmlns:operNS="http://ump.webservices.lof.kz" returnQName="retNS:searchPeopleReturn" xmlns:retNS="http://ump.webservices.lof.kz" returnType="rtns:WantedResult" xmlns:rtns="http://store.ump.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:peopleList" xmlns:pns="http://ump.webservices.lof.kz" type="tns:WantedData" xmlns:tns="http://store.ump.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://ump.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://ump.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="testService searchPeople"/>
+
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:WantedResult"
+        type="java:kz.lof.webservices.store.ump.WantedResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry[]"
+        innerType="cmp-ns:InfoEntry" xmlns:cmp-ns="http://common.webservices.lof.kz"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:ServiceInfo"
+        type="java:kz.lof.webservices.common.ServiceInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://common.webservices.lof.kz"
+        qname="ns:InfoEntry"
+        type="java:kz.lof.webservices.common.InfoEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:WantedData"
+        type="java:kz.lof.webservices.store.ump.WantedData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.ump.webservices.lof.kz"
+        qname="ns:QuestData"
+        type="java:kz.lof.webservices.store.ump.QuestData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://ump.webservices.lof.kz"
+        qname="ns:ArrayOf_tns2_QuestData"
+        type="java:kz.lof.webservices.store.ump.QuestData[]"
+        innerType="cmp-ns:QuestData" xmlns:cmp-ns="http://store.ump.webservices.lof.kz"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

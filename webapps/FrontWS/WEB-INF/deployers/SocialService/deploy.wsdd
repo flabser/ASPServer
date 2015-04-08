@@ -1,0 +1,105 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SocialServiceService WSDL service -->
+
+  <service name="SocialService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://social.webservices.lof.kz"/>
+      <parameter name="wsdlServiceElement" value="SocialServiceService"/>
+      <parameter name="schemaQualified" value="http://store.social.webservices.lof.kz,http://social.webservices.lof.kz"/>
+      <parameter name="wsdlServicePort" value="SocialService"/>
+      <parameter name="className" value="kz.lof.webservices.frontface.social.SocialServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="SocialService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getHumanByFullName" qname="operNS:getHumanByFullName" xmlns:operNS="http://social.webservices.lof.kz" returnQName="retNS:getHumanByFullNameReturn" xmlns:retNS="http://social.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.social.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:firstname" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lastname" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:middlename" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanByDistrict" qname="operNS:getHumanByDistrict" xmlns:operNS="http://social.webservices.lof.kz" returnQName="retNS:getHumanByDistrictReturn" xmlns:retNS="http://social.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.social.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:districts" xmlns:pns="http://social.webservices.lof.kz" type="tns:District" xmlns:tns="http://store.social.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanById" qname="operNS:getHumanById" xmlns:operNS="http://social.webservices.lof.kz" returnQName="retNS:getHumanByIdReturn" xmlns:retNS="http://social.webservices.lof.kz" returnType="rtns:HumanFullData" xmlns:rtns="http://store.social.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:idPerson" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getHumanByAddress" qname="operNS:getHumanByAddress" xmlns:operNS="http://social.webservices.lof.kz" returnQName="retNS:getHumanByAddressReturn" xmlns:retNS="http://social.webservices.lof.kz" returnType="rtns:HumanSearchResult" xmlns:rtns="http://store.social.webservices.lof.kz" soapAction="" >
+        <parameter qname="pns:addresses" xmlns:pns="http://social.webservices.lof.kz" type="tns:Address" xmlns:tns="http://store.social.webservices.lof.kz"/>
+        <parameter qname="pns:pageNum" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:resultsOnPage" xmlns:pns="http://social.webservices.lof.kz" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lang" xmlns:pns="http://social.webservices.lof.kz" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getHumanByDistrict getHumanById getHumanByAddress getHumanByFullName"/>
+
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:District"
+        type="java:kz.lof.webservices.store.social.District"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:Address"
+        type="java:kz.lof.webservices.store.social.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:HumanShortData"
+        type="java:kz.lof.webservices.store.social.HumanShortData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:HumanFullData"
+        type="java:kz.lof.webservices.store.social.HumanFullData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:Street"
+        type="java:kz.lof.webservices.store.social.Street"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://store.social.webservices.lof.kz"
+        qname="ns:HumanSearchResult"
+        type="java:kz.lof.webservices.store.social.HumanSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://social.webservices.lof.kz"
+        qname="ns:ArrayOf_tns1_HumanShortData"
+        type="java:kz.lof.webservices.store.social.HumanShortData[]"
+        innerType="cmp-ns:HumanShortData" xmlns:cmp-ns="http://store.social.webservices.lof.kz"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

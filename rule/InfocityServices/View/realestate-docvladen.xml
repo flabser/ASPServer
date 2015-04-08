@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="realestate-docvladen" history="on"> 
+	<description>Центр недвижимости - Недвижимость - по документам на владение</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\realestate.xsl</xsltfile>
+	<title source="KEYWORD">Центр недвижимости - Недвижимость - по документам на владение</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Центр недвижимости</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Недвижимость  - по документам на владение</caption>
+	</column>
+	<column>
+		<caption id="documents" source="KEYWORD">Документов</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>		
+	<column>
+		<caption id="priznak" source="KEYWORD">Признак</caption>
+	</column>		
+	<column>
+		<caption id="tip" source="KEYWORD">Тип</caption>
+	</column>		
+	<column>
+		<caption id="podtip" source="KEYWORD">Подтип</caption>
+	</column>		
+	<column>
+		<caption id="nomer" source="KEYWORD">Номер</caption>
+	</column>
+	<column>
+		<caption id="familiya" source="KEYWORD">Фамилия</caption>
+	</column>		
+	<column>
+		<caption id="imya" source="KEYWORD">Имя</caption>
+	</column>		
+	<column>
+		<caption id="otchestvo" source="KEYWORD">Отчество</caption>
+	</column>		
+	<column>
+		<caption id="vypolnit" source="KEYWORD">Выполнить</caption>
+	</column>		
+	<column>
+		<caption id="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	</column>		
+	<column>
+		<caption id="tipdocumenta" source="KEYWORD">Тип документа</caption>
+	</column>		
+	<column>
+		<caption id="nomerdocumenta" source="KEYWORD">Номер документа</caption>
+	</column>		
+	<column>
+		<caption id="adresmestazhitelstva" source="KEYWORD">Адрес места жительства</caption>
+	</column>
+	<column>
+		<caption id="fionaimenovanieorganizacii" source="KEYWORD">ФИО/Наименование организации</caption>
+	</column>
+	<column>
+		<caption id="iin" source="KEYWORD">ИИН</caption>
+	</column>	
+	<column>
+		<caption id="priznakstroeniya" source="KEYWORD">Признак строения</caption>
+	</column>	
+	<column>
+		<caption id="ulica" source="KEYWORD">Улица</caption>
+	</column>	
+	<column>
+		<caption id="dom" source="KEYWORD">Дом</caption>
+	</column>	
+	<column>
+		<caption id="kvartira" source="KEYWORD">Квартира</caption>
+	</column>	
+	<column>
+		<caption id="adresstroeniya" source="KEYWORD">Адрес строения</caption>
+	</column>
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	<column>
+		<caption id="searchtime" source="KEYWORD">Время поиска</caption>
+	</column>
+	<column>
+		<caption id="totalfound" source="KEYWORD">Найдено всего</caption>
+	</column>	
+	<glossary mode="on" id="dokpriznak" source="query">
+		<description>Признак документа</description>
+		<value>glossary-dokpriznak</value>
+	</glossary>				
+	<glossary mode="on" id="typedoc" source="query">
+		<description>Тип документа</description>
+		<value>glossary-typedoc</value>
+	</glossary>				
+	<glossary mode="on" id="subtypedoc" source="query">
+		<description>Подтип документа</description>
+		<value>glossary-subtypedoc</value>
+	</glossary>				
+</rule>

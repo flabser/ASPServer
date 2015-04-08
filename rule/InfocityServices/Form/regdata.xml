@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule type="form" id="regdata" mode="on">
+	<caching>CACHING_IN_USER_SESSION_SCOPE</caching>
+	<description>Сведения о налогоплательщике</description>
+	<xsltfile>forms/regdata.xsl</xsltfile>
+	<doctype>PROJECT</doctype>
+	<title source="KEYWORD">Сведения о налогоплательщике</title>
+	<outline>navigator</outline>
+	<default>
+		<field mode="on">
+			<name>signer</name>
+			<value source="static" />
+		</field>
+		<field mode="on">
+			<name>recipients</name>
+			<value source="static" />
+		</field>
+		<field mode="on">
+			<name>briefcontent</name>
+			<value source="static" />
+		</field>
+		<field mode="on">
+			<name>projectdate</name>
+			<value source="macro">current_time</value>
+		</field>
+		<field mode="on" publishas="USER">
+			<name>author</name>
+			<value source="macro">current_user</value>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>position</name>
+			<value source="macro">current_user_position</value>
+		</field>
+	</default>
+	<show>
+		<field mode="on">
+			<name>signer</name>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>position</name>
+			<value source="macro">current_user_position</value>
+		</field>		
+		<field mode="on" publishas="GLOSSARY">
+			<name>project</name>
+			<value source="docfield">project</value>
+		</field>
+		<field mode="on">
+			<name>coordinats</name>
+			<value source="docfield">coordinats</value>
+		</field>
+		<field mode="on">
+			<name>respost</name>
+			<value source="docfield">respost</value>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>city</name>
+			<value source="docfield">city</value>
+		</field>
+		<field mode="on">
+			<name>street</name>
+			<value source="docfield">street</value>
+		</field>
+		<field mode="on">
+			<name>house</name>
+			<value source="docfield">house</value>
+		</field>
+		<field mode="on">
+			<name>porch</name>
+			<value source="docfield">porch</value>
+		</field>
+		<field mode="on">
+			<name>floor</name>
+			<value source="docfield">floor</value>
+		</field>
+		<field mode="on">
+			<name>apartment</name>
+			<value source="docfield">apartment</value>
+		</field>
+		<field mode="on">
+			<name>origin</name>
+			<value source="docfield">origin</value>
+		</field>
+		<field mode="on">
+			<name>close</name>
+			<caption source="KEYWORD">Закрыть</caption>
+		</field>
+		<field mode="on">
+			<name>properties</name>
+			<caption source="KEYWORD">Свойства</caption>
+		</field>
+		<field mode="on">
+			<name>attachments</name>
+			<caption source="KEYWORD">Вложения</caption>
+		</field>
+		<field mode="on">
+			<name>content</name>
+			<caption source="KEYWORD">Содержание</caption>
+		</field>
+		<field mode="on">
+			<name>coordination</name>
+			<caption source="KEYWORD">Согласование</caption>
+		</field>
+		<field mode="on">
+			<name>saved</name>
+			<caption source="KEYWORD">Сохраненный</caption>
+		</field>
+		<field mode="on">
+			<name>newdoc</name>
+			<caption source="KEYWORD">Новый документ</caption>
+		</field>
+		<field mode="on">
+			<name>editing</name>
+			<caption source="KEYWORD">Редактирование</caption>
+		</field>
+		<field mode="on">
+			<name>readonly</name>
+			<caption source="KEYWORD">Только для чтения</caption>
+		</field>
+		<field mode="on">
+			<name>modenotdefined</name>
+			<caption source="KEYWORD">Режим не определен</caption>
+		</field>
+		<field mode="on">
+			<name>doctypemultilang</name>
+			<caption source="KEYWORD">Замечание</caption>
+		</field>
+		<field mode="on">
+			<name>more</name>
+			<caption source="KEYWORD">Дополнительно</caption>
+		</field>
+		<field mode="on">
+			<name>type</name>
+			<caption source="KEYWORD">Тип</caption>
+		</field>
+		<field mode="on">
+			<name>contributors</name>
+			<caption source="KEYWORD">Участники</caption>
+		</field>
+		<field mode="on">
+			<name>waittime</name>
+			<caption source="KEYWORD">Время ожидания</caption>
+		</field>
+		<field mode="on">
+			<name>statuscoord</name>
+			<caption source="KEYWORD">Статус</caption>
+		</field>
+		<field mode="on">
+			<name>currcoorder</name>
+			<caption source="KEYWORD">текущий согл.</caption>
+		</field>
+		<field mode="on">
+			<name>waiting</name>
+			<caption source="KEYWORD">Ожидает ответа</caption>
+		</field>
+		<field mode="on">
+			<name>unlimtimecoord</name>
+			<caption source="KEYWORD">Неограничено</caption>
+		</field>
+		<field mode="on">
+			<name>oncoordinating</name>
+			<caption source="KEYWORD">На согласовании</caption>
+		</field>
+		<field mode="on">
+			<name>agreed</name>
+			<caption source="KEYWORD">Согласован</caption>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>category</name>
+			<value source="docfield">category</value>
+		</field>
+		<field mode="on">
+			<name>coordblocks</name>
+			<value source="macro">COORD_BLOCKS</value>
+		</field>
+		<field mode="on">
+			<name>recipients</name>
+			<value source="macro">RECIPIENTS</value>
+		</field>
+		<field mode="on">
+			<name>coordblocks</name>
+			<value source="macro">COORD_BLOCKS</value>
+		</field>
+		<field mode="on">
+			<name>recipients</name>
+			<value source="macro">RECIPIENTS</value>
+		</field>
+		<field mode="on">
+			<name>projectdate</name>
+			<value source="docfield">projectdate</value>
+		</field>
+		<field mode="on" publishas="USER">
+			<name>author</name>
+			<value source="docfield">author</value>
+		</field>
+		<field mode="on">
+			<name>vnnumber</name>
+			<value source="docfield">vnnumber</value>
+		</field>
+		<field mode="on">
+			<name>vn</name>
+			<value source="docfield">vn</value>
+		</field>
+		<field mode="on" publishas="USER">
+			<name>sender</name>
+			<value source="docfield">sender</value>
+		</field>
+		<field mode="on" publishas="USER">
+			<name>responsible</name>
+			<value source="docfield">responsible</value>
+		</field>
+		<field mode="on">
+			<name>coordstatus</name>
+			<value source="docfield">coordstatus</value>
+		</field>
+		<field mode="on">
+			<name>regdate</name>
+			<value source="docfield">regdate</value>
+		</field>
+		<field mode="on">
+			<name>currentcoordblocknumber</name>
+			<value source="docfield">currentcoordblocknumber</value>
+		</field>
+		<field mode="on">
+			<name>currentrecipient</name>
+			<value source="docfield">currentrecipient</value>
+		</field>
+		<field mode="on">
+			<name>viewtext</name>
+			<value source="docfield">viewtext</value>
+		</field>
+		<field mode="on">
+			<name>docversion</name>
+			<value source="docfield">docversion</value>
+		</field>
+		<field mode="on" publishas="HTML">
+			<name>briefcontent</name>
+			<value source="docfield">briefcontent</value>
+		</field>
+		<field mode="on">
+			<name>coordblocks</name>
+			<value source="macro">COORD_BLOCKS</value>
+		</field>
+		<field mode="on">
+			<name>rtfcontent</name>
+			<value source="doc_attachment">rtfcontent</value>
+		</field>
+		<field mode="on" publishas="HTML">
+			<name>contentsource</name>
+			<value source="docfield">contentsource</value>
+		</field>
+		<field mode="on">
+			<name>ctrldate</name>
+			<value source="docfield">ctrldate</value>
+			<docfield type="datetime">ctrldate</docfield>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>subcategory</name>
+			<value source="docfield">subcategory</value>
+			<docfield type="number">subcategory</docfield>
+		</field>
+		<field mode="on" publishas="GLOSSARY">
+			<name>contragent</name>
+			<value source="docfield">contragent</value>
+			<docfield>contragent</docfield>
+		</field>
+	</show>
+	<events>
+		<queryopen source="file">form.regdata.QueryOpen</queryopen>
+	</events> 
+	<save>
+	</save>
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>
+	<viewtext><![CDATA[
+	]]></viewtext>	
+	<viewdate><![CDATA[
+	]]></viewdate>
+	<viewnumber><![CDATA[
+	]]></viewnumber>
+	<caption name="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	<caption name="close" source="KEYWORD">Закрыть</caption>
+	<caption name="logout" source="KEYWORD">Завершить работу</caption>
+	<caption name="help" source="KEYWORD">Помощь</caption>
+	<caption name="svedeniyaonalogoplatelschike" source="KEYWORD">Сведения о налогоплательщике</caption>
+	<caption name="obschiesvadeniya" source="KEYWORD">Общие сведения</caption>
+	<caption name="familiya" source="KEYWORD">Фамилия</caption>
+	<caption name="imya" source="KEYWORD">Имя</caption>
+	<caption name="otchestvo" source="KEYWORD">Отчество</caption>
+	<caption name="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	<caption name="rnn" source="KEYWORD">РНН</caption>
+	<caption name="adresregistr" source="KEYWORD">Адрес (регистр.)</caption>
+	<caption name="adresreal" source="KEYWORD">Адрес (реал.)</caption>
+	<caption name="dataregistracii" source="KEYWORD">Дата регистрации</caption>
+	<caption name="seriyadocumenta" source="KEYWORD">Серия документа</caption>
+	<caption name="nomerdocumenta" source="KEYWORD">Номер документа</caption>
+	<caption name="organvydachi" source="KEYWORD">Орган выдачи</caption>
+	<caption name="datavydachi" source="KEYWORD">Дата выдачи</caption>
+	<caption name="iin" source="KEYWORD">ИИН</caption>
+	<caption name="viddeyatelnosti" source="KEYWORD">Вид деятельности</caption>
+	<caption name="formaorganizacii" source="KEYWORD">Форма организации</caption>
+	<caption name="formasobstvennosti" source="KEYWORD">Форма собственности</caption>
+	<caption name="vidyuridicheskogolica" source="KEYWORD">Вид юридического лица</caption>
+	<caption name="okpo" source="KEYWORD">ОКПО</caption>
+	<caption name="raspechatatrezultaty" source="KEYWORD">Распечатать результаты</caption>
+	<caption name="printed" source="KEYWORD">Распечатал</caption>
+</rule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="query" id="allactivity">
+	<description></description>
+	<doctype></doctype>
+	<query source="macro">all_activity</query>
+</rule>

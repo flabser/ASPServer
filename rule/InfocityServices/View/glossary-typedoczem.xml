@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="glossary-typedoczem" history="on"> 
+	<description>Справочники - Тип документа на земельный участок</description>
+	<outline>navigator</outline>
+	<query>glossary-typedoczem</query>		
+	<xsltfile>views\glossary-view.xsl</xsltfile>
+	<title source="KEYWORD">Справочники - Тип документа на земельный участок</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Справочники</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Тип документа на земельный участок</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="familiya" source="KEYWORD">Фамилия</caption>
+	</column>
+	<column>
+		<caption id="btnnewdocument" source="KEYWORD">Новый тип документа</caption>
+	</column>		
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	<column>
+		<caption id="searchtime" source="KEYWORD">Время поиска</caption>
+	</column>
+	<column>
+		<caption id="totalfound" source="KEYWORD">Найдено всего</caption>
+	</column>
+	
+</rule>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<rule type="view" id="monitoring" history="on"> 
+	<description>Статистика работы пользователей</description>
+	<outline>navigator</outline>
+	<query>allactivity</query>		
+	<xsltfile>views\monitoringusers.xsl</xsltfile>
+	<title source="KEYWORD">Статистика работы пользователей</title>
+	<column>
+		<caption id="admineis" source="KEYWORD">Администратор ЕИС 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Статистика работы пользователей</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="documents" source="KEYWORD">Документов</caption>
+	</column>
+	<column>
+		<caption id="updates" source="KEYWORD">Обновлено</caption>
+	</column>
+	<column>
+		<caption id="from" source="KEYWORD">из</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="dataivremya" source="KEYWORD">Дата и время</caption>
+	</column>
+	<column>
+		<caption id="fiopolzovatelya" source="KEYWORD">ФИО пользователя</caption>
+	</column>
+	<column>
+		<caption id="login" source="KEYWORD">Логин</caption>
+	</column>
+	<column>
+		<caption id="deistvie" source="KEYWORD">Действие</caption>
+	</column>
+	<column>
+		<caption id="resultat" source="KEYWORD">Результат</caption>
+	</column>
+	<column>
+		<caption id="primechanie" source="KEYWORD">Примечание</caption>
+	</column>
+</rule>

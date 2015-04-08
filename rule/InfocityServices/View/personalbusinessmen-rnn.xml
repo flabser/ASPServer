@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="personalbusinessmen-rnn" history="on"> 
+	<description>Налоговый департамент - Индивидуальные предприниматели - по РНН</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\personalbusinessmen.xsl</xsltfile>
+	<title source="KEYWORD">Налоговый департамент - Индивидуальные предприниматели - по РНН</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">Налоговый департамент</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Индивидуальные предприниматели - по РНН</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="from" source="KEYWORD">из</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="vypolnit" source="KEYWORD">Выполнить</caption>
+	</column>		
+	<column>
+		<caption id="fio" source="KEYWORD">ФИО</caption>
+	</column>		
+	<column>
+		<caption id="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	</column>	
+	<column>
+		<caption id="naimenovanie" source="KEYWORD">Наименование</caption>
+	</column>		
+	<column>
+		<caption id="vidpredprinimatelstva" source="KEYWORD">Вид предпринимательства</caption>
+	</column>		
+	<column>
+		<caption id="adresprozhivaniya" source="KEYWORD">Адрес проживания (регистрации)</caption>
+	</column>		
+	<column>
+		<caption id="rnn" source="KEYWORD">РНН</caption>
+	</column>	
+	<column>
+		<caption id="iin" source="KEYWORD">ИИН</caption>
+	</column>	
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	<column>
+		<caption id="searchtime" source="KEYWORD">Время поиска</caption>
+	</column>
+	<column>
+		<caption id="totalfound" source="KEYWORD">Найдено всего</caption>
+	</column>
+</rule>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="view" id="socialdept-district" history="on"> 
+	<description>Департамент социальной защиты - По району</description>
+	<outline>navigator</outline>
+	<query>remarkdraft</query>		
+	<xsltfile>views\social.xsl</xsltfile>
+	<title source="KEYWORD">Департамент социальной защиты - По району</title>
+	<action mode="on" type="PRINT">
+		<caption source="KEYWORD">Печать</caption>
+		<granted source="script" mode="on"><![CDATA[
+			String[] getStringValue(_Session session){
+				def user = session.getStructure().getUser(session.getCurrentUser());
+				return getAsArray((user.hasRole("print")) ? user.getUserID() : "");
+			}]]></granted>
+	</action>
+	<column>
+		<caption id="eis" source="KEYWORD">Единая Информационная система 'Город'</caption>
+	</column>
+	<column>
+		<caption id="category" source="KEYWORD">УМП</caption>
+	</column>
+	<column>
+		<caption id="view" source="KEYWORD">Департамент социальной защиты - По району</caption>
+	</column>
+	<column>
+		<caption id="page" source="KEYWORD">Страница</caption>
+	</column>
+	<column>
+		<caption id="documents" source="KEYWORD">Документов</caption>
+	</column>
+	<column>
+		<caption id="helpcaption" source="KEYWORD">Помощь</caption>
+	</column>
+	<column>
+		<caption id="familiya" source="KEYWORD">Фамилия</caption>
+	</column>		
+	<column>
+		<caption id="imya" source="KEYWORD">Имя</caption>
+	</column>		
+	<column>
+		<caption id="otchestvo" source="KEYWORD">Отчество</caption>
+	</column>		
+	<column>
+		<caption id="district" source="KEYWORD">Район</caption>
+	</column>		
+	<column>
+		<caption id="vypolnit" source="KEYWORD">Выполнить</caption>
+	</column>	
+	<column>
+		<caption id="datarozhdeniya" source="KEYWORD">Дата рождения</caption>
+	</column>
+	<column>
+		<caption id="pol" source="KEYWORD">Пол</caption>
+	</column>				
+	<column>
+		<caption id="nacionalnost" source="KEYWORD">Национальность</caption>
+	</column>			
+	<column>
+		<caption id="udostoverenie" source="KEYWORD">Удостоверение</caption>
+	</column>	
+	<column>
+		<caption id="iin" source="KEYWORD">ИИН</caption>
+	</column>
+	<column>
+		<caption id="fio" source="KEYWORD">ФИО</caption>
+	</column>
+	<column>
+		<caption id="address" source="KEYWORD">Адрес</caption>
+	</column>
+	<column>
+		<caption id="print" source="KEYWORD">Распечатать</caption>
+	</column>
+	<column>
+		<caption id="searchtime" source="KEYWORD">Время поиска</caption>
+	</column>
+	<column>
+		<caption id="totalfound" source="KEYWORD">Найдено всего</caption>
+	</column>
+</rule>

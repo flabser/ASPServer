@@ -1,0 +1,73 @@
+BODY {
+    font-family: Verdana,Arial,Helvetica,sans-serif !important;
+}
+
+#resizer, #outline, #sendrequest, #usernavpanel, #printbutton, #resultdiv{
+	display:none;
+}
+
+.inputrequest{
+	border:none;
+}
+#header-view{
+	height:50px !important;
+}
+
+#header-view span{
+	width:100%;
+	text-align:right;
+	line-height:50px;
+	font-size:15px
+}
+
+#header-view span img{
+	position:absolute;
+	top:0px;
+	left:5px
+}
+
+#viewcontent-header{
+	height:50px !important;
+}
+
+#aboutprint{
+	display:block !important;
+	margin-top:5px;
+}
+
+#pagetitle{
+	font-size:19px !important;
+}
+
+#inputstable{
+	margin-top:20px !important;
+}
+
+#printtable{
+	display:block !important;
+	width:650px !important;
+	border-collapse:collapse;
+	font-size:12px;
+}
+
+#printtable a{
+	text-decoration:none;
+	color:#444;
+}
+
+#resultdiv{
+	width:1000px !important;
+	position:static;
+}
+
+#resultdiv table{
+	display:none;
+}
+
+#resultdiv table tr td{
+	max-width:120px !important;
+}
+
+#resultHeaderDataTable{
+	display:none;
+}
