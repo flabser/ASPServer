@@ -16,7 +16,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[36];
+        _operations = new org.apache.axis.description.OperationDesc[37];
         _initOperationDesc1();
         _initOperationDesc2();
         _initOperationDesc3();
@@ -31,7 +31,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "date"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "date"), java.util.Date.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnClass(String[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getLogReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -39,9 +39,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCountry");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "Country"));
         oper.setReturnClass(kz.lof.webservices.store.ump.Country[].class);
@@ -62,7 +62,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationNatData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationNatData[].class);
@@ -83,7 +83,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationReasonData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationReasonData[].class);
@@ -102,7 +102,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatEducData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.NatEducData[].class);
@@ -121,7 +121,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatEducData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.NatEducData[].class);
@@ -146,7 +146,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "CriminalsData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.CriminalsData[].class);
@@ -163,7 +163,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationLiveData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationLiveData[].class);
@@ -176,12 +176,12 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.setName("getFlats");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "idStreet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flatNumber"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flatNumber"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnClass(String[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getFlatsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -205,7 +205,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.setName("getFullData");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "HumanFullData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.HumanFullData.class);
@@ -216,9 +216,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDistricts");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "District"));
         oper.setReturnClass(kz.lof.webservices.store.ump.District[].class);
@@ -229,9 +229,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getStreets");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "Street"));
         oper.setReturnClass(kz.lof.webservices.store.ump.Street[].class);
@@ -244,10 +244,10 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.setName("getHouses");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "idStreet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnClass(String[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getHousesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -255,17 +255,17 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getHumanByFIO");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "firstName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "firstName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lastName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lastName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "middleName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "middleName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "pageNum"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "HumansSearchResult"));
         oper.setReturnClass(kz.lof.webservices.store.ump.HumansSearchResult.class);
@@ -278,17 +278,17 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.setName("getHumanByAddr");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "street"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "Street"), kz.lof.webservices.store.ump.Street.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flat"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flat"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flatPart"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flatPart"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "pageNum"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "HumansSearchResult"));
         oper.setReturnClass(kz.lof.webservices.store.ump.HumansSearchResult.class);
@@ -299,13 +299,13 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getHumanByDoc");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "docNumber"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "docNumber"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "pageNum"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "HumansSearchResult"));
         oper.setReturnClass(kz.lof.webservices.store.ump.HumansSearchResult.class);
@@ -316,9 +316,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCitizenByIIN");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "iin"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "iin"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "HumansSearchResult"));
         oper.setReturnClass(kz.lof.webservices.store.ump.HumansSearchResult.class);
@@ -329,7 +329,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllCountries");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "Country"));
         oper.setReturnClass(kz.lof.webservices.store.ump.Country[].class);
@@ -340,7 +340,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllDistricts");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "District"));
         oper.setReturnClass(kz.lof.webservices.store.ump.District[].class);
@@ -356,7 +356,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllStreets");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "Street"));
         oper.setReturnClass(kz.lof.webservices.store.ump.Street[].class);
@@ -373,7 +373,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatCount"));
         oper.setReturnClass(kz.lof.webservices.store.ump.NatCount[].class);
@@ -390,7 +390,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "CountByAddr"));
         oper.setReturnClass(kz.lof.webservices.store.ump.CountByAddr[].class);
@@ -407,7 +407,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "CountByAddr"));
         oper.setReturnClass(kz.lof.webservices.store.ump.CountByAddr[].class);
@@ -430,7 +430,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "CountByAddr"));
         oper.setReturnClass(kz.lof.webservices.store.ump.CountByAddr[].class);
@@ -451,7 +451,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationData[].class);
@@ -472,7 +472,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationData[].class);
@@ -493,7 +493,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationNatData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationNatData[].class);
@@ -514,7 +514,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "MigrationReasonData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.MigrationReasonData[].class);
@@ -531,7 +531,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "SpecCount"));
         oper.setReturnClass(kz.lof.webservices.store.ump.SpecCount[].class);
@@ -553,7 +553,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "SpecCount"));
         oper.setReturnClass(kz.lof.webservices.store.ump.SpecCount[].class);
@@ -572,7 +572,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatEducData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.NatEducData[].class);
@@ -591,7 +591,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatEducData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.NatEducData[].class);
@@ -608,7 +608,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "TypeRegData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.TypeRegData[].class);
@@ -633,7 +633,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "CriminalsData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.CriminalsData[].class);
@@ -650,7 +650,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "resultsOnPage"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "TypeRegData"));
         oper.setReturnClass(kz.lof.webservices.store.ump.TypeRegData[].class);
@@ -658,6 +658,21 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[35] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getFlatParts");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "idStreet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "house"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "flatNumber"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getFlatPartsReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[36] = oper;
 
     }
 
@@ -677,19 +692,19 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             super.service = service;
         }
         ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
-            java.lang.Class cls;
+            Class cls;
             javax.xml.namespace.QName qName;
             javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://common.webservices.lof.kz", "InfoEntry");
             cachedSerQNames.add(qName);
             cls = kz.lof.webservices.common.InfoEntry.class;
@@ -1048,7 +1063,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             }
             java.util.Enumeration keys = super.cachedProperties.keys();
             while (keys.hasMoreElements()) {
-                java.lang.String key = (java.lang.String) keys.nextElement();
+                String key = (String) keys.nextElement();
                 _call.setProperty(key, super.cachedProperties.get(key));
             }
             // All the type mapping information is registered
@@ -1061,14 +1076,14 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
                     // must set encoding style before registering serializers
                     _call.setEncodingStyle(null);
                     for (int i = 0; i < cachedSerFactories.size(); ++i) {
-                        java.lang.Class cls = (java.lang.Class) cachedSerClasses.get(i);
+                        Class cls = (Class) cachedSerClasses.get(i);
                         javax.xml.namespace.QName qName =
                                 (javax.xml.namespace.QName) cachedSerQNames.get(i);
-                        java.lang.Object x = cachedSerFactories.get(i);
+                        Object x = cachedSerFactories.get(i);
                         if (x instanceof Class) {
-                            java.lang.Class sf = (java.lang.Class)
+                            Class sf = (Class)
                                  cachedSerFactories.get(i);
-                            java.lang.Class df = (java.lang.Class)
+                            Class df = (Class)
                                  cachedDeserFactories.get(i);
                             _call.registerTypeMapping(cls, qName, sf, df, false);
                         }
@@ -1084,12 +1099,12 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             }
             return _call;
         }
-        catch (java.lang.Throwable _t) {
+        catch (Throwable _t) {
             throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
         }
     }
 
-    public java.lang.String[] getLog(java.util.Date date) throws java.rmi.RemoteException {
+    public String[] getLog(java.util.Date date) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1105,7 +1120,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {date});
+ try {        Object _resp = _call.invoke(new Object[] {date});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1113,9 +1128,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (java.lang.String[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1123,7 +1138,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.Country[] getCountry(java.lang.String name, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.Country[] getCountry(String name, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1139,7 +1154,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {name, lang});
+ try {        Object _resp = _call.invoke(new Object[] {name, lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1148,7 +1163,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.Country[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.Country[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.Country[].class);
             }
         }
@@ -1157,7 +1172,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationNatData[] getInfoMigrationNationByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationNatData[] getInfoMigrationNationByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1173,7 +1188,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1182,7 +1197,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationNatData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationNatData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationNatData[].class);
             }
         }
@@ -1191,7 +1206,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationReasonData[] getInfoMigrationReasonByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationReasonData[] getInfoMigrationReasonByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1207,7 +1222,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1216,7 +1231,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationReasonData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationReasonData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationReasonData[].class);
             }
         }
@@ -1225,7 +1240,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatSpecByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int nacId, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatSpecByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int nacId, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1241,7 +1256,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(nacId), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(nacId), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1250,7 +1265,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.NatEducData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.NatEducData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatEducData[].class);
             }
         }
@@ -1259,7 +1274,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatEducByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int nacId, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatEducByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int nacId, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1275,7 +1290,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(nacId), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(nacId), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1284,7 +1299,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.NatEducData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.NatEducData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatEducData[].class);
             }
         }
@@ -1293,7 +1308,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.CriminalsData[] getCountCriminalsByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int idNac, int sex, int startAge, int endAge, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.CriminalsData[] getCountCriminalsByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int idNac, int sex, int startAge, int endAge, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1309,7 +1324,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(idNac), new java.lang.Integer(sex), new java.lang.Integer(startAge), new java.lang.Integer(endAge), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(idNac), new Integer(sex), new Integer(startAge), new Integer(endAge), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1318,7 +1333,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.CriminalsData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.CriminalsData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.CriminalsData[].class);
             }
         }
@@ -1327,7 +1342,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationLiveData[] getInfoMigrationLiveByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationLiveData[] getInfoMigrationLiveByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1343,7 +1358,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1352,7 +1367,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationLiveData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationLiveData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationLiveData[].class);
             }
         }
@@ -1361,7 +1376,42 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public java.lang.String[] getFlats(int idStreet, java.lang.String house, java.lang.String flatNumber) throws java.rmi.RemoteException {
+    public String[] getFlatParts(int idStreet, String house, String flatNumber) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[36]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getFlatParts"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+//        try {
+            Object _resp = _call.invoke(new Object[] {idStreet, house, flatNumber});
+
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException)_resp;
+            }
+            else {
+                extractAttachments(_call);
+                try {
+                    return (String[]) _resp;
+                } catch (Exception _exception) {
+                    return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
+                }
+            }
+//        } catch (org.apache.axis.AxisFault axisFaultException) {
+//            throw axisFaultException;
+//        }
+    }
+
+    public String[] getFlats(int idStreet, String house, String flatNumber) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1377,7 +1427,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(idStreet), house, flatNumber});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(idStreet), house, flatNumber});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1385,9 +1435,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (java.lang.String[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1411,7 +1461,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        Object _resp = _call.invoke(new Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1420,7 +1470,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.common.ServiceInfo) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.common.ServiceInfo) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.common.ServiceInfo.class);
             }
         }
@@ -1429,7 +1479,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.HumanFullData getFullData(long id, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.HumanFullData getFullData(long id, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1445,7 +1495,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(id), lang});
+ try {        Object _resp = _call.invoke(new Object[] {new Long(id), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1454,7 +1504,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.HumanFullData) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.HumanFullData) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.HumanFullData.class);
             }
         }
@@ -1463,7 +1513,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.District[] getDistricts(java.lang.String name, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.District[] getDistricts(String name, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1479,7 +1529,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {name, lang});
+ try {        Object _resp = _call.invoke(new Object[] {name, lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1488,7 +1538,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.District[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.District[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.District[].class);
             }
         }
@@ -1497,7 +1547,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.Street[] getStreets(java.lang.String name, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.Street[] getStreets(String name, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1513,7 +1563,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {name, lang});
+ try {        Object _resp = _call.invoke(new Object[] {name, lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1522,7 +1572,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.Street[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.Street[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.Street[].class);
             }
         }
@@ -1531,7 +1581,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public java.lang.String[] getHouses(int idStreet, java.lang.String house) throws java.rmi.RemoteException {
+    public String[] getHouses(int idStreet, String house) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1547,7 +1597,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(idStreet), house});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(idStreet), house});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1555,9 +1605,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (java.lang.String[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1565,7 +1615,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByFIO(java.lang.String firstName, java.lang.String lastName, java.lang.String middleName, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByFIO(String firstName, String lastName, String middleName, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1581,7 +1631,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {firstName, lastName, middleName, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {firstName, lastName, middleName, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1590,7 +1640,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.HumansSearchResult.class);
             }
         }
@@ -1599,7 +1649,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByAddr(kz.lof.webservices.store.ump.Street street, java.lang.String house, java.lang.String flat, String flatNumber, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByAddr(kz.lof.webservices.store.ump.Street street, String house, String flat, String flatPart, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1615,7 +1665,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {street, house, flat, flatNumber, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {street, house, flat, flatPart, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1624,7 +1674,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.HumansSearchResult.class);
             }
         }
@@ -1633,7 +1683,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByDoc(java.lang.String docNumber, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.HumansSearchResult getHumanByDoc(String docNumber, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1649,7 +1699,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {docNumber, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {docNumber, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1658,7 +1708,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.HumansSearchResult.class);
             }
         }
@@ -1667,7 +1717,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.HumansSearchResult getCitizenByIIN(java.lang.String iin, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.HumansSearchResult getCitizenByIIN(String iin, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1683,7 +1733,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {iin, lang});
+ try {        Object _resp = _call.invoke(new Object[] {iin, lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1692,7 +1742,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.HumansSearchResult) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.HumansSearchResult.class);
             }
         }
@@ -1701,7 +1751,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.Country[] getAllCountries(java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.Country[] getAllCountries(String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1717,7 +1767,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {lang});
+ try {        Object _resp = _call.invoke(new Object[] {lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1726,7 +1776,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.Country[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.Country[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.Country[].class);
             }
         }
@@ -1735,7 +1785,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.District[] getAllDistricts(java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.District[] getAllDistricts(String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1751,7 +1801,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {lang});
+ try {        Object _resp = _call.invoke(new Object[] {lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1760,7 +1810,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.District[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.District[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.District[].class);
             }
         }
@@ -1769,7 +1819,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.Street[] getAllStreets(java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.Street[] getAllStreets(String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1785,7 +1835,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {lang});
+ try {        Object _resp = _call.invoke(new Object[] {lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1794,7 +1844,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.Street[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.Street[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.Street[].class);
             }
         }
@@ -1803,7 +1853,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatCount[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NatCount[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1819,7 +1869,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1828,7 +1878,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.NatCount[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.NatCount[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatCount[].class);
             }
         }
@@ -1837,7 +1887,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1853,7 +1903,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1862,7 +1912,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.CountByAddr[].class);
             }
         }
@@ -1871,7 +1921,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1887,7 +1937,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1896,7 +1946,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.CountByAddr[].class);
             }
         }
@@ -1905,7 +1955,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.CountByAddr[] getCntAdamByAge(kz.lof.webservices.store.ump.Address[] address, int startAge, int endAge, int sex, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.CountByAddr[] getCntAdamByAge(kz.lof.webservices.store.ump.Address[] address, int startAge, int endAge, int sex, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1921,7 +1971,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(startAge), new java.lang.Integer(endAge), new java.lang.Integer(sex), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(startAge), new Integer(endAge), new Integer(sex), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1930,7 +1980,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.CountByAddr[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.CountByAddr[].class);
             }
         }
@@ -1939,7 +1989,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationData[] getInfoMigrationByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationData[] getInfoMigrationByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1955,7 +2005,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1964,7 +2014,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationData[].class);
             }
         }
@@ -1973,7 +2023,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationData[] getInfoMigrationByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationData[] getInfoMigrationByCodeRegion(kz.lof.webservices.store.ump.Region[] region, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1989,7 +2039,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1998,7 +2048,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationData[].class);
             }
         }
@@ -2007,7 +2057,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationNatData[] getInfoMigrationNationByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationNatData[] getInfoMigrationNationByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2023,7 +2073,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2032,7 +2082,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationNatData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationNatData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationNatData[].class);
             }
         }
@@ -2041,7 +2091,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.MigrationReasonData[] getInfoMigrationReasonByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.MigrationReasonData[] getInfoMigrationReasonByAdr(kz.lof.webservices.store.ump.Address[] address, java.util.Calendar startDate, java.util.Calendar endDate, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2057,7 +2107,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, startDate, endDate, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, startDate, endDate, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2066,7 +2116,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.MigrationReasonData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.MigrationReasonData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.MigrationReasonData[].class);
             }
         }
@@ -2075,7 +2125,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.SpecCount[] getMigrationSpecByAdr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.SpecCount[] getMigrationSpecByAdr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2091,7 +2141,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2100,7 +2150,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.SpecCount[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.SpecCount[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.SpecCount[].class);
             }
         }
@@ -2109,7 +2159,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.SpecCount[] getMigrationSpecByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.SpecCount[] getMigrationSpecByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2125,7 +2175,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2134,7 +2184,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.SpecCount[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.SpecCount[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.SpecCount[].class);
             }
         }
@@ -2143,7 +2193,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatSpecByAdr(kz.lof.webservices.store.ump.Address[] address, int nacId, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatSpecByAdr(kz.lof.webservices.store.ump.Address[] address, int nacId, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2159,7 +2209,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(nacId), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(nacId), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2168,7 +2218,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.NatEducData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.NatEducData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatEducData[].class);
             }
         }
@@ -2177,7 +2227,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatEducByAdr(kz.lof.webservices.store.ump.Address[] address, int nacId, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NatEducData[] getMigrationNatEducByAdr(kz.lof.webservices.store.ump.Address[] address, int nacId, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2193,7 +2243,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(nacId), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(nacId), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2202,7 +2252,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.NatEducData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.NatEducData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatEducData[].class);
             }
         }
@@ -2211,7 +2261,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.TypeRegData[] getCountTypeRegByAdr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.TypeRegData[] getCountTypeRegByAdr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2227,7 +2277,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2236,7 +2286,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.TypeRegData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.TypeRegData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.TypeRegData[].class);
             }
         }
@@ -2245,7 +2295,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.CriminalsData[] getCountCriminalsByAdr(kz.lof.webservices.store.ump.Address[] address, int idNac, int sex, int startAge, int endAge, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.CriminalsData[] getCountCriminalsByAdr(kz.lof.webservices.store.ump.Address[] address, int idNac, int sex, int startAge, int endAge, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2261,7 +2311,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {address, new java.lang.Integer(idNac), new java.lang.Integer(sex), new java.lang.Integer(startAge), new java.lang.Integer(endAge), new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {address, new Integer(idNac), new Integer(sex), new Integer(startAge), new Integer(endAge), new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2270,7 +2320,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.CriminalsData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.CriminalsData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.CriminalsData[].class);
             }
         }
@@ -2279,7 +2329,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.TypeRegData[] getCountTypeRegByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, java.lang.String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.TypeRegData[] getCountTypeRegByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -2295,7 +2345,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {region, new java.lang.Integer(pageNum), new java.lang.Integer(resultsOnPage), lang});
+ try {        Object _resp = _call.invoke(new Object[] {region, new Integer(pageNum), new Integer(resultsOnPage), lang});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2304,7 +2354,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             extractAttachments(_call);
             try {
                 return (kz.lof.webservices.store.ump.TypeRegData[]) _resp;
-            } catch (java.lang.Exception _exception) {
+            } catch (Exception _exception) {
                 return (kz.lof.webservices.store.ump.TypeRegData[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.TypeRegData[].class);
             }
         }
