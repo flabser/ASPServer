@@ -1,142 +1,131 @@
-/**
- * HumansSearchServiceServiceLocator.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
- */
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
 
 package kz.lof.webservices.frontface.ump;
 
-public class HumansSearchServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.ump.HumansSearchServiceService {
+import kz.pchelka.env.Environment;
+import org.apache.axis.AxisFault;
+import org.apache.axis.EngineConfiguration;
+import org.apache.axis.client.Service;
+import org.apache.axis.client.Stub;
+
+import javax.xml.namespace.QName;
+import javax.xml.rpc.ServiceException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.Remote;
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class HumansSearchServiceServiceLocator extends Service implements HumansSearchServiceService {
+    private String HumansSearchService_address = "http://" + Environment.getExtHost("ump") + "/WS/services/HumansSearchService";
+    private String HumansSearchServiceWSDDServiceName = "HumansSearchService";
+    private HashSet ports = null;
 
     public HumansSearchServiceServiceLocator() {
     }
 
-
-    public HumansSearchServiceServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public HumansSearchServiceServiceLocator(EngineConfiguration config) {
         super(config);
     }
 
-    public HumansSearchServiceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public HumansSearchServiceServiceLocator(String wsdlLoc, QName sName) throws ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for HumansSearchService
-    private java.lang.String HumansSearchService_address = "http://localhost:15045/WS/services/HumansSearchService";
-
-    public java.lang.String getHumansSearchServiceAddress() {
-        return HumansSearchService_address;
+    public String getHumansSearchServiceAddress() {
+        return this.HumansSearchService_address;
     }
 
-    // The WSDD service name defaults to the port name.
-    private java.lang.String HumansSearchServiceWSDDServiceName = "HumansSearchService";
-
-    public java.lang.String getHumansSearchServiceWSDDServiceName() {
-        return HumansSearchServiceWSDDServiceName;
+    public String getHumansSearchServiceWSDDServiceName() {
+        return this.HumansSearchServiceWSDDServiceName;
     }
 
-    public void setHumansSearchServiceWSDDServiceName(java.lang.String name) {
-        HumansSearchServiceWSDDServiceName = name;
+    public void setHumansSearchServiceWSDDServiceName(String name) {
+        this.HumansSearchServiceWSDDServiceName = name;
     }
 
-    public kz.lof.webservices.frontface.ump.HumansSearchService getHumansSearchService() throws javax.xml.rpc.ServiceException {
-       java.net.URL endpoint;
+    public HumansSearchService getHumansSearchService() throws ServiceException {
+        URL endpoint;
         try {
-            endpoint = new java.net.URL(HumansSearchService_address);
+            endpoint = new URL(this.HumansSearchService_address);
+        } catch (MalformedURLException var3) {
+            throw new ServiceException(var3);
         }
-        catch (java.net.MalformedURLException e) {
-            throw new javax.xml.rpc.ServiceException(e);
-        }
-        return getHumansSearchService(endpoint);
+
+        HumansSearchService hSS = this.getHumansSearchService(endpoint);
+        ((Stub)hSS).setUsername("temp_user");
+        ((Stub)hSS).setPassword("temp_password");
+        return hSS;
     }
 
-    public kz.lof.webservices.frontface.ump.HumansSearchService getHumansSearchService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public HumansSearchService getHumansSearchService(URL portAddress) throws ServiceException {
         try {
-            kz.lof.webservices.frontface.ump.HumansSearchServiceSoapBindingStub _stub = new kz.lof.webservices.frontface.ump.HumansSearchServiceSoapBindingStub(portAddress, this);
-            _stub.setPortName(getHumansSearchServiceWSDDServiceName());
-            return _stub;
-        }
-        catch (org.apache.axis.AxisFault e) {
+            HumansSearchServiceSoapBindingStub e = new HumansSearchServiceSoapBindingStub(portAddress, this);
+            e.setPortName(this.getHumansSearchServiceWSDDServiceName());
+            return e;
+        } catch (AxisFault var3) {
             return null;
         }
     }
 
-    public void setHumansSearchServiceEndpointAddress(java.lang.String address) {
-        HumansSearchService_address = address;
+    public void setHumansSearchServiceEndpointAddress(String address) {
+        this.HumansSearchService_address = address;
     }
 
-    /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
-     */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    public Remote getPort(Class serviceEndpointInterface) throws ServiceException {
         try {
-            if (kz.lof.webservices.frontface.ump.HumansSearchService.class.isAssignableFrom(serviceEndpointInterface)) {
-                kz.lof.webservices.frontface.ump.HumansSearchServiceSoapBindingStub _stub = new kz.lof.webservices.frontface.ump.HumansSearchServiceSoapBindingStub(new java.net.URL(HumansSearchService_address), this);
-                _stub.setPortName(getHumansSearchServiceWSDDServiceName());
+            if(HumansSearchService.class.isAssignableFrom(serviceEndpointInterface)) {
+                HumansSearchServiceSoapBindingStub t = new HumansSearchServiceSoapBindingStub(new URL(this.HumansSearchService_address), this);
+                t.setPortName(this.getHumansSearchServiceWSDDServiceName());
+                return t;
+            }
+        } catch (Throwable var3) {
+            throw new ServiceException(var3);
+        }
+
+        throw new ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null?"null":serviceEndpointInterface.getName()));
+    }
+
+    public Remote getPort(QName portName, Class serviceEndpointInterface) throws ServiceException {
+        if(portName == null) {
+            return this.getPort(serviceEndpointInterface);
+        } else {
+            String inputPortName = portName.getLocalPart();
+            if("HumansSearchService".equals(inputPortName)) {
+                return this.getHumansSearchService();
+            } else {
+                Remote _stub = this.getPort(serviceEndpointInterface);
+                ((Stub)_stub).setPortName(portName);
                 return _stub;
             }
         }
-        catch (java.lang.Throwable t) {
-            throw new javax.xml.rpc.ServiceException(t);
-        }
-        throw new javax.xml.rpc.ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndpointInterface.getName()));
     }
 
-    /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
-     */
-    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
-        if (portName == null) {
-            return getPort(serviceEndpointInterface);
+    public QName getServiceName() {
+        return new QName("http://ump.webservices.lof.kz", "HumansSearchServiceService");
+    }
+
+    public Iterator getPorts() {
+        if(this.ports == null) {
+            this.ports = new HashSet();
+            this.ports.add(new QName("http://ump.webservices.lof.kz", "HumansSearchService"));
         }
-        java.lang.String inputPortName = portName.getLocalPart();
-        if ("HumansSearchService".equals(inputPortName)) {
-            return getHumansSearchService();
-        }
-        else  {
-            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
-            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
-            return _stub;
+
+        return this.ports.iterator();
+    }
+
+    public void setEndpointAddress(String portName, String address) throws ServiceException {
+        if("HumansSearchService".equals(portName)) {
+            this.setHumansSearchServiceEndpointAddress(address);
+        } else {
+            throw new ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
         }
     }
 
-    public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "HumansSearchServiceService");
+    public void setEndpointAddress(QName portName, String address) throws ServiceException {
+        this.setEndpointAddress(portName.getLocalPart(), address);
     }
-
-    private java.util.HashSet ports = null;
-
-    public java.util.Iterator getPorts() {
-        if (ports == null) {
-            ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "HumansSearchService"));
-        }
-        return ports.iterator();
-    }
-
-    /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-        
-if ("HumansSearchService".equals(portName)) {
-            setHumansSearchServiceEndpointAddress(address);
-        }
-        else 
-{ // Unknown Port Name
-            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
-        }
-    }
-
-    /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-        setEndpointAddress(portName.getLocalPart(), address);
-    }
-
 }
