@@ -9,11 +9,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.ss.usermodel.*
 import org.apache.poi.ss.util.WorkbookUtil
 
-import java.sql.Connection
-import java.sql.Date
-import java.sql.PreparedStatement
-import java.sql.ResultSet
-import java.sql.SQLException
+import java.sql.*
 
 class UsersWork extends _DoScript {
 
@@ -76,6 +72,7 @@ class UsersWork extends _DoScript {
         ResultSet resultSet = null;
         OutputStream out = null;
         int i = 0;
+        String fileUrl = ""
         try {
             ps = conn.prepareStatement(query);
             ps.setString(1, userId);
@@ -95,12 +92,15 @@ class UsersWork extends _DoScript {
             sheet.autoSizeColumn(1)
             sheet.autoSizeColumn(2)
             String sep = File.separator;
+
             File dir = new File(new File("").absolutePath + "${sep}webapps${sep}InfocityServices${sep}reports${sep}${ses.getCurrentUserID()}");
             if(!dir.exists())
                 dir.mkdirs();
 
             out = new FileOutputStream(dir.getAbsolutePath() + "${sep}Работа пользователя ${userId}.xls");
             wb.write(out);
+
+            showFile(dir.getAbsolutePath() + "${sep}Работа пользователя ${userId}.xls", "Работа пользователя ${userId}.xls")
 
         } catch (SQLException e){
             print e;

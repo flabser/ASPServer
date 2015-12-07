@@ -72,6 +72,8 @@ class Users extends _DoScript {
             out = new FileOutputStream(dir.getAbsolutePath() + "${sep}Пользователи.xls");
             wb.write(out);
 
+            showFile(dir.getAbsolutePath() + "${sep}Пользователи.xls", "Пользователи.xls")
+
         } catch (SQLException e){
             print e;
         } finally {

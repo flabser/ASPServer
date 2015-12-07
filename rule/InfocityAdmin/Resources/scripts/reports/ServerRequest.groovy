@@ -132,6 +132,8 @@ class ServerRequest extends _DoScript {
             out = new FileOutputStream(dir.getAbsolutePath() + "${sep}Обращение к серверу-источнику ${fullServerName}.xls");
             wb.write(out);
 
+            showFile(dir.getAbsolutePath() + "${sep}Обращение к серверу-источнику ${fullServerName}.xls", "Обращение к серверу-источнику ${fullServerName}.xls")
+
         } catch (SQLException e){
             print e;
         } finally {
