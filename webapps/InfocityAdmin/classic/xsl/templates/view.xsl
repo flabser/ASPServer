@@ -193,24 +193,24 @@
 	</xsl:template>
 	
 	<xsl:template name="viewinfo">
-		<div style="height:30px">
-		<table style="width:99%; margin-left:3px; " class="time">
-			<tr>
-				<td width="33%">
-					<font class="time">
-						<xsl:value-of select="columns/column[@id = 'PAGE']/@caption"/>:&#xA0;<xsl:value-of select="query/@currentpage"/>  &#xA0;<xsl:value-of select="columns/column[@id = 'FROM']/@caption"/>  &#xA0;<xsl:value-of select="query/@maxpage"/>
-					</font>
-				</td>
-				<td width="33%">
-					<xsl:call-template name="prepagelist"/>
-				</td>
-				<td width="33%" style="text-align:right; font-size: 12px ">
-					<font class="time">
-						<xsl:value-of select="columns/column[@id = 'DOCUMENTS']/@caption"/>: <xsl:value-of select="query/@count"/>
-					</font>
-				</td>
-			</tr>
-		</table>
+		<div class="viewinfo" style="height:30px">
+			<table style="width:99%; margin-left:3px;" class="time">
+				<tr>
+					<td width="33%">
+						<font class="time">
+							<xsl:value-of select="columns/column[@id = 'PAGE']/@caption"/>:&#xA0;<xsl:value-of select="query/@currentpage"/>  &#xA0;<xsl:value-of select="columns/column[@id = 'FROM']/@caption"/>  &#xA0;<xsl:value-of select="query/@maxpage"/>
+						</font>
+					</td>
+					<td width="33%">
+						<xsl:call-template name="prepagelist"/>
+					</td>
+					<td width="33%" style="text-align:right; font-size: 12px ">
+						<font class="time">
+							<xsl:value-of select="columns/column[@id = 'DOCUMENTS']/@caption"/>: <xsl:value-of select="query/@count"/>
+						</font>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</xsl:template>
 	

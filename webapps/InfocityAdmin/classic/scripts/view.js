@@ -23,5 +23,27 @@ function message(text,elID){
 }
 
 function getReportUsers() {
-		window.location.href= 'Provider?type=page&id=get_report_users'
+	window.location.href= 'Provider?type=page&id=get_report_users'
+}
+
+function getReportWorkUsers() {
+	var datefrom = $("#datefrom").val();
+	var dateto = $("#dateto").val();
+	var userid = $("#userid").val();
+	if(datefrom !='' && dateto != '' && userid != ''){
+		window.location.href= 'Provider?type=page&id=get_report_workusers&userid='+userid+'&fromdate='+datefrom+"&todate="+dateto;
+	}else{
+		infoDialog("Заполните все необходимые поля")
+	}
+}
+
+function getReportServices() {
+	var service = $("#service").val();
+	var datefrom = $("#datefrom").val();
+	var dateto = $("#dateto").val();
+	if(service !='' && datefrom !='' && dateto != ''){
+		window.location.href= 'Provider?type=page&id=get_report_services&server='+service+'&fromdate='+datefrom+"&todate="+dateto;
+	}else{
+		infoDialog("Заполните все необходимые поля")
+	}
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rule type="page" id="get_report_users" mode="on">
+<rule type="page" id="get_report_services" mode="on">
 	<description/>
 	<!--<xsltfile>views/citizen.xsl</xsltfile>-->
 	<element mode="ON" type="SCRIPT">
 		<name>script_result</name>
 		<events>
-			<doscript source="file">reports.Users</doscript>
+			<doscript source="file">reports.ServerRequest</doscript>
 		</events>
 	</element>
 </rule>
