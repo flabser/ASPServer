@@ -21,3 +21,7 @@ function message(text,elID){
 		}
 	});
 }
+
+function getReportUsers() {
+		window.location.href= 'Provider?type=page&id=get_report_users'
+}

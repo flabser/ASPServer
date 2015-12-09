@@ -82,6 +82,22 @@
 					<hint source="KEYWORD">Журналы выгрузок</hint>
 				</entry>
 			</entry>
+			<entry mode="on" url="Provider?type=view&amp;id=exp" id="exp">
+				<caption source="KEYWORD">Экспорт</caption>
+				<hint source="KEYWORD">Экспорт</hint>
+				<entry mode="on" url="Provider?type=view&amp;id=expusers" id="expusers">
+					<caption source="KEYWORD">Экспорт пользователей</caption>
+					<hint source="KEYWORD">Экспорт пользователей</hint>
+				</entry>
+				<entry mode="on" url="Provider?type=view&amp;id=expworkusers&amp;users=&amp;dateto=&amp;datefrom=&amp;totalsfrom=&amp;totalsto=&amp;errorsonly=" id="expworkusers">
+					<caption source="KEYWORD">Работа пользователей</caption>
+					<hint source="KEYWORD">Работа пользователей</hint>
+				</entry>
+				<entry mode="on" url="Provider?type=view&amp;id=expservices" id="expservices">
+					<caption source="KEYWORD">Обращения к серверам-источникам</caption>
+					<hint source="KEYWORD">Обращения к серверам-источникам</hint>
+				</entry>
+			</entry>
 		</entry>
 		<default>
 			<field mode="on">
