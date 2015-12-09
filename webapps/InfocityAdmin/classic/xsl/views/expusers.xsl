@@ -45,150 +45,7 @@
 						<font style="font-size:13px; line-height:19px; color:#555555;"><xsl:value-of select="columns/column[@id='REQUEST_FILTER']/@caption"/></font>
 					</div>
 					<div style="width:100%; height:455px">
-						<table style="width:100%; margin-top:30px; font-size:14px">
-							<tr>
-								<td style="width:240px; text-align:right">
-									<xsl:value-of select="columns/column[@id='USER_LOGIN']/@caption"/> :
-								</td>
-								<td style="width:360px">
-									<input type="text" id="login" style="width:300px; padding:3px"></input>
-								</td>
-							</tr>
-							<tr>
-								<td style="text-align:right">
-									<input type="checkbox" id="errorsonly" style="padding:2px" value="true"></input>
-								</td>
-								<td style="font-size:12px">
-									<xsl:value-of select="columns/column[@id='REQUEST_ERROR_ONLY']/@caption"/>
-								</td>
-							</tr>
-							<tr>
-								<td style="text-align:center; padding-top:15px; color:#555555; border-bottom:1px solid #efefef" colspan="2">
-									<xsl:value-of select="columns/column[@id='REQUEST_FILTER_TARGET']/@caption"/>
-								</td>
-							</tr>
-							<tr>
-								<td style="padding-top:10px; text-align:right">
-									<xsl:value-of select="columns/column[@id='SERVER_SPRING']/@caption"/> :
-								</td>
-								<td style="padding-top:10px;">
-									<select id="server" style="width:310px; padding:5px" onchange="javascript:selectServerItem()">
-										<option value="">
-										</option>
-										<xsl:for-each select="glossaries/typeservices/entry">
-											<option value="{name}">
-												<xsl:value-of select="namerus"/>
-											</option>
-										</xsl:for-each>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td style=" text-align:right">
-									<xsl:value-of select="columns/column[@id='SERVICE']/@caption"/> :
-								</td>
-								<td style="">
-									<select id="service" style="width:310px; padding:5px" onchange="javascript:selectServiceItem()">
-										<option value="">
-										</option>
-										<xsl:for-each select="glossaries/typeservices/entry/services/entry">
-											<option class="{../../name}" value="{name}" style="display:none">
-												<xsl:value-of select="viewtext"/>
-											</option>
-										</xsl:for-each>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td style=" text-align:right">
-									<xsl:value-of select="columns/column[@id='FUNCTION']/@caption"/> :
-								</td>
-								<td style="">
-									<select id="func" style="width:310px; padding:5px" onchange="javascript:selectFuncItem()">
-										<option value="">
-										</option>
-										<xsl:for-each select="glossaries/typeservices/entry/services/entry/methods/entry">
-											<option class="{../../name}" value="{value}"  style="display:none">
-												<xsl:value-of select="name"/>
-											</option>
-										</xsl:for-each>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td style="text-align:center; padding-top:15px; color:#555555; border-bottom:1px solid #efefef" colspan="2">
-									<xsl:value-of select="columns/column[@id='FILTER_TRAFIC']/@caption"/>
-								</td>
-							</tr>
-							<tr>
-								<td style="padding-top:10px; text-align:right">
-									<xsl:value-of select="columns/column[@id='RECORD_COUNT']/@caption"/> :
-								</td>
-								<td style="padding-top:10px;">
-									<xsl:value-of select="columns/column[@id='FOR']/@caption"/> <input type="text" id="totalsfrom" style="width:60px; padding:3px"></input> <xsl:value-of select="columns/column[@id='UP_TO']/@caption"/> <input type="text" id="totalsto" style="width:60px; padding:3px"></input>
-								</td>
-							</tr>
-							<tr>
-								<td style="text-align:center; padding-top:15px; color:#555555; border-bottom:1px solid #efefef" colspan="2">
-									<xsl:value-of select="columns/column[@id='FILTER_TIME_REQUEST']/@caption"/>
-								</td>
-							</tr>
-							 <tr>
-								<td style="padding-top:10px;text-align:right;">
-									<xsl:value-of select="columns/column[@id='TOTAL_TIME_REQUEST']/@caption"/> :
-								</td>
-								<td style="padding-top:10px;">
-									<xsl:value-of select="columns/column[@id='FOR']/@caption"/> <input type="text" id="difftimefrom" style="width:60px; padding:3px"></input> <xsl:value-of select="columns/column[@id='UP_TO']/@caption"/> <input type="text" id="difftimeto" style="width:60px; padding:3px"></input> сек.
-								</td>
-							</tr> 
-							<tr>
-								<td style="text-align:center; padding-top:15px; color:#555555; border-bottom:1px solid #efefef" colspan="2">
-									<xsl:value-of select="columns/column[@id='FILTER_DATE_REQUEST']/@caption"/>
-								</td>
-							</tr>
-							<tr>
-								<td style="padding-top:10px;text-align:right">
-									<xsl:value-of select="columns/column[@id='REQUEST_DATE']/@caption"/> :
-								</td>
-								<td style="padding-top:10px">
-									<xsl:value-of select="columns/column[@id='FROM']/@caption"/> <input type="text" id="datefrom" style="width:80px; padding:3px"></input> <xsl:value-of select="columns/column[@id='TO']/@caption"/> <input type="text" id="dateto" style="width:80px; padding:3px"></input> 
-								</td>
-							</tr>
-						</table>
-					</div>
-					<div style="width:100%; height:40px; border-top:1px solid #cdcdcd; text-align:right;" id="filter_button_panel">
-						<button title="ok" style="margin-right:5px; margin-top:7px">
-							<xsl:attribute name="onclick">javascript:OkFilterActivity();</xsl:attribute>
-							<font style="font-size:12px; vertical-align:top">ок</font>
-						</button>
-						<button title="oтмена" style="margin-right:15px; margin-top:7px">
-							<xsl:attribute name="onclick">javascript:CancelFilterActivity();</xsl:attribute>
-							<font style="font-size:12px; vertical-align:top"><xsl:value-of select="columns/column[@id='CANCEL']/@caption"/></font>
-						</button>
-						<script type="text/javascript">    
-					       		$(function() {
-									$( "#filter_button_panel button" ).button();
-			        			});
-			        			$(function() {
-									var dates = $( "#datefrom, #dateto" ).datepicker({
-									defaultDate: "+1w",
-									changeMonth: true,
-									numberOfMonths: 1,
-									showOn: "button",
-									buttonImage: '/SharedResources/img/iconset/calendar.png',
-									buttonImageOnly: true,
-									onSelect: function( selectedDate ) {
-										var option = this.id == "datefrom" ? "minDate" : "maxDate",
-										instance = $( this ).data( "datepicker" ),
-										date = $.datepicker.parseDate(
-										instance.settings.dateFormat ||
-										$.datepicker._defaults.dateFormat,
-										selectedDate, instance.settings );
-										dates.not( this ).datepicker( "option", option, date );
-										}
-									});
-								});
-    					</script>
+
 					</div>
 				</div>
 				<xsl:call-template name="flashentry"/>
@@ -246,9 +103,9 @@
 					
 					<span id="view" class="viewframe{outline/category[entry[@current=1]]/@id}">
 						<div id="viewcontent" style="margin-left:12px;">
-						<div id="viewcontent-header" style="height:100px;">
+							<div id="viewcontent-header" style="height:20px;">
 						
-					</div>
+						</div>
 					<div id="viewtablediv">
 						<div id="tablecontent">
 							<xsl:call-template name="viewinfo"/>
@@ -257,6 +114,7 @@
 								<script type="text/javascript">    
 						       		$(function() {
 										$(".button_panel button").button();
+										$(".viewinfo").remove();
 				        			});
 	    						</script>
 								<span style="float:left; margin-left:3px; margin-top:12px">
@@ -302,18 +160,6 @@
 							
 							<br/>
 							<div style="overflow:auto;">
-								<table style="width:100%;border-collapse:collapse; font-size:14px;  margin-right:20px">
-									<tr style="height:40px; background:#efefef; border:1px solid #ccc;">
-										<td style="text-align:center; font-weight:bold; width:20px">
-											<input type="checkbox" id="allchbox" onClick="checkAll(this);"/>	
-										</td>
-										<td style="text-align:center; font-weight:bold; width:160px ; padding:3px"><xsl:value-of select="columns/column[@id='DATE']/@caption"/></td>
-										<td style="text-align:center; font-weight:bold;  width:160px; padding:3px"><xsl:value-of select="columns/column[@id='SERVER_SPRING']/@caption"/></td>
-										<td style="text-align:center; font-weight:bold;  width:157px; padding:3px"><xsl:value-of select="columns/column[@id='USER']/@caption"/></td>
-										<td style="text-align:center; font-weight:bold;  width:180px; padding:3px"><xsl:value-of select="columns/column[@id='SERVICE']/@caption"/></td>
-										<td style="text-align:center; font-weight:bold; min-width:150px; padding:3px"><xsl:value-of select="columns/column[@id='METHOD']/@caption"/></td>
-									</tr>
-								</table>
 								<div class="activiti" style="position:absolute; top:170px; bottom:0px; overflow-y:scroll; width:100%">
 									<xsl:variable name ="i" select="count(/request/query/parameters/*[. ne ''])"/>
 								<xsl:variable name ="i" select="if(/request/query/parameters/datefrom != '' and /request/query/parameters/dateto != '') then $i - 1 else $i"/>
