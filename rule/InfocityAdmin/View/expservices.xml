@@ -134,7 +134,7 @@
 						<name>UDPServiceProxy</name>
 						<viewtext>Транспорт</viewtext>
 						<viewtextkaz>Транспорт</viewtextkaz>
-						<value>UDPServiceProxy</value>
+						<value>UDPService</value>
 						<methods>
 							<entry>
 								<name>getDataByFIO</name>
@@ -240,7 +240,51 @@
 						<name>BTIServiceProxy</name>
 						<viewtext>Недвижимость</viewtext>
 						<viewtextkaz>Недвижимость</viewtextkaz>
-						<value>BTIServiceProxy</value>
+						<value>BTIService</value>
+						<methods>
+							<entry>
+								<name>getDataByAddress</name>
+								<value>getDataByAddress</value>
+							</entry>
+							<entry>
+								<name>getDataByBuildingId</name>
+								<value>getDataByBuildingId</value>
+							</entry>
+							<entry>
+								<name>getDataByDoc</name>
+								<value>getDataByDoc</value>
+							</entry>
+							<entry>
+								<name>getDataByFIO</name>
+								<value>getDataByFIO</value>
+							</entry>
+							<entry>
+								<name>getDataByIIN</name>
+								<value>getDataByIIN</value>
+							</entry>
+							<entry>
+								<name>getDataByOrgName</name>
+								<value>getDataByOrgName</value>
+							</entry>
+							<entry>
+								<name>getDataByOwnerId</name>
+								<value>getDataByOwnerId</value>
+							</entry>
+						</methods>
+					</entry>
+				</services>
+			</entry>
+			<entry mode="on">
+				<name>GKZ</name>
+				<namerus>Алматы Жер</namerus>
+				<namekaz>Алматы Жер</namekaz>
+				<value>GKZ</value>
+				<services>
+					<entry mode="on">
+						<name>GKZ</name>
+						<viewtext>Алматы Жер </viewtext>
+						<viewtextkaz>Алматы Жер</viewtextkaz>
+						<value>GKZ</value>
 						<methods>
 							<entry>
 								<name>getDataByAddress</name>
