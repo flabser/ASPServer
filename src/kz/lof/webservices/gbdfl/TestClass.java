@@ -23,6 +23,8 @@ public class TestClass {
 
         //наверное что-то стандартное
         SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "1", "");
+
+        //собственно сам запрос
         FullResponse_[] response = service.getPersonByFIO(new FIORequest_(fio, info));
 
         Assert.assertTrue(response != null && response.length > 0);
