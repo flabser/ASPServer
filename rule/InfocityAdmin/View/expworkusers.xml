@@ -12,7 +12,7 @@
 		<caption id="category" source="KEYWORD">Генератор отчетов</caption>
 	</column>
 	<column>
-		<caption id="view" source="KEYWORD">Журнал выгрузок</caption>
+		<caption id="view" source="KEYWORD">Работа пользователей</caption>
 	</column>
 	<column>
 		<caption id="page" source="KEYWORD">Страница</caption>
