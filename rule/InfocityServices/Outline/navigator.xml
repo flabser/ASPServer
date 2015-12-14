@@ -62,6 +62,32 @@
 				</entry>
 			</entry>			
 		</entry>
+		<entry id="gbdflcenter" mode="on">
+			<caption source="KEYWORD">ГБД ФЛ</caption>
+			<hint source="KEYWORD">ГБД ФЛ</hint>
+			<granted source="script" mode="on"><![CDATA[
+				String[] getStringValue(_Session session){
+					def user = session.getStructure().getUser(session.getCurrentUser());
+					return getAsArray(user.hasRole("GBD -> MainOutlineEntry") ? user.getUserID() : "");
+				}
+				]]>
+			</granted>
+			<entry mode="on" hint="Недвижимость" id="realestate">
+				<caption source="KEYWORD">ГБД ФЛ</caption>
+				<hint source="KEYWORD">ГБД ФЛ</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=gbd-fio" hint="По ФИО" id="gbd-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GBDService -> getPersonByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+			</entry>
+		</entry>
 		<entry id="ump" mode="on">
 			<caption source="KEYWORD">УМП</caption>
 			<hint source="KEYWORD">УМП</hint>
@@ -505,6 +531,42 @@
 					<hint source="KEYWORD">По ИИН</hint>
 				</entry>
 			</entry>			
+		</entry>
+		<entry id="departmenttruda" mode="off">
+			<caption source="KEYWORD">Департамент труда и соц</caption>
+			<hint source="KEYWORD">Департамент труда и соц</hint>
+			<entry mode="on"  hint="Лицензии на привлечение ин. граждан" id="licensesforeigncitizens">
+				<caption source="KEYWORD">Лицензии на привлечение ин. граждан</caption>
+				<hint source="KEYWORD">Лицензии на привлечение ин. граждан</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-fio" hint="По ФИО" id="licensesforeigncitizens-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-id" hint="По уд. личности" id="licensesforeigncitizens-id">
+					<caption source="KEYWORD">По уд. личности</caption>
+					<hint source="KEYWORD">По уд. личности</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=licensesforeigncitizens-organization" hint="По наименованию организации" id="licensesforeigncitizens-organization">
+					<caption source="KEYWORD">По наименованию организации</caption>
+					<hint source="KEYWORD">По наименованию организации</hint>
+				</entry>
+			</entry>
+			<entry mode="on" hint="Пособия" id="grant">
+				<caption source="KEYWORD">Пособия</caption>
+				<hint source="KEYWORD">Пособия</hint>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-fio" hint="По ФИО" id="grant-fio">
+					<caption source="KEYWORD">По ФИО</caption>
+					<hint source="KEYWORD">По ФИО</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-rnn" hint="По РНН" id="grant-rnn">
+					<caption source="KEYWORD">По РНН</caption>
+					<hint source="KEYWORD">По РНН</hint>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=grant-iin" hint="По ИИН" id="grant-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+				</entry>
+			</entry>
 		</entry>
 		<entry id="glossary" mode="on">
 			<caption source="KEYWORD">Справочники</caption>
