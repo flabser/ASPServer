@@ -2,7 +2,7 @@
 <rule type="view" id="expworkusers" history="on">
 	<description>Экспорт Обращения к серверам-источникам</description>
 	<outline>navigator</outline>
-	<query></query>		
+	<query></query>
 	<xsltfile>views\expworkusers.xsl</xsltfile>
 	<title source="KEYWORD">Обращения к серверам-источникам</title>
 	<column>
