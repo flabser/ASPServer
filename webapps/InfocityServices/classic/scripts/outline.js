@@ -1999,12 +1999,12 @@ function GBD_getDataByFIO(isCitizen,page){
 								sumpage= Math.ceil($(xml).find("root").attr("count") / pagesize);
 								if (sumpage != 1){
 									if(page > 1){
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+",1)'><<</a>");
+										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+",1)'><<</a>");
 									}
 									if (sumpage < 11){
 										for (var k=1 ; k < sumpage+1; k++){
 											if(k == page){
-												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}else{
 												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}
@@ -2013,32 +2013,32 @@ function GBD_getDataByFIO(isCitizen,page){
 									if (sumpage > 10 && page == 1){
 										for (var k=1 ; k < 11; k++){
 											if(k == page){
-												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}else{
-												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}
 										}
 									}
 									if (sumpage > 10 && page != 1 && sumpage-page > 9){
 										for (var k=page ; k < page+10; k++){
 											if(k == page){
-												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}else{
-												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}
 										}
 									}
 									if (sumpage > 10 && page != 1 && sumpage-page <= 9){
 										for (var k=sumpage-10 ; k < sumpage+1; k++){
 											if(k == page){
-												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}else{
-												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}
 										}
 									}
 									if(page < sumpage){
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+sumpage+")'>>></a>");
+										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+sumpage+")'>>></a>");
 									}
 								}
 								if($(xml).find("root").attr("countelements") < 21){
