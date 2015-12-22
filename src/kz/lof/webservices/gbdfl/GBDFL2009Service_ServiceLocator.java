@@ -7,7 +7,13 @@
 
 package kz.lof.webservices.gbdfl;
 
+import kz.flabs.users.User;
+import org.apache.axis.client.Stub;
+
 public class GBDFL2009Service_ServiceLocator extends org.apache.axis.client.Service implements GBDFL2009Service_Service {
+
+
+    private User user = null;
 
     public GBDFL2009Service_ServiceLocator() {
     }
@@ -29,7 +35,7 @@ public class GBDFL2009Service_ServiceLocator extends org.apache.axis.client.Serv
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String GBDFL2009ServiceBindingWSDDServiceName = "GBDFL2009ServiceBinding";
+    private java.lang.String GBDFL2009ServiceBindingWSDDServiceName = "GBDService"; //"GBDFL2009ServiceBinding";///////
 
     public java.lang.String getGBDFL2009ServiceBindingWSDDServiceName() {
         return GBDFL2009ServiceBindingWSDDServiceName;
@@ -37,6 +43,14 @@ public class GBDFL2009Service_ServiceLocator extends org.apache.axis.client.Serv
 
     public void setGBDFL2009ServiceBindingWSDDServiceName(java.lang.String name) {
         GBDFL2009ServiceBindingWSDDServiceName = name;
+    }
+
+    public GBDFL2009Service_PortType getGBDFL2009ServiceBinding(User user) throws javax.xml.rpc.ServiceException {
+
+        GBDFL2009Service_PortType result = getGBDFL2009ServiceBinding();
+
+        ((Stub)result)._setProperty("kz.lof.webservices.current_user", user);
+        return result;
     }
 
     public GBDFL2009Service_PortType getGBDFL2009ServiceBinding() throws javax.xml.rpc.ServiceException {
@@ -47,13 +61,17 @@ public class GBDFL2009Service_ServiceLocator extends org.apache.axis.client.Serv
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getGBDFL2009ServiceBinding(endpoint);
+        GBDFL2009Service_PortType result = getGBDFL2009ServiceBinding(endpoint);
+        return result;
     }
 
     public GBDFL2009Service_PortType getGBDFL2009ServiceBinding(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
             GBDFL2009ServiceHttpBindingStub _stub = new GBDFL2009ServiceHttpBindingStub(portAddress, this);
             _stub.setPortName(getGBDFL2009ServiceBindingWSDDServiceName());
+
+
+
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {

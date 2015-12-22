@@ -65,11 +65,13 @@ public class GBDFL2009ServiceHttpBindingStub extends org.apache.axis.client.Stub
 
     public GBDFL2009ServiceHttpBindingStub() throws org.apache.axis.AxisFault {
          this(null);
+///////////////////
     }
 
     public GBDFL2009ServiceHttpBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
          this(service);
          super.cachedEndpoint = endpointURL;
+
     }
 
     public GBDFL2009ServiceHttpBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {

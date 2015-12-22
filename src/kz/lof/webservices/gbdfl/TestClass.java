@@ -2,7 +2,7 @@ package kz.lof.webservices.gbdfl;
 
 
 import org.junit.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import javax.xml.rpc.ServiceException;
 import java.rmi.RemoteException;
@@ -22,7 +22,7 @@ public class TestClass {
         FIO_ fio = new FIO_("иван", "иванович", "иванов");
 
         //наверное что-то стандартное
-        SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "1", "");
+        SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "25", "1", "1");
 
         //собственно сам запрос
         FullResponse_[] response = service.getPersonByFIO(new FIORequest_(fio, info));

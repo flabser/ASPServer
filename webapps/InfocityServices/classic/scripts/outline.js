@@ -1875,7 +1875,7 @@ function GBD_getDataByFIO(isCitizen,page){
 				$.ajax({
 					type: "POST",
 					url: "Provider",
-					data: "type=page&id=ump_gethumanbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
+					data: "type=page&id=gdb_gethumanbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
 					success: function(xml){
 						$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 						$("#printbutton").css("visibility","visible");
@@ -1988,7 +1988,7 @@ function GBD_getDataByFIO(isCitizen,page){
 				$.ajax({
 					type: "POST",
 					url: "Provider",
-					data:"type=page&id=ump_getforeignerbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
+					data:"type=page&id=gdb_getforeignerbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
 					success: function(xml){
 						$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 						$("#printbutton").css("visibility","visible");
@@ -2006,7 +2006,7 @@ function GBD_getDataByFIO(isCitizen,page){
 											if(k == page){
 												$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}else{
-												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:UMP_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
+												$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GDB_getDataByFIO("+isCitizen+","+k+")'>"+k+"</a>");
 											}
 										}
 									}
@@ -2050,8 +2050,8 @@ function GBD_getDataByFIO(isCitizen,page){
 									k=i+1;
 									getfulldataccess = $(xml).find("root").find("getfulldataccess").text();
 									if(getfulldataccess == "true"){
-										firstcolumn = "<a onclick='savereqparam()' href='Provider?type=page&id=ump_getforeignerbyid&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
-										secondcolumn ="<a onclick='savereqparam()' href='Provider?type=page&id=ump_getforeignerbyid&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>";
+										firstcolumn = "<a onclick='savereqparam()' href='Provider?type=page&id=gdb_getforeignerbyid&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
+										secondcolumn ="<a onclick='savereqparam()' href='Provider?type=page&id=gdb_getforeignerbyid&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>";
 									}else{
 										firstcolumn ="<font>"+ k +"</font>";
 										secondcolumn = "<font>"+ $(xml).find("fio"+k).text() +"</font>";

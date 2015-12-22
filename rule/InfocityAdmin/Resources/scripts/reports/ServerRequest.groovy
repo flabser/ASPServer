@@ -89,15 +89,18 @@ class ServerRequest extends _DoScript {
         IDBConnectionPool dbPool = ((Database)session.getCurrentDatabase().baseObject).dbPool
         Connection conn = dbPool.getConnection();
         String query = "" +
-                "select org.viewtext as org_name, emp.fullname as emp_name, method_name, count(*) \n" +
-                "from activity \n" +
+                "select org.viewtext as org_name, emp.fullname as emp_name, method_name, count\n" +
+                "from (\n" +
+                "   select activity.userid, activity.method_name, count(*)\n" +
+                "   from activity \n" +
+                "   where service_name = ? and event_time >= ? and event_time <= ? \n" +
+                "   group by activity.userid, activity.method_name \n" +
+                ") as data\n" +
                 "inner join employers as emp\n" +
-                "   on activity.userid = emp.userid\n" +
+                "   on data.userid = emp.userid\n" +
                 "inner join organizations as org\n" +
                 "   on emp.orgid = org.orgid\n" +
-                "where service_name = ? and event_time between ? and ? \n" +
-                "group by org_name, emp_name, method_name\n" +
-                "order by emp_name, method_name asc"
+                "order by emp_name, method_name asc;"
 
         PreparedStatement ps = null;
         ResultSet resultSet = null;

@@ -1,15 +1,11 @@
 package page.gbd
-
 import kz.lof.webservices.clients.ump.HumansSearchServiceProxy
-import kz.lof.webservices.gbdfl.FIORequest_
-import kz.lof.webservices.gbdfl.FIO_
-import kz.lof.webservices.gbdfl.FullResponse_
-import kz.lof.webservices.gbdfl.GBDFL2009Service_PortType
-import kz.lof.webservices.gbdfl.GBDFL2009Service_ServiceLocator
-import kz.lof.webservices.gbdfl.SystemInfo_
-import kz.nextbase.script.*
+import kz.lof.webservices.gbdfl.*
+import kz.nextbase.script._Session
+import kz.nextbase.script._Tag
+import kz.nextbase.script._WebFormData
+import kz.nextbase.script._XMLDocument
 import kz.nextbase.script.events._DoScript
-import org.junit.Assert
 
 class GetHumanByFIO extends _DoScript {
 	
@@ -25,16 +21,16 @@ class GetHumanByFIO extends _DoScript {
 			String pagesize = formData.get("pagesize")[0]
 
 			GBDFL2009Service_ServiceLocator l = new GBDFL2009Service_ServiceLocator();
-			GBDFL2009Service_PortType service = l.getGBDFL2009ServiceBinding();
+			GBDFL2009Service_PortType service = l.getGBDFL2009ServiceBinding(session.user);
 
 			FIO_ fio = new FIO_(firstname, middlename, lastname);
 
-			SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "1", "");
+			SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "25", "");
 
 			//собственно сам запрос
 			FullResponse_[] response = service.getPersonByFIO(new FIORequest_(fio, info));
 
-			Assert.assertTrue(response != null && response.length > 0);
+//			Assert.assertTrue(response != null && response.length > 0);
 			def tag = new _Tag("root","")
 			def i = 0;
 			for (FullResponse_ fullResponse_ : response) {
