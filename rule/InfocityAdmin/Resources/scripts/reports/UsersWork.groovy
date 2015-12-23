@@ -13,6 +13,56 @@ import java.sql.*
 
 class UsersWork extends _DoScript {
 
+    private static HashMap<String, HashMap<String, String>> availableMethods = new HashMap<>();
+    static{
+        HashMap<String, String> bti = new HashMap<>();
+        bti.put("serverName", "Центр недвижимости");
+        bti.put("getDataByFIO", "Поиск по ФИО");
+        bti.put("getDataByDoc", "Поиск по документу на владение");
+        bti.put("getDataByIIN", "Поиск по ИИН");
+        bti.put("getDataByAddress", "Поиск по адресу");
+        availableMethods.put("BTIService", bti);
+
+        HashMap<String, String> citizen = new HashMap<>();
+        citizen.put("serverName", "Граждане РК");
+        citizen.put("getHumanByFIO", "Поиск по ФИО");
+        citizen.put("getHumanByDoc", "Поиск по номеру удостоверения");
+        citizen.put("getCitizenByIIN", "Поиск по ИИН");
+        citizen.put("getHumanByAddr", "Поиск по адресу");
+        availableMethods.put("HumansSearchService", citizen);
+
+        HashMap<String, String> foreigner = new HashMap<>();
+        foreigner.put("serverName", "Иностранцы");
+        foreigner.put("getPersonByFIO", "Поиск по ФИО");
+        foreigner.put("getPersonByDoc", "Поиск паспорту");
+        availableMethods.put("ForeignersSearchService", foreigner);
+
+        HashMap<String, String> zher = new HashMap<>();
+        zher.put("serverName", "Алматы Жер");
+        zher.put("getDataByFIO", "Поиск по ФИО");
+        zher.put("getDataByCompany", "Поиск по наименованию организации");
+        zher.put("getDataByCadastrNumber", "Поиск по кадастровому номеру");
+        zher.put("getDataByDocument", "Поиск по документу на участок");
+        availableMethods.put("GKZService", zher);
+
+        HashMap<String, String> nk = new HashMap<>();
+        nk.put("serverName", "Налоговый комитет");
+        nk.put("getDataByFIO", "Поиск по ФИО");
+        nk.put("getDataByOrgName", "Поиск по наименованию организации");
+        nk.put("getDataByIIN", "Поиск по ИИН");
+        nk.put("getDataByRNN", "Поиск по РНН");
+        availableMethods.put("TaxPayService", nk);
+
+        HashMap<String, String> udp = new HashMap<>();
+        udp.put("serverName", "Управление дорожной полиций");
+        udp.put("getDataByOrgName", "Поиск по наименованию организации");
+        udp.put("getDataByFIO", "Поиск по ФИО");
+        udp.put("getDataByIIN", "Поиск по ИИН");
+        udp.put("getDataByGRNZ", "Поиск по гос. номеру");
+        udp.put("getDataBySRTS", "Поиск по тех. паспорту");
+        availableMethods.put("UDPService", udp);
+    }
+
     /**
      * параметр _WebFormData должен содержать поле <b>userid</b>,
      * <b>fromdate</b> и <b>todate</b>,
@@ -50,18 +100,31 @@ class UsersWork extends _DoScript {
         font.setBold(true);
         style.setFont(font);
 
-        Cell serverCell = header.createCell(0);
+        Cell nameCell = header.createCell(0);
+        nameCell.setCellValue("ФИО");
+        nameCell.setCellStyle(style);
+        Cell orgCell = header.createCell(1);
+        orgCell.setCellValue("Организация");
+        orgCell.setCellStyle(style);
+        Cell serverCell = header.createCell(2);
         serverCell.setCellValue("Сервер-источник");
         serverCell.setCellStyle(style);
-        Cell serviceCell = header.createCell(1);
+        Cell serviceCell = header.createCell(3);
         serviceCell.setCellValue("Сервис");
         serviceCell.setCellStyle(style);
-        Cell amountCell = header.createCell(2);
+        Cell amountCell = header.createCell(4);
         amountCell.setCellValue("Кол-во обращений");
         amountCell.setCellStyle(style);
 
         IDBConnectionPool dbPool = ((Database)session.getCurrentDatabase().baseObject).dbPool
         Connection conn = dbPool.getConnection();
+
+        String getUserData = "select emp.fullname as emp_name, org.viewtext as org_name " +
+                "from employers as emp " +
+                "inner join organizations as org " +
+                "    on emp.orgid = org.orgid " +
+                "where emp.userid = '${userId}'";
+
         String query = "" +
                 "select service_name, method_name, count(*) " +
                 "from activity where userid = ? and event_time between ? and ? " +
@@ -69,11 +132,21 @@ class UsersWork extends _DoScript {
                 "order by service_name, method_name asc"
 
         PreparedStatement ps = null;
+        Statement st = null;
         ResultSet resultSet = null;
         OutputStream out = null;
         int i = 0;
-        String fileUrl = ""
         try {
+            st = conn.createStatement();
+            resultSet = st.executeQuery(getUserData);
+            if(!resultSet.next()) {
+                log("user '${userId}' not found!")
+                return;
+            }
+
+            String userName = resultSet.getString("emp_name");
+            String orgName = resultSet.getString("org_name");
+
             ps = conn.prepareStatement(query);
             ps.setString(1, userId);
             ps.setDate(2, new Date(fromDate.getTime()));
@@ -81,16 +154,26 @@ class UsersWork extends _DoScript {
             resultSet = ps.executeQuery()
 
             while (resultSet.next()) {
+
+                String methodName;
+                String serviceName = resultSet.getString("service_name");
+                if(availableMethods.get(serviceName) == null || (methodName = availableMethods.get(serviceName).get(resultSet.getString("method_name"))) == null)
+                    continue;
+
                 Row row = sheet.createRow(i++ + 1);
-                row.createCell(0).setCellValue(resultSet.getString("service_name"));
-                row.createCell(1).setCellValue(resultSet.getString("method_name"));
-                row.createCell(2).setCellValue(resultSet.getString("count"));
+                row.createCell(0).setCellValue(userName);
+                row.createCell(1).setCellValue(orgName);
+                row.createCell(2).setCellValue(availableMethods.get(serviceName).get("serverName"));
+                row.createCell(3).setCellValue(methodName);
+                row.createCell(4).setCellValue(resultSet.getString("count"));
             }
 
 
             sheet.autoSizeColumn(0)
             sheet.autoSizeColumn(1)
             sheet.autoSizeColumn(2)
+            sheet.autoSizeColumn(3)
+            sheet.autoSizeColumn(4)
             String sep = File.separator;
 
             File dir = new File(new File("").absolutePath + "${sep}webapps${sep}InfocityServices${sep}reports${sep}${ses.getCurrentUserID()}");
@@ -110,6 +193,9 @@ class UsersWork extends _DoScript {
             }
             if(ps != null){
                 try{ps.close();} catch (SQLException ignored){}
+            }
+            if(st != null){
+                try{st.close();} catch (SQLException ignored){}
             }
             if (out != null) {
                 try { out.close(); } catch (IOException ignored) {}

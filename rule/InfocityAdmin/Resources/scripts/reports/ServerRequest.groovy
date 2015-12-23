@@ -17,6 +17,51 @@ import java.sql.SQLException
 
 class ServerRequest extends _DoScript {
 
+    private static HashMap<String, HashMap<String, String>> availableMethods = new HashMap<>();
+    static{
+        HashMap<String, String> bti = new HashMap<>();
+        bti.put("getDataByFIO", "Поиск по ФИО");
+        bti.put("getDataByDoc", "Поиск по документу на владение");
+        bti.put("getDataByIIN", "Поиск по ИИН");
+        bti.put("getDataByAddress", "Поиск по адресу");
+        availableMethods.put("Центр недвижимости", bti);
+
+        HashMap<String, String> citizen = new HashMap<>();
+        citizen.put("getHumanByFIO", "Поиск по ФИО");
+        citizen.put("getHumanByDoc", "Поиск по номеру удостоверения");
+        citizen.put("getCitizenByIIN", "Поиск по ИИН");
+        citizen.put("getHumanByAddr", "Поиск по адресу");
+        availableMethods.put("Граждане РК", citizen);
+
+        HashMap<String, String> foreigner = new HashMap<>();
+        foreigner.put("getPersonByFIO", "Поиск по ФИО");
+        foreigner.put("getPersonByDoc", "Поиск паспорту");
+        availableMethods.put("Иностранцы", foreigner);
+
+        HashMap<String, String> zher = new HashMap<>();
+        zher.put("getDataByFIO", "Поиск по ФИО");
+        zher.put("getDataByCompany", "Поиск по наименованию организации");
+        zher.put("getDataByCadastrNumber", "Поиск по кадастровому номеру");
+        zher.put("getDataByDocument", "Поиск по документу на участок");
+        availableMethods.put("Алматы Жер", zher);
+
+        HashMap<String, String> nk = new HashMap<>();
+        nk.put("getDataByFIO", "Поиск по ФИО");
+        nk.put("getDataByOrgName", "Поиск по наименованию организации");
+        nk.put("getDataByIIN", "Поиск по ИИН");
+        nk.put("getDataByRNN", "Поиск по РНН");
+        availableMethods.put("Налоговый комитет", nk);
+
+        HashMap<String, String> udp = new HashMap<>();
+        udp.put("getDataByOrgName", "Поиск по наименованию организации");
+        udp.put("getDataByFIO", "Поиск по ФИО");
+        udp.put("getDataByIIN", "Поиск по ИИН");
+        udp.put("getDataByGRNZ", "Поиск по гос. номеру");
+        udp.put("getDataBySRTS", "Поиск по тех. паспорту");
+        availableMethods.put("Управление дорожной полиций", udp);
+    }
+
+    private String servName = "";
         /**
          * параметр _WebFormData должен содержать поле <b>server</b>, равный одному из значении
          *"HumansSearchService",
@@ -32,17 +77,16 @@ class ServerRequest extends _DoScript {
     @Override
     void doProcess(_Session session, _WebFormData formData, String lang) {
 
-
         String server = formData.getValueSilently("server")
         String fullServerName;
         switch(server) {
-            case "HumansSearchService" : fullServerName = "миграционной полиции"; break;
-            case "ForeignersSearchService" : fullServerName = "миграционной полиции"; break;
-            case "TaxIndService" : fullServerName = "налогового комитета"; break;
-            case "TaxPayService" : fullServerName = "налогового комитета"; break;
-            case "UDPService" : fullServerName = "дорожной полиции"; break;
-            case "BTIService" : fullServerName = "БТИ"; break;
-            case "GKZService" : fullServerName = "АлматыЖер"; break;
+            case "HumansSearchService" : servName = "Граждане РК"; fullServerName = "миграционной полиции"; break;
+            case "ForeignersSearchService" : servName = "Иностранцы"; fullServerName = "миграционной полиции"; break;
+            case "TaxIndService" : servName = "Налоговый комитет"; fullServerName = "налогового комитета"; break;
+            case "TaxPayService" : servName = "Налоговый комитет"; fullServerName = "налогового комитета"; break;
+            case "UDPServiceProxy" : servName = "Управление дорожной полиций"; fullServerName = "дорожной полиции"; break;
+            case "BTIService" : servName = "Центр недвижимости"; fullServerName = "центра недвижимости"; break;
+            case "GKZService" : servName = "Алматы Жер"; fullServerName = "АлматыЖер"; break;
             default: log("Unknown server '${server}'"); return;
         }
 
@@ -73,16 +117,19 @@ class ServerRequest extends _DoScript {
         font.setBold(true);
         style.setFont(font);
 
-        Cell orgCell = header.createCell(0);
+        Cell serverCell = header.createCell(0);
+        serverCell.setCellValue("Сервер-источник");
+        serverCell.setCellStyle(style);
+        Cell orgCell = header.createCell(1);
         orgCell.setCellValue("Организация");
         orgCell.setCellStyle(style);
-        Cell empCell = header.createCell(1);
+        Cell empCell = header.createCell(2);
         empCell.setCellValue("ФИО");
         empCell.setCellStyle(style);
-        Cell serviceCell = header.createCell(2);
+        Cell serviceCell = header.createCell(3);
         serviceCell.setCellValue("Сервис");
         serviceCell.setCellStyle(style);
-        Cell amountCell = header.createCell(3);
+        Cell amountCell = header.createCell(4);
         amountCell.setCellValue("Кол-во обращений");
         amountCell.setCellStyle(style);
 
@@ -114,18 +161,23 @@ class ServerRequest extends _DoScript {
             resultSet = ps.executeQuery()
 
             while (resultSet.next()) {
-                Row row = sheet.createRow(i++ + 1);
-                row.createCell(0).setCellValue(resultSet.getString("org_name"));
-                row.createCell(1).setCellValue(resultSet.getString("emp_name"));
-                row.createCell(2).setCellValue(resultSet.getString("method_name"));
-                row.createCell(3).setCellValue(resultSet.getString("count"));
-            }
+                String methodName;
+                if((methodName = availableMethods.get(servName).get(resultSet.getString("method_name"))) == null)
+                    continue;
 
+                Row row = sheet.createRow(i++ + 1);
+                row.createCell(0).setCellValue(servName);
+                row.createCell(1).setCellValue(resultSet.getString("org_name"));
+                row.createCell(2).setCellValue(resultSet.getString("emp_name"));
+                row.createCell(3).setCellValue(methodName);
+                row.createCell(4).setCellValue(resultSet.getString("count"));
+            }
 
             sheet.autoSizeColumn(0)
             sheet.autoSizeColumn(1)
             sheet.autoSizeColumn(2)
             sheet.autoSizeColumn(3)
+            sheet.autoSizeColumn(4)
 
             String sep = File.separator;
             File dir = new File(new File("").absolutePath + "${sep}webapps${sep}InfocityServices${sep}reports${sep}${ses.getCurrentUserID()}");
