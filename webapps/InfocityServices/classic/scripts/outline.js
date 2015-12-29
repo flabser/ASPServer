@@ -2100,6 +2100,89 @@ function GBD_getDataByFIO(isCitizen,page){
 	}
 }
 
+
+function GBD_getDataByIIN(){
+	if($("input[name=iin]").val().length != 12){
+		infoDialog("Поле 'ИИН' должно содержать 12 символов");
+	}else{
+		if (/[a-zA-Zа-яА-Я]/.test($("input[name=iin]").val()) ) {
+			infoDialog("Поле 'ИИН' может содержать только чиcловые значения");
+		}else{
+			$.cookie("lastreqview", "iin",{ path:"/", expires:30});
+			$.cookie("iin", $.trim($("input[name=iin]").val()),{ path:"/", expires:30});
+			$("#resultDataTable tr").remove();
+			$("#printtable, #page-nav, #counter, #reqtime").empty();
+			loadingOutline();
+			var iin = $.trim($("[name=iin]").serialize());
+			$.ajax({
+				type: "POST",
+				url: 'Provider',
+				data: "type=page&id=gbd_gethumanbyiin&"+iin+"&onlyxml",
+				success: function(xml){
+					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
+					$("#printbutton").css("visibility","visible");
+					if ($(xml).find("response").attr("status") !='error'){
+						if ($(xml).find("root").attr("count") != '0'){
+							if($(xml).find("root").attr("count") < 21){
+								count_elements= $(xml).find("root").attr("count")
+							}else{
+								count_elements= $(xml).find("root").attr("count") - ((page-1) * 20) ;
+							}
+							for (var i=0 ; i < count_elements && i < 20; i++){
+								k=i+1;
+								getfulldataccess = $(xml).find("root").find("getfulldataccess").text();
+								if(getfulldataccess == "true"){
+									firstcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
+									secondcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>";
+								}else{
+									firstcolumn = "<font>"+ k +"</font>";
+									secondcolumn = "<font>"+ $(xml).find("fio"+k).text() +"</font>";
+								}
+								$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center; width:"+ $("#1td").width()+"px'>" +
+									firstcolumn +
+									"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#2td").width()+"px'>"+
+									secondcolumn +
+									"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#3td").width()+"px'>"+$(xml).find("iin"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#4td").width()+"px'>"+$(xml).find("birthdate"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#5td").width()+"px'>"+$(xml).find("gender"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#6td").width()+"px'>"+$(xml).find("nationality"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("numberid"+k).text() +"</td>" +
+									"</tr>");
+							}
+						}else{
+							$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'> По данному запросу ничего не найдено</td></tr>");
+							$("#resultdiv").css("top",$("#fieldsdiv").height());
+						}
+						endLoadingOutlineNotRefresher();
+					}else{
+						if($(xml).find("error:contains('Connection refused: connect')").length !=0){
+							infoDialog("Отсутствует соединение с сервером")
+						}
+						if($(xml).find("error:contains('Connection timed out: connect')").length !=0){
+							infoDialog("Превышен интервал ожидания")
+						}
+						$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'>Произошла ошибка при поиске</td></tr>");
+						$("#resultdiv").css("top",$("#fieldsdiv").height());
+						endLoadingOutlineNotRefresher();
+					}
+				},
+				complete: function(){
+					$("#printtable").empty();
+					$("#resultHeaderDataTable tr").clone().appendTo("#printtable");
+					$("#resultDataTable tr").clone().appendTo("#printtable");
+				},
+				error: function(){
+					$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'> По данному запросу ничего не найдено</td></tr>");
+					$("#resultdiv").css("top",$("#fieldsdiv").height());
+				}
+			});
+		}
+
+	}
+}
+
 function UMP_getDataByFIO(isCitizen,page){
 	if($("[name=lastname]").val().length == 0 || $("[name=firstname]").val().length == 0){
 		infoDialog("Поля 'Фамилия' и 'Имя' обязательны к заполнению");
