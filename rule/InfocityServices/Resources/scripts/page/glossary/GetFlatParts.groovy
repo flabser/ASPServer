@@ -17,7 +17,7 @@ class GetFlatParts extends _DoScript {
 			String streetid = formData.get("streetid")[0];
 			String housenumber = formData.get("house")[0];
 			String flatnumber = formData.get("flat")[0];
-			String flatpart = formData.get("flatnumber")[0];
+			//String flatpart = formData.get("flatnumber")[0];
 			def tag = new _Tag("root","")
 			def result = proxy.getFlatParts(streetid.toInteger(), housenumber, flatnumber)
 			def flats =  new _Tag("flats","");
