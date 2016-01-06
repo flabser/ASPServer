@@ -72,7 +72,7 @@
 				}
 				]]>
 			</granted>
-			<entry mode="on" hint="Недвижимость" id="realestate">
+			<entry mode="on" hint="ГБД ФЛ" id="gbdfl">
 				<caption source="KEYWORD">ГБД ФЛ</caption>
 				<hint source="KEYWORD">ГБД ФЛ</hint>
 				<entry mode="on" type="link" url="Provider?type=view&amp;id=gbd-fio" hint="По ФИО" id="gbd-fio">
@@ -82,6 +82,17 @@
 						String[] getStringValue(_Session session){
 							def user = session.getStructure().getUser(session.getCurrentUser());
 							return getAsArray(user.hasRole("GBDService -> getPersonByFIO") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=gbd-iin" hint="По ИИН" id="gbd-iin">
+					<caption source="KEYWORD">По ИИН</caption>
+					<hint source="KEYWORD">По ИИН</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GBDService -> getPersonByIIN") ? user.getUserID() : "");
 						}
 						]]>
 					</granted>
