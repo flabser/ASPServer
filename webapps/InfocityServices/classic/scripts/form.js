@@ -157,6 +157,7 @@ function SuggestionHouse() {
 							source: availableTags,
 							select: function(event, ui) { 
 								$("#house").val(ui.item.id);
+								SuggestionFlatParts()
 							}
 						});
 						$("#house").autocomplete("search" , $("#house").val());
@@ -193,6 +194,7 @@ function SuggestionFlat() {
 							source: availableTags,
 							select: function(event, ui) { 
 								$("#flat").val(ui.item.id);
+								SuggestionFlatParts()
 							}
 						});
 						$("#flat").autocomplete("search" , $("#flat").val());
@@ -204,6 +206,36 @@ function SuggestionFlat() {
 			}
 		}
 	});
+}
+
+function SuggestionFlatParts() {
+	$("#flatnumber").empty();
+	$("#flatnumber").attr("disabled","disabled");
+	var availableTags = [];
+	availableTags.length = 0;
+	if ($("#streetid").val().length != 0){
+		//$("#flat").addClass("ui-autocomplete-loading");
+		$("#tiptip_holder").css("display","none");
+		$.ajax({
+			type: "POST",
+			url: 'Provider',
+			data: 'type=page&id=ump_getflatparts&'+$.trim($("input[name=streetid]").serialize())+"&"+$.trim($("input[name=house]").serialize())+"&"+$.trim($("input[name=flat]").serialize())+"&onlyxml",
+			datatype:'xml',
+			success: function(data) {
+				$(data).find("entry").each(function(index, element){
+					var option = "<option value='"+$(element).find("number").text()+"'>"+$(element).find("number").text()+"</option>";
+					$("#flatnumber").append(option);
+					$("#flatnumber").removeAttr("disabled");
+					//availableTags.push({label:$(element).find("number").text(), value:$(element).find("number").text(),id:$(element).find("number").text()});
+				});
+			},
+			complete:function() {
+
+			}
+		});
+	}else{
+		$("#tiptip_holder").css("display","block");
+	}
 }
 
 function setValHiddenFields(el){

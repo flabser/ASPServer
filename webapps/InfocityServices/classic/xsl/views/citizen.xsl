@@ -242,7 +242,10 @@
 												<xsl:value-of select="columns/column[@id='FLATNUMBER']/@caption"/> :
 											</td>
 											<td width="300px">
-												<input type="text" id="flatnumber" style="width:300px; padding:2px;" name="flatNumber" class="inputrequest" autocomplete="off"/>
+												<select id="flatnumber" style="width:300px; padding:2px;" name="flatNumber" class="inputrequest" autocomplete="off" disabled="disabled">
+
+												</select>
+												<!--<input type="text" id="flatnumber" style="width:300px; padding:2px;" name="flatNumber" class="inputrequest" autocomplete="off"/>-->
 											</td>
 										</tr>
 										<tr>
