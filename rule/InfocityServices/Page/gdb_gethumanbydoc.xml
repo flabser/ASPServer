@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rule type="page" id="gbd_gethumanbydoc" mode="on">
+	<description/>
+	<!-- 	<caching>CACHING_IN_USER_SESSION_SCOPE</caching> -->
+	<caching>NO_CACHING</caching>
+	<xsltfile>views/citizen.xsl</xsltfile>
+	<element mode="ON" type="SCRIPT">
+		<name>script_result</name>
+		<events>
+			<doscript source="file">page.gbd.GetHumanByDoc</doscript>
+		</events>
+	</element>
+</rule>

@@ -149,6 +149,33 @@
 										</tr>
 									</table>
 								</xsl:if>
+								<xsl:if test="/request/@id='gbd-doc'">
+									<script type="text/javascript">
+										$(document).ready(function(){
+										loadprevparamreq($.cookie('lastreqview'), 'id')
+										})
+									</script>
+									<table id="inputstable" style="border-collapse:collapse;  font-family:Verdana,Arial,Helvetica,sans-serif !important; color:#111; margin: 45px 0px 10px;">
+										<tr>
+											<td width="250px" style="font-size:15px; text-align:right;">
+												<xsl:value-of select="columns/column[@id='NOMER']/@caption"/> :
+											</td>
+											<td width="300px">
+												<input type="text" style="width:300px; padding:2px;" name="doc" class="inputrequest"/>
+											</td>
+										</tr>
+										<tr>
+											<td style="padding:3px; text-align:left"></td>
+											<td style="font-size:16px; text-align:right;">
+												<br/>
+												<button class="button" id="sendrequest" style='margin-left:3px'>
+													<xsl:attribute name="onclick">javascript:GBD_getDataByID(1,1)</xsl:attribute>
+													<xsl:value-of select="columns/column[@id='VYPOLNIT']/@caption"/>
+												</button>
+											</td>
+										</tr>
+									</table>
+								</xsl:if>
 								<xsl:if test="/request/@id='gbd-iin'">
 									<script type="text/javascript">
 					   					$(document).ready(function(){
