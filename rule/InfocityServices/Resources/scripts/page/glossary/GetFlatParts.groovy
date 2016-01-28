@@ -21,11 +21,13 @@ class GetFlatParts extends _DoScript {
 			def tag = new _Tag("root","")
 			def result = proxy.getFlatParts(streetid.toInteger(), housenumber, flatnumber)
 			def flats =  new _Tag("flats","");
+			def i= 0
 			result.each{
-				def entry = new _Tag("entry","");
-				def number = new _Tag("number",it);
-				entry.addTag(number);
-				flats.addTag(entry);
+				if(result[i] != null){
+					def number = new _Tag("number", result[i]);
+					flats.addTag(number);
+				}
+				i++;
 			}
 			tag.addTag(flats);
 			def xml = new _XMLDocument(tag)
