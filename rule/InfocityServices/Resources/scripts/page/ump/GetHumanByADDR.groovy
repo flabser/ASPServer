@@ -18,7 +18,7 @@ class GetHumanByADDR extends _DoScript {
 			String street = formData.get("streetid")[0];
 			String house = formData.get("house")[0];
 			String flat = formData.get("flat")[0];
-            String flatNumber = formData.get("flatNumber")[0];
+            String flatPart = formData.get("flatNumber")[0];
 			Street streetid = new Street();
 			streetid.setId(street.toInteger());
 			String page = formData.get("page")[0]
@@ -26,7 +26,7 @@ class GetHumanByADDR extends _DoScript {
 			String pagesize = formData.get("pagesize")[0]
 			//streetid.setName(street)
 			String isCitizen = formData.get("iscitizen")[0];
-			def result = proxy.getHumanByAddr(streetid, house, flat, flatNumber, page.toInteger(), pagesize.toInteger(), lang)
+			def result = proxy.getHumanByAddr(streetid, house, flat, flatPart, page.toInteger(), pagesize.toInteger(), lang)
 			def tag = new _Tag("root","")
 			tag.setAttr("count",result.getTotalFound());
 			if(isCitizen == '1'){
