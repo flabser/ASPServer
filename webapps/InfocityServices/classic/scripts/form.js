@@ -222,8 +222,10 @@ function SuggestionFlatParts() {
 			data: 'type=page&id=ump_getflatparts&'+$.trim($("input[name=streetid]").serialize())+"&"+$.trim($("input[name=house]").serialize())+"&"+$.trim($("input[name=flat]").serialize())+"&onlyxml",
 			datatype:'xml',
 			success: function(data) {
-				$(data).find("entry").each(function(index, element){
-					var option = "<option value='"+$(element).find("number").text()+"'>"+$(element).find("number").text()+"</option>";
+				var option_one = "<option value=''></option>";
+				$("#flatnumber").append(option_one);
+				$(data).find("number").each(function(index, element){
+					var option = "<option value='"+$(element).text()+"'>"+$(element).text()+"</option>";
 					$("#flatnumber").append(option);
 					$("#flatnumber").removeAttr("disabled");
 					//availableTags.push({label:$(element).find("number").text(), value:$(element).find("number").text(),id:$(element).find("number").text()});
