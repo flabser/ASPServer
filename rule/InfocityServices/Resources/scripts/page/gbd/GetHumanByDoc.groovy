@@ -14,7 +14,7 @@ class GetHumanByDoc extends _DoScript {
 	public void doProcess(_Session session, _WebFormData formData,	String lang) {
 		HumansSearchServiceProxy proxy = new HumansSearchServiceProxy(session.user);
 		try {
-			String docnumber = formData.get("docnumber")[0];
+			String docnumber = formData.get("doc")[0];
 
 			String isCitizen = formData.get("iscitizen")[0];
 			String page = formData.get("page")[0]
