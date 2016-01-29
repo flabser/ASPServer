@@ -2111,7 +2111,7 @@ function GBD_getDataByID(isCitizen,page){
 	}
 }
 
-function GBD_getDataByIIN(){
+function GBD_getDataByIIN(page){
 	if($("input[name=iin]").val().length != 12){
 		infoDialog("Поле 'ИИН' должно содержать 12 символов");
 	}else{
@@ -2127,7 +2127,7 @@ function GBD_getDataByIIN(){
 			$.ajax({
 				type: "POST",
 				url: 'Provider',
-				data: "type=page&id=gbd_gethumanbyiin&"+iin+"&onlyxml",
+				data: "type=page&id=gbd_gethumanbyiin&"+iin+"&page="+page+"&pagesize=20&onlyxml",
 				success: function(xml){
 					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 					$("#printbutton").css("visibility","visible");
