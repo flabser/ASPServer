@@ -97,6 +97,17 @@
 						]]>
 					</granted>
 				</entry>
+				<entry mode="on" type="link" url="Provider?type=view&amp;id=gbd-doc" hint="По Удостоверению" id="gbd-doc">
+					<caption source="KEYWORD">По уд. личности</caption>
+					<hint source="KEYWORD">По уд. личности</hint>
+					<granted source="script" mode="on"><![CDATA[
+						String[] getStringValue(_Session session){
+							def user = session.getStructure().getUser(session.getCurrentUser());
+							return getAsArray(user.hasRole("GBDService -> getPersonByDoc") ? user.getUserID() : "");
+						}
+						]]>
+					</granted>
+				</entry>
 			</entry>
 		</entry>
 		<entry id="ump" mode="on">
