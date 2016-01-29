@@ -1874,7 +1874,7 @@ function GBD_getDataByFIO(isCitizen,page){
 			$.ajax({
 				type: "POST",
 				url: "Provider",
-				data: "type=page&id=gdb_gethumanbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
+				data: "type=page&id=gbd_gethumanbyfio&"+firstname+"&"+middlename+"&"+lastname+"&iscitizen="+isCitizen+"&page="+page+"&pagesize="+pagesize+"&onlyxml",
 				success: function(xml){
 					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 					$("#printbutton").css("visibility","visible");
