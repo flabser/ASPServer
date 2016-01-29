@@ -18,7 +18,7 @@ class GetHumanByIIN extends _DoScript {
 		try {
 			String iin = formData.get("iin")[0];
 
-			String isCitizen = formData.get("iscitizen")[0];
+			//String isCitizen = formData.get("iscitizen")[0];
 			String page = formData.get("page")[0]
 			String pagesize = formData.get("pagesize")[0]
 
