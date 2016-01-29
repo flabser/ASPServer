@@ -188,7 +188,7 @@
 												<xsl:value-of select="columns/column[@id='IIN']/@caption"/> :
 											</td>
 											<td width="300px">
-												<input type="text" style="width:300px; padding:2px;" name="lastname" class="inputrequest"/>
+												<input type="text" style="width:300px; padding:2px;" name="iin" class="inputrequest"/>
 											</td>
 										</tr>
 										<tr>
