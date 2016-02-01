@@ -2132,11 +2132,11 @@ function GBD_getDataByIIN(page){
 					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 					$("#printbutton").css("visibility","visible");
 					if ($(xml).find("response").attr("status") !='error'){
-						if ($(xml).find("root").attr("count") != '0'){
-							if($(xml).find("root").attr("count") < 21){
-								count_elements= $(xml).find("root").attr("count")
+						if ($(xml).find("root").attr("countelements") != '0'){
+							if($(xml).find("root").attr("countelements") < 21){
+								count_elements= $(xml).find("root").attr("countelements")
 							}else{
-								count_elements= $(xml).find("root").attr("count") - ((page-1) * 20) ;
+								count_elements= $(xml).find("root").attr("countelements") - ((page-1) * 20) ;
 							}
 							for (var i=0 ; i < count_elements && i < 20; i++){
 								k=i+1;
