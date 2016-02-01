@@ -2111,7 +2111,7 @@ function GBD_getDataByID(isCitizen,page){
 	}
 }
 
-function GBD_getDataByIIN(pagenum){
+function GBD_getDataByIIN(isCitizen, pagenum){
 	var page = pagenum;
 	if($("input[name=iin]").val().length != 12){
 		infoDialog("Поле 'ИИН' должно содержать 12 символов");
