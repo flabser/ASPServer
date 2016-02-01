@@ -2135,7 +2135,7 @@ function GBD_getDataByIIN(isCitizen, pagenum){
 					if ($(xml).find("response").attr("status") !='error'){
 						if ($(xml).find("root").attr("countelements") != '0'){
 							if($(xml).find("root").attr("countelements") < 21){
-								count_elements= $(xml).find("root").attr("countelements")
+								count_elements= $(xml).find("root").attr("countelements");
 							}else{
 								count_elements= $(xml).find("root").attr("countelements") - ((page-1) * 20) ;
 							}
