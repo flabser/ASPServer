@@ -2111,7 +2111,8 @@ function GBD_getDataByID(isCitizen,page){
 	}
 }
 
-function GBD_getDataByIIN(){
+function GBD_getDataByIIN(isCitizen, pagenum){
+	var page = pagenum;
 	if($("input[name=iin]").val().length != 12){
 		infoDialog("Поле 'ИИН' должно содержать 12 символов");
 	}else{
@@ -2127,16 +2128,16 @@ function GBD_getDataByIIN(){
 			$.ajax({
 				type: "POST",
 				url: 'Provider',
-				data: "type=page&id=gbd_gethumanbyiin&"+iin+"&onlyxml",
+				data: "type=page&id=gbd_gethumanbyiin&"+iin+"&page="+page+"&pagesize=20&onlyxml",
 				success: function(xml){
 					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 					$("#printbutton").css("visibility","visible");
 					if ($(xml).find("response").attr("status") !='error'){
-						if ($(xml).find("root").attr("count") != '0'){
-							if($(xml).find("root").attr("count") < 21){
-								count_elements= $(xml).find("root").attr("count")
+						if ($(xml).find("root").attr("countelements") != '0'){
+							if($(xml).find("root").attr("countelements") < 21){
+								count_elements= $(xml).find("root").attr("countelements");
 							}else{
-								count_elements= $(xml).find("root").attr("count") - ((page-1) * 20) ;
+								count_elements= $(xml).find("root").attr("countelements") - ((page-1) * 20) ;
 							}
 							for (var i=0 ; i < count_elements && i < 20; i++){
 								k=i+1;
