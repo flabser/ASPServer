@@ -1,15 +1,12 @@
 package handler.testservices
-
-import java.rmi.RemoteException;
-import java.util.Map;
-import kz.lof.webservices.tax.*
-import kz.lof.webservices.tax.store.*
-import kz.lof.webservices.Utils
 import kz.nextbase.script._Session
-import kz.nextbase.script._WebFormData;
+import kz.nextbase.script._WebFormData
 import kz.nextbase.script.events._DoHandler
 
-
+import java.rmi.RemoteException
+//import kz.lof.webservices.tax.*
+//import kz.lof.webservices.tax.store.*
+//import kz.lof.webservices.Utils
 class Trigger extends _DoHandler {
 
 	@Override

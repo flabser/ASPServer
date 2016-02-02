@@ -46,14 +46,14 @@
     <debug>true</debug>
 	 <externalhost>
 
-    	<host id="nk" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="gkz" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="uaig" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="udp" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="ump" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="social" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="bti" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
-    	<host id="FRNS" type="WEB_SERVICES_PROVIDER">192.168.1.75:15045</host>
+    	<host id="nk" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="gkz" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="uaig" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="udp" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="ump" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="social" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="bti" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
+    	<host id="FRNS" type="WEB_SERVICES_PROVIDER">127.0.0.1:15045</host>
 
     </externalhost>
 </nextbase>

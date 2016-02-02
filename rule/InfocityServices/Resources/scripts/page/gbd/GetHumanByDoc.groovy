@@ -1,5 +1,4 @@
 package page.gbd
-
 import kz.lof.webservices.clients.ump.HumansSearchServiceProxy
 import kz.lof.webservices.gbdfl.*
 import kz.nextbase.script._Session
@@ -9,6 +8,26 @@ import kz.nextbase.script._XMLDocument
 import kz.nextbase.script.events._DoScript
 
 class GetHumanByDoc extends _DoScript {
+
+    private String createAddress(Address_ address){
+        if (address == null) return "";
+
+        String result = "" +
+                createLine("", address.regionName) +
+                createLine("", address.cityName) +
+                createLine("", address.districtName) +
+                createLine("ул.", address.streetName) +
+                createLine("д.", address.buildingNumber) +
+                createLine("кв.", address.flatNumber);
+        if(result.length() > 0) result = result.substring(0, result.length() - 2);
+        return result;
+    }
+
+    private String createLine(String prefix, String value){
+        if(value != null && value.trim().length() != 0)
+            return prefix + value.trim() + ", ";
+        return ""
+    }
 	
 	@Override
 	public void doProcess(_Session session, _WebFormData formData,	String lang) {
@@ -16,7 +35,7 @@ class GetHumanByDoc extends _DoScript {
 		try {
 			String docnumber = formData.get("doc")[0];
 
-			String isCitizen = formData.get("iscitizen")[0];
+//			String isCitizen = formData.get("iscitizen")[0];
 			String page = formData.get("page")[0]
 			String pagesize = formData.get("pagesize")[0]
 
@@ -40,25 +59,25 @@ class GetHumanByDoc extends _DoScript {
 				def fioh = new _Tag("fio"+i, fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
 				tag.addTag(fioh)
 
-				def birthdate = new _Tag("birthdate"+i, fullResponse_.getCommonInfo().getBirthDate())
+				def birthdate = new _Tag("birthdate"+i, fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
 				tag.addTag(birthdate)
 				//дата рождения
 				//System.out.println(fullResponse_.getCommonInfo().getBirthDate());
-				def regplace = new _Tag("regplace"+i, fullResponse_.getCommonInfo().getCapableCourtName())
+                def regplace = new _Tag("regplace"+i, createAddress(fullResponse_.getCurrentAddress()));
 				tag.addTag(regplace)
 				//место регистрации
 				//System.out.println(fullResponse_.getCommonInfo().getCapableCourtName());
 
 				//национальность
-				def nationality = new _Tag("nationality"+i, fullResponse_.getCommonInfo().getNationalityName())
+				def nationality = new _Tag("nationality"+i, (String)fullResponse_.getCommonInfo().getNationalityName())
 				tag.addTag(nationality)
 				//System.out.println(fullResponse_.getCommonInfo().getNationalityName());
 
 //          номер Удостоверения
-				def idnumber = new _Tag("idnumber"+i, fullResponse_.getCommonInfo().getCapableNumber())
+				def idnumber = new _Tag("idnumber"+i, docnumber)
 				tag.addTag(idnumber)
 
-				def iinout = new _Tag("iin"+i, fullResponse_.getCommonInfo().getBirthCertificateNumber())
+				def iinout = new _Tag("iin"+i, fullResponse_.getCommonInfo().getIIN())
 				tag.addTag(iinout)
 				//System.out.println(fullResponse_.getCommonInfo().getBirthCertificateNumber());
 //          или этот
