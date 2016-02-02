@@ -79,19 +79,18 @@ class GetHumanByIIN extends _DoScript {
 //			Assert.assertTrue(response != null && response.length > 0);
             def tag = new _Tag("root","")
             def i = 0;
-            for (FullResponse_ fullResponse_ : response) {
+			def getfulldataccess;
+			getfulldataccess = new _Tag("getfulldataccess", session.currentAppUser.hasRole("HumansSearchService -> getFullData").toString())
+			tag.addTag(getfulldataccess);
+			for (FullResponse_ fullResponse_ : response) {
                 i++;
                 //фио
-                /*System.out.println(fullResponse_.getCurrentFIO().getFirstName());
-                System.out.println(fullResponse_.getCurrentFIO().getSurName());
-                System.out.println(fullResponse_.getCurrentFIO().getMiddleName());*/
                 def fioh = new _Tag("fio"+i, fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
                 tag.addTag(fioh)
 
                 def birthdate = new _Tag("birthdate"+i, fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
                 tag.addTag(birthdate)
                 //дата рождения
-                //System.out.println(fullResponse_.getCommonInfo().getBirthDate());
                 def regplace = new _Tag("regplace"+i, createAddress(fullResponse_.getCurrentAddress()));
                 tag.addTag(regplace)
                 //место регистрации
@@ -100,9 +99,8 @@ class GetHumanByIIN extends _DoScript {
                 //национальность
                 def nationality = new _Tag("nationality"+i, (String)fullResponse_.getCommonInfo().getNationalityName())
                 tag.addTag(nationality)
-                //System.out.println(fullResponse_.getCommonInfo().getNationalityName());
 
-//          номер Удостоверения
+				// номер Удостоверения
                 String docNumber = "";
                 if(fullResponse_.documentList.length > 0)
                     docNumber = fullResponse_.documentList[0].docNumber;
@@ -112,57 +110,9 @@ class GetHumanByIIN extends _DoScript {
 
                 def iinout = new _Tag("iin"+i, iin)
                 tag.addTag(iinout)
-                //System.out.println(fullResponse_.getCommonInfo().getBirthCertificateNumber());
-//          или этот
-                //System.out.println(fullResponse_.getCommonInfo().getCapableNumber());
 
             }
             tag.setAttr("countelements",i);
-            //def tag = new _Tag("root","")
-            /*def result = proxy.getHumanByFIO(firstname, lastname, middlename, page.toInteger(),  pagesize.toInteger(), lang)
-            tag.setAttr("count",result.getTotalFound().toString());
-            if(isCitizen == '1'){
-                def getfulldataccess = new _Tag("getfulldataccess",session.currentAppUser.hasRole("HumansSearchService -> getFullData").toString());
-                tag.addTag(getfulldataccess);
-            }else{
-                def getfulldataccess = new _Tag("getfulldataccess",session.currentAppUser.hasRole("ForeignersSearchService -> getFullData").toString());
-                tag.addTag(getfulldataccess);
-            }
-            def countelements;
-            if (result.getTotalFound() != 0){
-                //def i = 1;
-                result.getShortData().each {
-                    def birthdate = new _Tag("birthdate"+i,_Helper.getDateAsStringShort(it.birthDate.getTime()))
-                    tag.addTag(birthdate)
-                    //def fio = new _Tag("fio"+i,it.lastName + " " + it.firstName + " " + it.middleName)
-                    tag.addTag(fio)
-                    def gendervalue = it.gender.toString();
-                    if (gendervalue == '1'){
-                        gendervalue = "Мужской";
-                    }else{
-                        gendervalue = "Женский";
-                    }
-                    def gender = new _Tag("gender"+i,gendervalue)
-                    tag.addTag(gender)
-                    def numberid = new _Tag("numberid"+i,it.idDocument[0].number)
-                    tag.addTag(numberid)
-                    if (it.gender.toString() == '1'){
-                        def nationality = new _Tag("nationality"+i,it.nationality.maleName);
-                        tag.addTag(nationality)
-                    }else{
-                        def nationality = new _Tag("nationality"+i,it.nationality.femaleName);
-                        tag.addTag(nationality)
-                    }
-                    def iin = new _Tag("iin"+i,it.iin)
-                    tag.addTag(iin)
-                    def id = new _Tag("id"+i,it.id.toString())
-                    tag.addTag(id);
-                    countelements = i;
-                    i++;
-                }
-                tag.setAttr("countelements",countelements);
-            }else{
-            }*/
             def xml = new _XMLDocument(tag)
             setContent(xml);
         } catch (Exception re) {
