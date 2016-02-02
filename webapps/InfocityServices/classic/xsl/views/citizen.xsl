@@ -198,7 +198,7 @@
 											<td style="padding:3px; text-align:left"></td>
 											<td style="font-size:16px; text-align:right;"><br/>
 												<button class="button" id="sendrequest" style='margin-left:3px'>
-													<xsl:attribute name="onclick">javascript:UMP_getDataByIIN(1)</xsl:attribute>
+													<xsl:attribute name="onclick">javascript:UMP_getDataByIIN()</xsl:attribute>
 													<xsl:value-of select="columns/column[@id='VYPOLNIT']/@caption"/>
 												</button>
 											</td>
