@@ -2159,7 +2159,8 @@ function GBD_getDataByIIN(isCitizen, pagenum){
 									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#4td").width()+"px'>"+$(xml).find("birthdate"+k).text() +"</td>" +
 									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#5td").width()+"px'>"+$(xml).find("gender"+k).text() +"</td>" +
 									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#6td").width()+"px'>"+$(xml).find("nationality"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("numberid"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("idnumber"+k).text() +"</td>" +
+									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#8td").width()+"px'>"+$(xml).find("regplace"+k).text() +"</td>" +
 									"</tr>");
 							}
 						}else{
