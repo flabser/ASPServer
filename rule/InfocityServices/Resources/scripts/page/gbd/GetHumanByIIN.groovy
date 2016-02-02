@@ -80,37 +80,45 @@ class GetHumanByIIN extends _DoScript {
             def tag = new _Tag("root","")
             def i = 0;
 			def getfulldataccess;
-			def getFullData = session.currentAppUser.hasRole("HumansSearchService -> getFullData");
-			getfulldataccess = new _Tag("getfulldataccess", getFullData.toString())
-			tag.addTag(getfulldataccess);
+//			def getFullData = session.currentAppUser.hasRole("HumansSearchService -> getFullData");
+//			getfulldataccess = new _Tag("getfulldataccess", getFullData.toString())
+//			tag.addTag(getfulldataccess);
 			for (FullResponse_ fullResponse_ : response) {
                 i++;
                 //фио
-                def fioh = new _Tag("fio"+i, fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
+                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
                 tag.addTag(fioh)
 
-                def birthdate = new _Tag("birthdate"+i, fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
+                def birthdate = new _Tag("birthdate", fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
                 tag.addTag(birthdate)
-                //дата рождения
-                def regplace = new _Tag("regplace"+i, createAddress(fullResponse_.getCurrentAddress()));
-                tag.addTag(regplace)
-                //место регистрации
-                //System.out.println(fullResponse_.getCommonInfo().getCapableCourtName());
+
+                def citizenship = new _Tag("citizenship", (String)fullResponse_.getCommonInfo().getCitizenshipName())
+                tag.addTag(citizenship)
 
                 //национальность
-                def nationality = new _Tag("nationality"+i, (String)fullResponse_.getCommonInfo().getNationalityName())
+                def nationality = new _Tag("nationality", (String)fullResponse_.getCommonInfo().getNationalityName())
                 tag.addTag(nationality)
 
-				// номер Удостоверения
+                def gender = new _Tag("gender", (String)fullResponse_.getCommonInfo().getSexName())
+                tag.addTag(gender)
+
+                def status = new _Tag("status", (String)fullResponse_.getCommonInfo().getStatusName())
+                tag.addTag(status)
+
+                def regplace = new _Tag("regplace", createAddress(fullResponse_.getCurrentAddress()));
+                tag.addTag(regplace)
+
+                def birthplace = new _Tag("birthplace", createAddress(fullResponse_.getBirthAddress()));
+                tag.addTag(birthplace)
+
                 String docNumber = "";
                 if(fullResponse_.documentList.length > 0)
                     docNumber = fullResponse_.documentList[0].docNumber;
 
-                def idnumber = new _Tag("idnumber"+i, docNumber)
+                def idnumber = new _Tag("idnumber", docNumber)
                 tag.addTag(idnumber)
 
-                def iinout = new _Tag("iin"+i, iin)
-                tag.addTag(iinout)
+                tag.addTag(new _Tag("iin", iin))
 
             }
             tag.setAttr("countelements",i);

@@ -50,40 +50,40 @@ class GetHumanByDoc extends _DoScript {
 //			Assert.assertTrue(response != null && response.length > 0);
 			def tag = new _Tag("root","")
 			def i = 0;
-			for (FullResponse_ fullResponse_ : response) {
-				i++;
-				//фио
-				/*System.out.println(fullResponse_.getCurrentFIO().getFirstName());
-				System.out.println(fullResponse_.getCurrentFIO().getSurName());
-				System.out.println(fullResponse_.getCurrentFIO().getMiddleName());*/
-				def fioh = new _Tag("fio"+i, fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
-				tag.addTag(fioh)
+            for (FullResponse_ fullResponse_ : response) {
+                i++;
+                //фио
+                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
+                tag.addTag(fioh)
 
-				def birthdate = new _Tag("birthdate"+i, fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
-				tag.addTag(birthdate)
-				//дата рождения
-				//System.out.println(fullResponse_.getCommonInfo().getBirthDate());
-                def regplace = new _Tag("regplace"+i, createAddress(fullResponse_.getCurrentAddress()));
-				tag.addTag(regplace)
-				//место регистрации
-				//System.out.println(fullResponse_.getCommonInfo().getCapableCourtName());
+                def birthdate = new _Tag("birthdate", fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
+                tag.addTag(birthdate)
 
-				//национальность
-				def nationality = new _Tag("nationality"+i, (String)fullResponse_.getCommonInfo().getNationalityName())
-				tag.addTag(nationality)
-				//System.out.println(fullResponse_.getCommonInfo().getNationalityName());
+                def citizenship = new _Tag("citizenship", (String)fullResponse_.getCommonInfo().getCitizenshipName())
+                tag.addTag(citizenship)
 
-//          номер Удостоверения
-				def idnumber = new _Tag("idnumber"+i, docnumber)
-				tag.addTag(idnumber)
+                //национальность
+                def nationality = new _Tag("nationality", (String)fullResponse_.getCommonInfo().getNationalityName())
+                tag.addTag(nationality)
 
-				def iinout = new _Tag("iin"+i, fullResponse_.getCommonInfo().getIIN())
-				tag.addTag(iinout)
-				//System.out.println(fullResponse_.getCommonInfo().getBirthCertificateNumber());
-//          или этот
-				//System.out.println(fullResponse_.getCommonInfo().getCapableNumber());
+                def gender = new _Tag("gender", (String)fullResponse_.getCommonInfo().getSexName())
+                tag.addTag(gender)
 
-			}
+                def status = new _Tag("status", (String)fullResponse_.getCommonInfo().getStatusName())
+                tag.addTag(status)
+
+                def regplace = new _Tag("regplace", createAddress(fullResponse_.getCurrentAddress()));
+                tag.addTag(regplace)
+
+                def birthplace = new _Tag("birthplace", createAddress(fullResponse_.getBirthAddress()));
+                tag.addTag(birthplace)
+
+                def idnumber = new _Tag("idnumber", docnumber)
+                tag.addTag(idnumber)
+
+                tag.addTag(new _Tag("iin", (String)fullResponse_.getCommonInfo().getIIN()))
+
+            }
 			tag.setAttr("countelements",i);
 			//def tag = new _Tag("root","")
 			/*def result = proxy.getHumanByFIO(firstname, lastname, middlename, page.toInteger(),  pagesize.toInteger(), lang)

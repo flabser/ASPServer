@@ -222,32 +222,33 @@
 									<xsl:value-of select="columns/column[@id='SEARCHTIME']/@caption"/>:<b id="reqtime"></b>
 								</font>
 							</div>
-							<table id="resultHeaderDataTable" style="border-collapse:collapse; font-size:14px;  width:100%; min-width:847px">
-								<tr style="height:40px; background:#efefef">
-									<td style="border:1px solid #ccc; text-align:center; width:4%" id="1td"></td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:24%" id="2td">
-										<xsl:value-of select="columns/column[@id='FIO']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:14%" id="3td">
-										<xsl:value-of select="columns/column[@id='IIN']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:8%" id="4td">
-										<xsl:value-of select="columns/column[@id='DATAROZHDENIYA']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:12%" id="5td">
-										<xsl:value-of select="columns/column[@id='POL']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:18%" id="6td">
-										<xsl:value-of select="columns/column[@id='NACIONALNOST']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:20%" id="7td">
-										<xsl:value-of select="columns/column[@id='UDOSTOVERENIE']/@caption"/>
-									</td>
-									<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:20%" id="7td">
-										<xsl:value-of select="columns/column[@id='REGPLACE']/@caption"/>
-									</td>
-								</tr>
-							</table>
+                                <br/>
+							<!--<table id="resultHeaderDataTable" style="border-collapse:collapse; font-size:14px;  width:100%; min-width:847px">-->
+								<!--<tr style="height:40px; background:#efefef">-->
+									<!--<td style="border:1px solid #ccc; text-align:center; width:4%" id="1td"></td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:24%" id="2td">-->
+										<!--<xsl:value-of select="columns/column[@id='FIO']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:14%" id="3td">-->
+										<!--<xsl:value-of select="columns/column[@id='IIN']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:8%" id="4td">-->
+										<!--<xsl:value-of select="columns/column[@id='DATAROZHDENIYA']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:12%" id="5td">-->
+										<!--<xsl:value-of select="columns/column[@id='POL']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:18%" id="6td">-->
+										<!--<xsl:value-of select="columns/column[@id='NACIONALNOST']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:20%" id="7td">-->
+										<!--<xsl:value-of select="columns/column[@id='UDOSTOVERENIE']/@caption"/>-->
+									<!--</td>-->
+									<!--<td style="border:1px solid #ccc; text-align:center; font-weight:bold; width:20%" id="7td">-->
+										<!--<xsl:value-of select="columns/column[@id='REGPLACE']/@caption"/>-->
+									<!--</td>-->
+								<!--</tr>-->
+							<!--</table>-->
 						</div>
 						<div id="resultdiv" style="overflow-y:scroll; overflow-x:hidden; width:100%; position:absolute; bottom:0px;  min-width:847px; right:0px; left:0px">
 							<table id="resultDataTable" style="width:100%; table-layout: fixed; border-collapse:collapse; font-size:14px;"></table>

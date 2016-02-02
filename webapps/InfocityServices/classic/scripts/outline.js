@@ -2009,81 +2009,23 @@ function GBD_getDataByID(isCitizen,page){
 				if ($(xml).find("response").attr("status") !='error'){
 					$("#counter").text($(xml).find("root").attr("count"));
 					$("#reqtime").text($(xml).find("response").attr("elapsed_time")+" сек");
-					if ($(xml).find("root").attr("count") != '0'){
-						sumpage= Math.ceil($(xml).find("root").attr("count") / pagesize);
-						if (sumpage != 1){
-							if(page > 1){
-								$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+",1)'><<</a>");
-							}
-							if (sumpage < 11){
-								for (var k=1 ; k < sumpage+1; k++){
-									if(k == page){
-										$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}else{
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}
-								}
-							}
-							if (sumpage > 10 && page == 1){
-								for (var k=1 ; k < 11; k++){
-									if(k == page){
-										$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}else{
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+k+")'>"+k+"</a>");
-									}
-								}
-							}
-							if (sumpage > 10 && page != 1 && sumpage-page > 9){
-								for (var k=page ; k < page+10; k++){
-									if(k == page){
-										$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}else{
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+k+")'>"+k+"</a>");
-									}
-								}
-							}
-							if (sumpage > 10 && page != 1 && sumpage-page <= 9){
-								for (var k=sumpage-10 ; k < sumpage+1; k++){
-									if(k == page){
-										$("#page-nav").append("<a style='font-weight:bold; padding:0px 3px; font-size:18px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}else{
-										$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+k+")'>"+k+"</a>");
-									}
-								}
-							}
-							if(page < sumpage){
-								$("#page-nav").append("<a style='padding:0px 3px; font-size:15px; text-decoration:none; color:#444' href='javascript:GBD_getDataByID("+isCitizen+","+sumpage+")'>>></a>");
-							}
-						}
-						if($(xml).find("root").attr("countelements") < 21){
-							count_elements= $(xml).find("root").attr("countelements")
-						}else{
-							count_elements= $(xml).find("root").attr("count") - ((page-1) * 20) ;
-						}
-						for (var i=0 ; i < count_elements && i < 20; i++){
-							k=i+1;
-							getfulldataccess = $(xml).find("root").find("getfulldataccess").text();
-							if(getfulldataccess == "true"){
-								firstcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
-								secondcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>" ;
-							}else{
-								firstcolumn = "<font>"+ k +"</font>";
-								secondcolumn = "<font>"+ $(xml).find("fio"+k).text() +"</font>";
-							}
-							$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center; width:"+ $("#1td").width()+"px'>" +
-								firstcolumn +
-								"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#2td").width()+"px'>"+
-								secondcolumn +
-								"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#3td").width()+"px'>"+$(xml).find("iin"+k).text() +"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#4td").width()+"px'>"+$(xml).find("birthdate"+k).text() +"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#5td").width()+"px'>"+$(xml).find("gender"+k).text() +"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#6td").width()+"px'>"+$(xml).find("nationality"+k).text() +"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("numberid"+k).text() +"</td>" +
-								"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#8td").width()+"px'>"+$(xml).find("regplace"+k).text() +"</td>" +
-								"</tr>");
-						}
+					if ($(xml).find("root").attr("countelements") != '0'){
+
+						$("#resultDataTable").append("" +
+                                "<tr><td style='width:20%'><b>ИИН</b></td><td>" + $(xml).find("iin").text() + "</td></tr>" +
+                                "<tr><td><b>Номер удостоверения</b></td><td>" + $(xml).find("idnumber").text() + "</td></tr>" +
+                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td><b>ФИО</b></td><td>" + $(xml).find("fio").text() + "</td></tr>" +
+                                "<tr><td><b>Дата рождения</b></td><td>" + $(xml).find("birthdate").text() + "</td></tr>" +
+                                "<tr><td><b>Гражданство</b></td><td>" + $(xml).find("citizenship").text() + "</td></tr>" +
+                                "<tr><td><b>Национальность</b></td><td>" + $(xml).find("nationality").text() + "</td></tr>" +
+                                "<tr><td><b>Пол</b></td><td>" + $(xml).find("gender").text() + "</td></tr>" +
+                                "<tr><td><b>Статус</b></td><td>" + $(xml).find("status").text() + "</td></tr>" +
+                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td><b>Текущий адрес</b></td><td>" + $(xml).find("regplace").text() + "</td></tr>" +
+                                "<tr><td><b>Адрес рождения</b></td><td>" + $(xml).find("birthplace").text() + "</td></tr>" +
+                                "");
+
 					}else{
 						$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'> По данному запросу ничего не найдено</td></tr>");
 						$("#resultdiv").css("top",$("#fieldsdiv").height());
@@ -2132,37 +2074,51 @@ function GBD_getDataByIIN(isCitizen, pagenum){
 				success: function(xml){
 					$("#resultdiv").css("top",$("#fieldsdiv").height()+"px");
 					$("#printbutton").css("visibility","visible");
-					if ($(xml).find("response").attr("status") !='error'){
+					if ($(xml).find("response").attr("status") !='error' ){
 						if ($(xml).find("root").attr("countelements") != '0'){
-							if($(xml).find("root").attr("countelements") < 21){
-								count_elements= $(xml).find("root").attr("countelements");
-							}else{
-								count_elements= $(xml).find("root").attr("countelements") - ((page-1) * 20) ;
-							}
-							for (var i=0 ; i < count_elements && i < 20; i++){
-								k=i+1;
-								getfulldataccess = $(xml).find("root").find("getfulldataccess").text();
-								if(getfulldataccess == "true"){
-									firstcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
-									secondcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>";
-								}else{
-									firstcolumn = "<font>"+ k +"</font>";
-									secondcolumn = "<font>"+ $(xml).find("fio"+k).text() +"</font>";
-								}
-								$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center; width:"+ $("#1td").width()+"px'>" +
-									firstcolumn +
-									"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#2td").width()+"px'>"+
-									secondcolumn +
-									"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#3td").width()+"px'>"+$(xml).find("iin"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#4td").width()+"px'>"+$(xml).find("birthdate"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#5td").width()+"px'>"+$(xml).find("gender"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#6td").width()+"px'>"+$(xml).find("nationality"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("idnumber"+k).text() +"</td>" +
-									"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#8td").width()+"px'>"+$(xml).find("regplace"+k).text() +"</td>" +
-									"</tr>");
-							}
+                            $("#resultDataTable").append("" +
+                                "<tr><td style='width:20%'><b>ИИН</b></td><td>" + $("input[name=iin]").val() + "</td></tr>" +
+                                "<tr><td><b>Номер удостоверения</b></td><td>" + $(xml).find("idnumber").text() + "</td></tr>" +
+                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td><b>ФИО</b></td><td>" + $(xml).find("fio").text() + "</td></tr>" +
+                                "<tr><td><b>Дата рождения</b></td><td>" + $(xml).find("birthdate").text() + "</td></tr>" +
+                                "<tr><td><b>Гражданство</b></td><td>" + $(xml).find("citizenship").text() + "</td></tr>" +
+                                "<tr><td><b>Национальность</b></td><td>" + $(xml).find("nationality").text() + "</td></tr>" +
+                                "<tr><td><b>Пол</b></td><td>" + $(xml).find("gender").text() + "</td></tr>" +
+                                "<tr><td><b>Статус</b></td><td>" + $(xml).find("status").text() + "</td></tr>" +
+                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td><b>Текущий адрес</b></td><td>" + $(xml).find("regplace").text() + "</td></tr>" +
+                                "<tr><td><b>Адрес рождения</b></td><td>" + $(xml).find("birthplace").text() + "</td></tr>" +
+                                "");
+							//if($(xml).find("root").attr("countelements") < 21){
+							//	count_elements= $(xml).find("root").attr("countelements");
+							//}else{
+							//	count_elements= $(xml).find("root").attr("countelements") - ((page-1) * 20) ;
+							//}
+							//for (var i=0 ; i < count_elements && i < 20; i++){
+							//	k=i+1;
+							//	getfulldataccess = $(xml).find("root").find("getfulldataccess").text();
+							//	if(getfulldataccess == "true"){
+							//		firstcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ k +"</a>";
+							//		secondcolumn = "<a onclick='savereqparam()' href='Provider?type=edit&id=citizen&key=&fid="+$(xml).find("id"+k).text() +"&fstatus="+ $(xml).find("status"+k).text()+"'class='doclink' >"+ $(xml).find("fio"+k).text() +"</a>";
+							//	}else{
+							//		firstcolumn = "<font>"+ k +"</font>";
+							//		secondcolumn = "<font>"+ $(xml).find("fio"+k).text() +"</font>";
+							//	}
+							//	$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center; width:"+ $("#1td").width()+"px'>" +
+							//		firstcolumn +
+							//		"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#2td").width()+"px'>"+
+							//		secondcolumn +
+							//		"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#3td").width()+"px'>"+$(xml).find("iin"+k).text() +"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#4td").width()+"px'>"+$(xml).find("birthdate"+k).text() +"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#5td").width()+"px'>"+$(xml).find("gender"+k).text() +"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#6td").width()+"px'>"+$(xml).find("nationality"+k).text() +"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#7td").width()+"px'>"+$(xml).find("idnumber"+k).text() +"</td>" +
+							//		"<td style='border:1px solid #ccc; word-wrap:break-word; width:"+ $("#8td").width()+"px'>"+$(xml).find("regplace"+k).text() +"</td>" +
+							//		"</tr>");
+							//}
 						}else{
 							$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'> По данному запросу ничего не найдено</td></tr>");
 							$("#resultdiv").css("top",$("#fieldsdiv").height());
