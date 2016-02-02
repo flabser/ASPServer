@@ -80,7 +80,8 @@ class GetHumanByIIN extends _DoScript {
             def tag = new _Tag("root","")
             def i = 0;
 			def getfulldataccess;
-			getfulldataccess = new _Tag("getfulldataccess", session.currentAppUser.hasRole("HumansSearchService -> getFullData").toString())
+			def getFullData = session.currentAppUser.hasRole("HumansSearchService -> getFullData");
+			getfulldataccess = new _Tag("getfulldataccess", getFullData.toString())
 			tag.addTag(getfulldataccess);
 			for (FullResponse_ fullResponse_ : response) {
                 i++;
