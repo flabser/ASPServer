@@ -78,14 +78,14 @@ class GetHumanByIIN extends _DoScript {
 
 //			Assert.assertTrue(response != null && response.length > 0);
             def tag = new _Tag("root","")
-            def i = 0;
 			def getfulldataccess;
 //			def getFullData = session.currentAppUser.hasRole("HumansSearchService -> getFullData");
 //			getfulldataccess = new _Tag("getfulldataccess", getFullData.toString())
 //			tag.addTag(getfulldataccess);
-			for (FullResponse_ fullResponse_ : response) {
-                i++;
-                //фио
+            if(response.length > 0){
+                tag.setAttr("countelements", 1);
+                def fullResponse_ = response[0];
+
                 def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
                 tag.addTag(fioh)
 
@@ -95,7 +95,6 @@ class GetHumanByIIN extends _DoScript {
                 def citizenship = new _Tag("citizenship", (String)fullResponse_.getCommonInfo().getCitizenshipName())
                 tag.addTag(citizenship)
 
-                //национальность
                 def nationality = new _Tag("nationality", (String)fullResponse_.getCommonInfo().getNationalityName())
                 tag.addTag(nationality)
 
@@ -111,17 +110,17 @@ class GetHumanByIIN extends _DoScript {
                 def birthplace = new _Tag("birthplace", createAddress(fullResponse_.getBirthAddress()));
                 tag.addTag(birthplace)
 
-                String docNumber = "";
-                if(fullResponse_.documentList.length > 0)
-                    docNumber = fullResponse_.documentList[0].docNumber;
+                tag.addTag(new _Tag("iin", (String)fullResponse_.getCommonInfo().getIIN()))
 
-                def idnumber = new _Tag("idnumber", docNumber)
-                tag.addTag(idnumber)
-
-                tag.addTag(new _Tag("iin", iin))
-
+                tag.setAttr("doccount", fullResponse_.documentList.length);
+                for (int i = 0; i < fullResponse_.documentList.length; i++) {
+                    Document_ doc = fullResponse_.documentList[i];
+                    tag.addTag(new _Tag("docnum" + (i + 1), (String)doc.docNumber))
+                    tag.addTag(new _Tag("docname" + (i + 1), (String)doc.docName))
+                    tag.addTag(new _Tag("docdate" + (i + 1), (String)doc.docIssueDate.time.format("dd.MM.yyyy")))
+                    tag.addTag(new _Tag("docissuer" + (i + 1), (String)doc.docIssuerName))
+                }
             }
-            tag.setAttr("countelements",i);
             def xml = new _XMLDocument(tag)
             setContent(xml);
         } catch (Exception re) {

@@ -2012,19 +2012,27 @@ function GBD_getDataByID(isCitizen,page){
 					if ($(xml).find("root").attr("countelements") != '0'){
 
 						$("#resultDataTable").append("" +
-                                "<tr><td style='width:20%'><b>ИИН</b></td><td>" + $(xml).find("iin").text() + "</td></tr>" +
-                                "<tr><td><b>Номер удостоверения</b></td><td>" + $(xml).find("idnumber").text() + "</td></tr>" +
-                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
-                                "<tr><td><b>ФИО</b></td><td>" + $(xml).find("fio").text() + "</td></tr>" +
-                                "<tr><td><b>Дата рождения</b></td><td>" + $(xml).find("birthdate").text() + "</td></tr>" +
-                                "<tr><td><b>Гражданство</b></td><td>" + $(xml).find("citizenship").text() + "</td></tr>" +
-                                "<tr><td><b>Национальность</b></td><td>" + $(xml).find("nationality").text() + "</td></tr>" +
-                                "<tr><td><b>Пол</b></td><td>" + $(xml).find("gender").text() + "</td></tr>" +
-                                "<tr><td><b>Статус</b></td><td>" + $(xml).find("status").text() + "</td></tr>" +
-                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
-                                "<tr><td><b>Текущий адрес</b></td><td>" + $(xml).find("regplace").text() + "</td></tr>" +
-                                "<tr><td><b>Адрес рождения</b></td><td>" + $(xml).find("birthplace").text() + "</td></tr>" +
+							    "<tr style='background:#efefef'><td colspan='4'><b>Общая информация</b></td></tr>" +
+                                "<tr><td ><b>ИИН</b></td><td colspan='3'>" + $(xml).find("iin").text() + "</td></tr>" +
+                                "<tr><td colspan='4' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td ><b>ФИО</b></td><td colspan='3'>" + $(xml).find("fio").text() + "</td></tr>" +
+                                "<tr><td ><b>Дата рождения</b></td><td colspan='3'>" + $(xml).find("birthdate").text() + "</td></tr>" +
+                                "<tr><td ><b>Гражданство</b></td><td colspan='3'>" + $(xml).find("citizenship").text() + "</td></tr>" +
+                                "<tr><td ><b>Национальность</b></td><td colspan='3'>" + $(xml).find("nationality").text() + "</td></tr>" +
+                                "<tr><td ><b>Пол</b></td><td colspan='3'>" + $(xml).find("gender").text() + "</td></tr>" +
+                                "<tr><td ><b>Статус</b></td><td colspan='3'>" + $(xml).find("status").text() + "</td></tr>" +
+                                "<tr><td colspan='4' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td ><b>Текущий адрес</b></td><td colspan='3'>" + $(xml).find("regplace").text() + "</td></tr>" +
+                                "<tr><td ><b>Адрес рождения</b></td><td colspan='3'>" + $(xml).find("birthplace").text() + "</td></tr>" +
+                                "<tr><td colspan='4'><br/></td></tr>" +
+                                "<tr style='background:#efefef'><td colspan='4'><b>Документы</td></tr>" +
+                                "<tr><td><b>Номер документа</b></td><td><b>Наименование</b></td><td><b>Когда выдан</b></td><td><b>Кем выдан</b></td></tr>" +
                                 "");
+						for (var i=1 ; i <= $(xml).find("root").attr("doccount"); i++){
+							$("#resultDataTable").append("" +
+							    "<tr><td>" + $(xml).find("docnum" + i).text() + "</td><td>" + $(xml).find("docname" + i).text() + 
+							    "</td><td>" + $(xml).find("docdate" + i).text() + "</td><td>" + $(xml).find("docissuer" + i).text() + "</td></tr>");
+						}
 
 					}else{
 						$("#resultDataTable").append("<tr style='color:#444444'><td style='border:1px solid #ccc; text-align:center' colspan='5'> По данному запросу ничего не найдено</td></tr>");
@@ -2077,19 +2085,27 @@ function GBD_getDataByIIN(isCitizen, pagenum){
 					if ($(xml).find("response").attr("status") !='error' ){
 						if ($(xml).find("root").attr("countelements") != '0'){
                             $("#resultDataTable").append("" +
-                                "<tr><td style='width:20%'><b>ИИН</b></td><td>" + $("input[name=iin]").val() + "</td></tr>" +
-                                "<tr><td><b>Номер удостоверения</b></td><td>" + $(xml).find("idnumber").text() + "</td></tr>" +
-                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
-                                "<tr><td><b>ФИО</b></td><td>" + $(xml).find("fio").text() + "</td></tr>" +
-                                "<tr><td><b>Дата рождения</b></td><td>" + $(xml).find("birthdate").text() + "</td></tr>" +
-                                "<tr><td><b>Гражданство</b></td><td>" + $(xml).find("citizenship").text() + "</td></tr>" +
-                                "<tr><td><b>Национальность</b></td><td>" + $(xml).find("nationality").text() + "</td></tr>" +
-                                "<tr><td><b>Пол</b></td><td>" + $(xml).find("gender").text() + "</td></tr>" +
-                                "<tr><td><b>Статус</b></td><td>" + $(xml).find("status").text() + "</td></tr>" +
-                                "<tr><td colspan='2' style='border-bottom: 1pt solid gray'></td></tr>" +
-                                "<tr><td><b>Текущий адрес</b></td><td>" + $(xml).find("regplace").text() + "</td></tr>" +
-                                "<tr><td><b>Адрес рождения</b></td><td>" + $(xml).find("birthplace").text() + "</td></tr>" +
+							    "<tr style='background:#efefef'><td colspan='4'><b>Общая информация</b></td></tr>" +
+                                "<tr><td ><b>ИИН</b></td><td colspan='3'>" + $(xml).find("iin").text() + "</td></tr>" +
+                                "<tr><td colspan='4' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td ><b>ФИО</b></td><td colspan='3'>" + $(xml).find("fio").text() + "</td></tr>" +
+                                "<tr><td ><b>Дата рождения</b></td><td colspan='3'>" + $(xml).find("birthdate").text() + "</td></tr>" +
+                                "<tr><td ><b>Гражданство</b></td><td colspan='3'>" + $(xml).find("citizenship").text() + "</td></tr>" +
+                                "<tr><td ><b>Национальность</b></td><td colspan='3'>" + $(xml).find("nationality").text() + "</td></tr>" +
+                                "<tr><td ><b>Пол</b></td><td colspan='3'>" + $(xml).find("gender").text() + "</td></tr>" +
+                                "<tr><td ><b>Статус</b></td><td colspan='3'>" + $(xml).find("status").text() + "</td></tr>" +
+                                "<tr><td colspan='4' style='border-bottom: 1pt solid gray'></td></tr>" +
+                                "<tr><td ><b>Текущий адрес</b></td><td colspan='3'>" + $(xml).find("regplace").text() + "</td></tr>" +
+                                "<tr><td ><b>Адрес рождения</b></td><td colspan='3'>" + $(xml).find("birthplace").text() + "</td></tr>" +
+                                "<tr><td colspan='4'><br/></td></tr>" +
+                                "<tr style='background:#efefef'><td colspan='4'><b>Документы</td></tr>" +
+                                "<tr><td><b>Номер документа</b></td><td><b>Наименование</b></td><td><b>Когда выдан</b></td><td><b>Кем выдан</b></td></tr>" +
                                 "");
+						for (var i=1 ; i <= $(xml).find("root").attr("doccount"); i++){
+							$("#resultDataTable").append("" +
+							    "<tr><td>" + $(xml).find("docnum" + i).text() + "</td><td>" + $(xml).find("docname" + i).text() + 
+							    "</td><td>" + $(xml).find("docdate" + i).text() + "</td><td>" + $(xml).find("docissuer" + i).text() + "</td></tr>");
+						}
 							//if($(xml).find("root").attr("countelements") < 21){
 							//	count_elements= $(xml).find("root").attr("countelements");
 							//}else{

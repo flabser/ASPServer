@@ -105,8 +105,8 @@
 									<font style="font-size:15px; color:#111;" id="printtitle">Распечатал: <xsl:value-of select="/request/@username"/></font>
 									<font style="font-size:14px; color:#111;" id="printtime"></font>
 								</div>
-								<br/>
-								<br/>
+								<!--<br/>-->
+								<!--<br/>-->
 								<xsl:if test="/request/@id='gbd' or /request/@id='gbd-fio'">
 									<script type="text/javascript">
 					   					$(document).ready(function(){
@@ -202,9 +202,9 @@
 										</tr>
 									</table>
 								</xsl:if>
-							<div style="clear:both; width:100%">&#xA0;</div>
+							<!--<div style="clear:both; width:100%">&#xA0;</div>-->
 							<table id="printtable" style="display:none"/>
-							<br/>
+							<!--<br/>-->
 							<div style="height:35px; text-align:center; width:100%; font-size:12px; color:#444">
 								<font style="float:left">
 									  <xsl:value-of select="columns/column[@id='TOTALFOUND']/@caption"/>:<b id="counter"></b>
@@ -251,7 +251,7 @@
 							<!--</table>-->
 						</div>
 						<div id="resultdiv" style="overflow-y:scroll; overflow-x:hidden; width:100%; position:absolute; bottom:0px;  min-width:847px; right:0px; left:0px">
-							<table id="resultDataTable" style="width:100%; table-layout: fixed; border-collapse:collapse; font-size:14px;"></table>
+							<table id="resultDataTable" style="width:96%; table-layout: fixed; border-collapse:collapse; font-size:14px;"></table>
 						</div>
 						
 						</div>
