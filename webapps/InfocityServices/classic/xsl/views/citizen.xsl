@@ -32,7 +32,7 @@
 				<script type="text/javascript" src="/SharedResources/jquery/js/cookie/jquery.cookie.js"/>
 				<script type="text/javascript" src="/SharedResources/jquery/js/hotnav/jquery.hotkeys.js"/>
 				<script type="text/javascript" src="/SharedResources/jquery/js/hotnav/jquery.hotnav.js"/>
-				<script type="text/javascript" src="classic/scripts/outline.js"/>
+				<script type="text/javascript" src="classic/scripts/outlineUMP.js"/>
 				<script type="text/javascript" src="classic/scripts/view.js"/>
 				<script type="text/javascript" src="classic/scripts/form.js"/>
 				<script>
@@ -237,7 +237,7 @@
 												<input type="text" id="flat" style="width:300px; padding:2px;" name="flat" class="inputrequest" autocomplete="off"/>
 											</td>
 										</tr>
-										<tr>
+										<tr class="">
 											<td width="250px" style="font-size:15px; text-align:right;">
 												<xsl:value-of select="columns/column[@id='FLATNUMBER']/@caption"/> :
 											</td>
