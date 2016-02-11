@@ -18,8 +18,8 @@ import kz.lof.webservices.store.ump.MigrationData;
 import kz.lof.webservices.store.ump.MigrationLiveData;
 import kz.lof.webservices.store.ump.MigrationNatData;
 import kz.lof.webservices.store.ump.MigrationReasonData;
-import kz.lof.webservices.store.ump.NatCount;
 import kz.lof.webservices.store.ump.NatEducData;
+import kz.lof.webservices.store.ump.NationalityByAddr;
 import kz.lof.webservices.store.ump.Region;
 import kz.lof.webservices.store.ump.SpecCount;
 import kz.lof.webservices.store.ump.Street;
@@ -42,6 +42,11 @@ public class HumansSearchServiceSoapBindingImpl implements HumansSearchService {
     public Country[] getCountry(String name, String lang) throws RemoteException {
         HumansSearchServiceProxy svc = new HumansSearchServiceProxy((User)MessageContext.getCurrentContext().getProperty("kz.lof.webservices.current_user"));
         return svc.getCountry(name, lang);
+    }
+
+    @Override
+    public String[] getFlats(int idStreet, String house, String flatNumber) throws RemoteException {
+        return new String[0];
     }
 
     public MigrationNatData[] getInfoMigrationNationByCodeRegion(Region[] region, Calendar startDate, Calendar endDate, int pageNum, int resultsOnPage, String lang) throws RemoteException {
@@ -74,9 +79,9 @@ public class HumansSearchServiceSoapBindingImpl implements HumansSearchService {
         return svc.getHumanByFIO(firstName, lastName, middleName, pageNum, resultsOnPage, lang);
     }
 
-    public HumansSearchResult getHumanByAddr(Street street, String house, String flat, int pageNum, int resultsOnPage, String lang) throws RemoteException {
+    public HumansSearchResult getHumanByAddr(Street street, String house, String flat, String flatPart, int pageNum, int resultsOnPage, String lang) throws RemoteException {
         HumansSearchServiceProxy svc = new HumansSearchServiceProxy((User)MessageContext.getCurrentContext().getProperty("kz.lof.webservices.current_user"));
-        return svc.getHumanByAddr(street, house, flat, pageNum, resultsOnPage, lang);
+        return svc.getHumanByAddr(street, house, flat, flatPart, pageNum, resultsOnPage, lang);
     }
 
     public HumansSearchResult getHumanByDoc(String docNumber, int pageNum, int resultsOnPage, String lang) throws RemoteException {
@@ -104,7 +109,7 @@ public class HumansSearchServiceSoapBindingImpl implements HumansSearchService {
         return svc.getAllStreets(lang);
     }
 
-    public NatCount[] getNationalityByAddr(Address[] address, int pageNum, int resultsOnPage, String lang) throws RemoteException {
+    public NationalityByAddr[] getNationalityByAddr(Address[] address, int pageNum, int resultsOnPage, String lang) throws RemoteException {
         HumansSearchServiceProxy svc = new HumansSearchServiceProxy((User)MessageContext.getCurrentContext().getProperty("kz.lof.webservices.current_user"));
         return svc.getNationalityByAddr(address, pageNum, resultsOnPage, lang);
     }
@@ -184,9 +189,19 @@ public class HumansSearchServiceSoapBindingImpl implements HumansSearchService {
         return svc.getDistricts(name, lang);
     }
 
+    @Override
+    public String[] getFlatParts(int idStreet, String house, String flatNumber) throws RemoteException {
+        return new String[0];
+    }
+
     public Street[] getStreets(String name, String lang) throws RemoteException {
         HumansSearchServiceProxy svc = new HumansSearchServiceProxy((User)MessageContext.getCurrentContext().getProperty("kz.lof.webservices.current_user"));
         return svc.getStreets(name, lang);
+    }
+
+    @Override
+    public String[] getHouses(int idStreet, String house) throws RemoteException {
+        return new String[0];
     }
 
     public MigrationLiveData[] getInfoMigrationLiveByCodeRegion(Region[] region, Calendar startDate, Calendar endDate, int pageNum, int resultsOnPage, String lang) throws RemoteException {

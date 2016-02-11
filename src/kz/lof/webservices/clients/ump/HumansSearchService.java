@@ -30,7 +30,7 @@ public interface HumansSearchService extends java.rmi.Remote {
     public kz.lof.webservices.store.ump.Country[] getAllCountries(String lang) throws java.rmi.RemoteException;
     public kz.lof.webservices.store.ump.District[] getAllDistricts(String lang) throws java.rmi.RemoteException;
     public kz.lof.webservices.store.ump.Street[] getAllStreets(String lang) throws java.rmi.RemoteException;
-    public kz.lof.webservices.store.ump.NatCount[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException;
+    public kz.lof.webservices.store.ump.NationalityByAddr[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException;
     public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByCodeRegion(kz.lof.webservices.store.ump.Region[] region, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException;
     public kz.lof.webservices.store.ump.CountByAddr[] getProzhivByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException;
     public kz.lof.webservices.store.ump.CountByAddr[] getCntAdamByAge(kz.lof.webservices.store.ump.Address[] address, int startAge, int endAge, int sex, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException;

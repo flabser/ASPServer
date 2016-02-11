@@ -10,7 +10,7 @@
 		<url>jdbc:postgresql://127.0.0.1:5432/InfocityServices</url>
 		<username/>
 		<password/>
-	<connectionid>K6ZgD5XLvdf/tCm3a8Lpjw==@@@2/5u/gmWVrP/tCm3a8Lpjw==</connectionid></database>
+	<connectionid>TUXwsBIj9j03ksElXuElNQ==@@@9UUQgEBzGt03ksElXuElNQ==</connectionid></database>
 	<!-- <database autodeploy="on">
 		<name>InfoSystemAdmin_data</name>
 	<driver>org.h2.Driver</driver>

@@ -1,25 +1,30 @@
 package kz.lof.webservices.handlers.client;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.*;
-import java.util.Map.Entry;
-
 import kz.flabs.appenv.AppEnv;
 import kz.flabs.dataengine.ActivityStatusType;
 import kz.flabs.dataengine.IActivity;
 import kz.flabs.runtimeobj.document.structure.Employer;
 import kz.flabs.users.User;
 import kz.pchelka.env.Environment;
-
 import org.apache.axis.AxisFault;
 import org.apache.axis.MessageContext;
 import org.apache.axis.SOAPPart;
 import org.apache.axis.handlers.BasicHandler;
-import org.apache.axis.message.*;
+import org.apache.axis.message.RPCElement;
+import org.apache.axis.message.RPCParam;
+import org.apache.axis.message.SOAPBodyElement;
+import org.apache.axis.message.SOAPFault;
 import org.xml.sax.SAXException;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Vector;
 
 public class ActivityLogger extends BasicHandler {
 
@@ -29,8 +34,8 @@ public class ActivityLogger extends BasicHandler {
 	@Override
 	public void invoke(MessageContext ctx) throws AxisFault {
 		currentMessageContext = ctx;
-		if (currentMessageContext.getProperty("kz.lof.webservices.green_light") != null &&
-				((boolean)currentMessageContext.getProperty("kz.lof.webservices.green_light")) == true) {
+        Object greenLight = currentMessageContext.getProperty("kz.lof.webservices.green_light");
+		if ( greenLight != null && (boolean)greenLight) {
 			return;
 		}
 		String currentUserID = "anonymous";

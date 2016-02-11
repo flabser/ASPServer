@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.ump;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class ForeignersSearchServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.ump.ForeignersSearchServiceService {
 
     public ForeignersSearchServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class ForeignersSearchServiceServiceLocator extends org.apache.axis.clien
     }
 
     // Use to get a proxy class for ForeignersSearchService
-    private java.lang.String ForeignersSearchService_address = "http://localhost:15045/WS/services/ForeignersSearchService";
+    private java.lang.String ForeignersSearchService_address = "http://" +  Environment.getExtHost("FRNS") + "/WS/services/ForeignersSearchService";
 
     public java.lang.String getForeignersSearchServiceAddress() {
         return ForeignersSearchService_address;
@@ -47,7 +50,11 @@ public class ForeignersSearchServiceServiceLocator extends org.apache.axis.clien
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getForeignersSearchService(endpoint);
+
+        ForeignersSearchService foreigners = getForeignersSearchService(endpoint);
+        ((Stub)foreigners).setUsername("temp_user");
+        ((Stub)foreigners).setPassword("temp_password");
+        return foreigners;
     }
 
     public kz.lof.webservices.frontface.ump.ForeignersSearchService getForeignersSearchService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

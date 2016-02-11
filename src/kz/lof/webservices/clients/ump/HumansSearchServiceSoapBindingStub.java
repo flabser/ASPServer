@@ -375,8 +375,8 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "lang"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NatCount"));
-        oper.setReturnClass(kz.lof.webservices.store.ump.NatCount[].class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NationalityByAddr"));
+        oper.setReturnClass(kz.lof.webservices.store.ump.NationalityByAddr[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "getNationalityByAddrReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -949,6 +949,24 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+
+        qName = new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NationalityByAddr");
+        cachedSerQNames.add(qName);
+        cls = kz.lof.webservices.store.ump.NationalityByAddr.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
+
+        qName = new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "ArrayOf_tns1_NationalityByAddr");
+        cachedSerQNames.add(qName);
+        cls = kz.lof.webservices.store.ump.NationalityByAddr[].class;
+        cachedSerClasses.add(cls);
+        qName = new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "NationalityByAddr");
+        qName2 = new javax.xml.namespace.QName("http://ump.webservices.lof.kz", "item");
+        cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+        cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
 
             qName = new javax.xml.namespace.QName("http://store.ump.webservices.lof.kz", "VisitReason");
             cachedSerQNames.add(qName);
@@ -1853,7 +1871,7 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public kz.lof.webservices.store.ump.NatCount[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
+    public kz.lof.webservices.store.ump.NationalityByAddr[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1877,9 +1895,9 @@ public class HumansSearchServiceSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (kz.lof.webservices.store.ump.NatCount[]) _resp;
+                return (kz.lof.webservices.store.ump.NationalityByAddr[]) _resp;
             } catch (Exception _exception) {
-                return (kz.lof.webservices.store.ump.NatCount[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NatCount[].class);
+                return (kz.lof.webservices.store.ump.NationalityByAddr[]) org.apache.axis.utils.JavaUtils.convert(_resp, kz.lof.webservices.store.ump.NationalityByAddr[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

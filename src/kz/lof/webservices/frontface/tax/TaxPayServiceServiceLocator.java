@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.tax;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class TaxPayServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.tax.TaxPayServiceService {
 
     public TaxPayServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class TaxPayServiceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for TaxPayService
-    private java.lang.String TaxPayService_address = "http://localhost:15045/WS/services/TaxPayService";
+    private java.lang.String TaxPayService_address = "http://" +  Environment.getExtHost("tax") + "/WS/services/TaxPayService";
 
     public java.lang.String getTaxPayServiceAddress() {
         return TaxPayService_address;
@@ -47,7 +50,12 @@ public class TaxPayServiceServiceLocator extends org.apache.axis.client.Service 
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getTaxPayService(endpoint);
+
+        TaxPayService taxPay = getTaxPayService(endpoint);
+        ((Stub)taxPay).setUsername("temp_user");
+        ((Stub)taxPay).setPassword("temp_password");
+        return taxPay;
+
     }
 
     public kz.lof.webservices.frontface.tax.TaxPayService getTaxPayService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.udp;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class UDPServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.udp.UDPServiceService {
 
     public UDPServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class UDPServiceServiceLocator extends org.apache.axis.client.Service imp
     }
 
     // Use to get a proxy class for UDPService
-    private java.lang.String UDPService_address = "http://localhost:15045/WS/services/UDPService";
+    private java.lang.String UDPService_address = "http://" +  Environment.getExtHost("udp") + "/WS/services/UDPService";
 
     public java.lang.String getUDPServiceAddress() {
         return UDPService_address;
@@ -47,7 +50,11 @@ public class UDPServiceServiceLocator extends org.apache.axis.client.Service imp
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getUDPService(endpoint);
+
+        UDPService udp = getUDPService(endpoint);
+        ((Stub)udp).setUsername("temp_user");
+        ((Stub)udp).setPassword("temp_password");
+        return udp;
     }
 
     public kz.lof.webservices.frontface.udp.UDPService getUDPService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

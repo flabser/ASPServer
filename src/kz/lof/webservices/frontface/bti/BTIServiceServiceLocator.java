@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.bti;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class BTIServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.bti.BTIServiceService {
 
     public BTIServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class BTIServiceServiceLocator extends org.apache.axis.client.Service imp
     }
 
     // Use to get a proxy class for BTIService
-    private java.lang.String BTIService_address = "http://localhost:15045/WS/services/BTIService";
+    private java.lang.String BTIService_address = "http://" + Environment.getExtHost("bti") + "/WS/services/BTIService";
 
     public java.lang.String getBTIServiceAddress() {
         return BTIService_address;
@@ -47,7 +50,11 @@ public class BTIServiceServiceLocator extends org.apache.axis.client.Service imp
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getBTIService(endpoint);
+
+        BTIService bti = getBTIService(endpoint);
+        ((Stub)bti).setUsername("temp_user");
+        ((Stub)bti).setPassword("temp_password");
+        return bti;
     }
 
     public kz.lof.webservices.frontface.bti.BTIService getBTIService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.udp;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class UDPCamServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.udp.UDPCamServiceService {
 
     public UDPCamServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class UDPCamServiceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for UDPCamService
-    private java.lang.String UDPCamService_address = "http://localhost:15045/WS/services/UDPCamService";
+    private java.lang.String UDPCamService_address = "http://" +  Environment.getExtHost("udp") + "/WS/services/UDPCamService";
 
     public java.lang.String getUDPCamServiceAddress() {
         return UDPCamService_address;
@@ -47,7 +50,12 @@ public class UDPCamServiceServiceLocator extends org.apache.axis.client.Service 
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getUDPCamService(endpoint);
+
+        UDPCamService udpCam = getUDPCamService(endpoint);
+        ((Stub)udpCam).setUsername("temp_user");
+        ((Stub)udpCam).setPassword("temp_password");
+        return udpCam;
+
     }
 
     public kz.lof.webservices.frontface.udp.UDPCamService getUDPCamService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

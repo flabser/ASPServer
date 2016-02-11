@@ -14,11 +14,11 @@
   		в контекст необходимые флаги
    -->
   <!--   <handler type="java:kz.lof.webservices.handlers.client.ServiceMan"/> -->
-   <handler type="java:kz.lof.webservices.handlers.client.ActivityLogger"/>
-   <handler type="java:kz.lof.webservices.handlers.client.Bouncer"/>
+   <!--<handler type="java:kz.lof.webservices.handlers.client.ActivityLogger"/>-->
+   <!--<handler type="java:kz.lof.webservices.handlers.client.Bouncer"/>-->
   </requestFlow>
   <responseFlow>
-   <handler type="java:kz.lof.webservices.handlers.client.ActivityLogger"/>
+   <!--<handler type="java:kz.lof.webservices.handlers.client.ActivityLogger"/>-->
   </responseFlow>
  </globalConfiguration>
  <transport name="http" pivot="java:org.apache.axis.transport.http.HTTPSender"/>

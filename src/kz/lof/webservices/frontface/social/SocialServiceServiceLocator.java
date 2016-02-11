@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.social;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class SocialServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.social.SocialServiceService {
 
     public SocialServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class SocialServiceServiceLocator extends org.apache.axis.client.Service 
     }
 
     // Use to get a proxy class for SocialService
-    private java.lang.String SocialService_address = "http://localhost:15045/WS/services/SocialService";
+    private java.lang.String SocialService_address = "http://" +  Environment.getExtHost("social") + "/WS/services/SocialService";
 
     public java.lang.String getSocialServiceAddress() {
         return SocialService_address;
@@ -47,7 +50,11 @@ public class SocialServiceServiceLocator extends org.apache.axis.client.Service 
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getSocialService(endpoint);
+
+        SocialService social = getSocialService(endpoint);
+        ((Stub)social).setUsername("temp_user");
+        ((Stub)social).setPassword("temp_password");
+        return social;
     }
 
     public kz.lof.webservices.frontface.social.SocialService getSocialService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

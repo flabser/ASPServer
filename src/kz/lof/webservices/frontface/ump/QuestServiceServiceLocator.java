@@ -7,6 +7,9 @@
 
 package kz.lof.webservices.frontface.ump;
 
+import kz.pchelka.env.Environment;
+import org.apache.axis.client.Stub;
+
 public class QuestServiceServiceLocator extends org.apache.axis.client.Service implements kz.lof.webservices.frontface.ump.QuestServiceService {
 
     public QuestServiceServiceLocator() {
@@ -22,7 +25,7 @@ public class QuestServiceServiceLocator extends org.apache.axis.client.Service i
     }
 
     // Use to get a proxy class for QuestService
-    private java.lang.String QuestService_address = "http://localhost:15045/WS/services/QuestService";
+    private java.lang.String QuestService_address = "http://" + Environment.getExtHost("quest") + "/WS/services/QuestService";
 
     public java.lang.String getQuestServiceAddress() {
         return QuestService_address;
@@ -47,7 +50,11 @@ public class QuestServiceServiceLocator extends org.apache.axis.client.Service i
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getQuestService(endpoint);
+
+        QuestService questService = getQuestService(endpoint);
+        ((Stub)questService).setUsername("temp_user");
+        ((Stub)questService).setPassword("temp_password");
+        return questService;
     }
 
     public kz.lof.webservices.frontface.ump.QuestService getQuestService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {

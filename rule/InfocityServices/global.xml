@@ -10,7 +10,7 @@
         <url>jdbc:postgresql://127.0.0.1:5432/InfocityServices</url>
         <username/>
         <password/>
-    <connectionid>3PSw3VosDCZhjI0Mtr+tQQ==@@@Ya3nYkuIajJhjI0Mtr+tQQ==</connectionid></database>
+    <connectionid>Axoi0PJd5YO7CJLW8abE/Q==@@@WTsLnOQnc3+7CJLW8abE/Q==</connectionid></database>
     <externalmodule type="STRUCTURE">InfocityAdmin</externalmodule>
     <!-- <database autodeploy="on">
         <name>InfoSystem_data</name>

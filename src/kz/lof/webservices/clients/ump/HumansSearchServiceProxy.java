@@ -186,7 +186,7 @@ public class HumansSearchServiceProxy implements kz.lof.webservices.clients.ump.
     return humansSearchService.getAllStreets(lang);
   }
 
-  public kz.lof.webservices.store.ump.NatCount[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException{
+  public kz.lof.webservices.store.ump.NationalityByAddr[] getNationalityByAddr(kz.lof.webservices.store.ump.Address[] address, int pageNum, int resultsOnPage, String lang) throws java.rmi.RemoteException{
     if (humansSearchService == null)
       _initHumansSearchServiceProxy();
     return humansSearchService.getNationalityByAddr(address, pageNum, resultsOnPage, lang);
