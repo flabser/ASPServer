@@ -1,5 +1,5 @@
 package page.gbd
-import kz.lof.webservices.clients.ump.HumansSearchServiceProxy
+
 import kz.lof.webservices.gbdfl.*
 import kz.nextbase.script._Session
 import kz.nextbase.script._Tag
@@ -9,13 +9,13 @@ import kz.nextbase.script.events._DoScript
 
 class GetHumanByDoc extends _DoScript {
 
-    private String createAddress(Address_ address){
+    private static String createAddress(Address_ address){
         if (address == null) return "";
 
         String result = "" +
+                createLine("", address.districtName) +
                 createLine("", address.regionName) +
                 createLine("", address.cityName) +
-                createLine("", address.districtName) +
                 createLine("ул.", address.streetName) +
                 createLine("д.", address.buildingNumber) +
                 createLine("кв.", address.flatNumber);
@@ -23,7 +23,7 @@ class GetHumanByDoc extends _DoScript {
         return result;
     }
 
-    private String createLine(String prefix, String value){
+    private static String createLine(String prefix, String value){
         if(value != null && value.trim().length() != 0)
             return prefix + value.trim() + ", ";
         return ""
@@ -31,29 +31,24 @@ class GetHumanByDoc extends _DoScript {
 	
 	@Override
 	public void doProcess(_Session session, _WebFormData formData,	String lang) {
-		HumansSearchServiceProxy proxy = new HumansSearchServiceProxy(session.user);
 		try {
-			String docnumber = formData.get("doc")[0];
 
-//			String isCitizen = formData.get("iscitizen")[0];
-			String page = formData.get("page")[0]
-			String pagesize = formData.get("pagesize")[0]
+			String docnumber = formData.get("doc")[0];
 
 			GBDFL2009Service_ServiceLocator l = new GBDFL2009Service_ServiceLocator();
 			GBDFL2009Service_PortType service = l.getGBDFL2009ServiceBinding(session.user);
 
-
 			SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "25", "");
-
 			FullResponse_[] response = service.getPersonByDocument(new DocumentRequest_(docnumber, info));
 
-//			Assert.assertTrue(response != null && response.length > 0);
 			def tag = new _Tag("root","")
             if(response.length > 0){
                 tag.setAttr("countelements", 1);
                 def fullResponse_ = response[0];
 
-                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
+                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getSurName() + " "
+                        + fullResponse_.getCurrentFIO().getFirstName() + " "
+                        + fullResponse_.getCurrentFIO().getMiddleName())
                 tag.addTag(fioh)
 
                 def birthdate = new _Tag("birthdate", fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))

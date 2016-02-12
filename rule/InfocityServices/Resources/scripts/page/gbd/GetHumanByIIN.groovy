@@ -1,5 +1,5 @@
 package page.gbd
-import kz.lof.webservices.clients.ump.HumansSearchServiceProxy
+
 import kz.lof.webservices.gbdfl.*
 import kz.nextbase.script._Session
 import kz.nextbase.script._Tag
@@ -13,9 +13,9 @@ class GetHumanByIIN extends _DoScript {
         if (address == null) return "";
 
         String result = "" +
+                createLine("", address.districtName) +
                 createLine("", address.regionName) +
                 createLine("", address.cityName) +
-                createLine("", address.districtName) +
                 createLine("ул.", address.streetName) +
                 createLine("д.", address.buildingNumber) +
                 createLine("кв.", address.flatNumber);
@@ -31,62 +31,24 @@ class GetHumanByIIN extends _DoScript {
 
     @Override
     public void doProcess(_Session session, _WebFormData formData,	String lang) {
-        HumansSearchServiceProxy proxy = new HumansSearchServiceProxy(session.user);
         try {
             String iin = formData.get("iin")[0];
-
-//			String isCitizen = formData.get("iscitizen")[0];
-//			String page = formData.get("page")[0]
-//			String pagesize = formData.get("pagesize")[0]
 
             GBDFL2009Service_ServiceLocator l = new GBDFL2009Service_ServiceLocator();
             GBDFL2009Service_PortType service = l.getGBDFL2009ServiceBinding(session.user);
 
-
             SystemInfo_ info = new SystemInfo_("1", "1", Calendar.getInstance(), "1", "1", "25", "");
-
             FullResponse_[] response = service.getPersonByIIN(new IINRequest_(iin, info));
 
-            ///////////////////////test case//////////////////////////
-//            FullResponse_ fullResponse_1 =  new FullResponse_();
-//            fullResponse_1.currentFIO = new FIO_();
-//            fullResponse_1.currentFIO.firstName = "Дарын";
-//            fullResponse_1.currentFIO.surName = "Серикбаев";
-//            fullResponse_1.currentFIO.middleName = "Жамиханович";
-//
-//            fullResponse_1.commonInfo = new CommonInfo_()
-//            fullResponse_1.commonInfo.birthDate = Calendar.getInstance();
-//            fullResponse_1.currentAddress = new Address_()
-//            fullResponse_1.currentAddress.cityName = "Almaty"
-//            fullResponse_1.currentAddress.districtName = "Medeu"
-//            fullResponse_1.currentAddress.streetName = "Dostyk"
-//            fullResponse_1.currentAddress.buildingNumber = "99"
-//            fullResponse_1.currentAddress.flatNumber = "7"
-//
-//            fullResponse_1.commonInfo.nationalityName = "Puerto-Rikanian"
-//
-//            Document_ d = new Document_()
-//            d.docNumber = "659433612";
-//            fullResponse_1.documentList = new Document_[1];
-//            fullResponse_1.documentList[0] = d;
-//
-//
-//            FullResponse_[] response = new FullResponse_[1];
-//            response[0] = fullResponse_1;
-
-            ///////////////////////////
-
-//			Assert.assertTrue(response != null && response.length > 0);
             def tag = new _Tag("root","")
-			def getfulldataccess;
-//			def getFullData = session.currentAppUser.hasRole("HumansSearchService -> getFullData");
-//			getfulldataccess = new _Tag("getfulldataccess", getFullData.toString())
-//			tag.addTag(getfulldataccess);
+
             if(response.length > 0){
                 tag.setAttr("countelements", 1);
                 def fullResponse_ = response[0];
 
-                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getFirstName() +" "+ fullResponse_.getCurrentFIO().getSurName() + " " + fullResponse_.getCurrentFIO().getMiddleName())
+                def fioh = new _Tag("fio", fullResponse_.getCurrentFIO().getSurName() + " "
+                        + fullResponse_.getCurrentFIO().getFirstName() + " "
+                        + fullResponse_.getCurrentFIO().getMiddleName())
                 tag.addTag(fioh)
 
                 def birthdate = new _Tag("birthdate", fullResponse_.getCommonInfo().getBirthDate().time.format("dd.MM.yyyy"))
@@ -126,7 +88,5 @@ class GetHumanByIIN extends _DoScript {
         } catch (Exception re) {
             println(re);
         }
-
     }
-
 }
