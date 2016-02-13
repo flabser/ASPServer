@@ -84,7 +84,7 @@ class ServerRequest extends _DoScript {
             case "ForeignersSearchService" : servName = "Иностранцы"; fullServerName = "миграционной полиции"; break;
             case "TaxIndService" : servName = "Налоговый комитет"; fullServerName = "налогового комитета"; break;
             case "TaxPayService" : servName = "Налоговый комитет"; fullServerName = "налогового комитета"; break;
-            case "UDPServiceProxy" : servName = "Управление дорожной полиций"; fullServerName = "дорожной полиции"; break;
+            case "UDPServiceProxy" : server = "UDPService"; servName = "Управление дорожной полиций"; fullServerName = "дорожной полиции"; break;
             case "BTIService" : servName = "Центр недвижимости"; fullServerName = "центра недвижимости"; break;
             case "GKZService" : servName = "Алматы Жер"; fullServerName = "АлматыЖер"; break;
             default: log("Unknown server '${server}'"); return;
